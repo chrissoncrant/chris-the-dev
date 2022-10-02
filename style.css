@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,900;1,100;1,400&display=swap');
+
+:root {
+    --black: #313131;
+    --white: #E8E8E8;
+    --gray: #515051;
+    --accent-orange: #D09D6F;
+    --accent-red: #C17564;
+    --green: #707970;
+    --blue: #2B4755;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    min-height: 100vh;
+    background-color: var(--black);
+}
+
+picture {
+    display: block;
+}
+
+picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+ol, ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    overflow-wrap: break-word;
+    max-width: 65ch;
+}
+
+p {
+    color: var(--white);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+    text-decoration: underline;
+}
+
+p {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+/* ?COMMENT ######################## */
+
+.inner-column {
+    padding: 0px 16px;
+}
+
+h1 > span {
+    display: block;
+}
+
+h1 > span:first-child {
+    color: var(--accent-orange);
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+h1 > span:last-child {
+    color: var(--accent-red);
+}
+
+.intro-section .inner-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    gap: 32px;
+}
+
+.intro-section p {
+    font-size: 20px;
+}
