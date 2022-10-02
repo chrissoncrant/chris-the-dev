@@ -70,6 +70,7 @@ p {
 a {
     display: block;
     text-decoration: none;
+    color: var(--accent-red);
 }
 
 p a {
