@@ -77,10 +77,6 @@ p a {
     text-decoration: underline;
 }
 
-p {
-    font-style: italic;
-}
-
 h1 {
     font-size: 36px;
 }
@@ -89,6 +85,9 @@ h1 {
 
 .inner-column {
     padding: 0px 16px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h1 > span {
@@ -115,4 +114,5 @@ h1 > span:last-child {
 
 .intro-section p {
     font-size: 20px;
+    font-style: italic;
 }
