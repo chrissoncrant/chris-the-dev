@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="../images/C-logo.png?v=1.1" type="image/x-icon">
 
     <link href="../style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="journal-style.css" type="text/css">
+    <link href="journal-style.css" rel="stylesheet" type="text/css">
     <!-- <script src="script.js" defer></script> -->
 </head>
 <body>
@@ -22,6 +22,45 @@
         </div>
     </header>
     <main>
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">October 5, 2022</h2>
+                <h3>Thoughts and Review: Atomic Design</h3>
+                <p>Reviewing what I’ve learned so far in the Atomic Design course. </p>
+
+                <p>Atoms are the simplest pieces. These are buttons, specific kinds of text (headers, descriptions, excerpts, paragraphs), specific kinds of images (profile pics, hero images, logos)</p>
+                
+                <p>Molecules are combinations of atoms to form larger functional pieces such as a search input with its search button.</p>
+                
+                <p>Organisms bring together molecules to form even more complex functional patterns consisting of combinations of atoms, molecules and even other organisms. Example would be a header which contains a navigation organism, a logo atom and a search molecule. </p>
+                
+                <p>Templates are how these things are brought together within a page. Templates are generic pages with generic content. These begin to give us an idea of how all the organisms come together to form an experience.</p>
+                
+                <p>Pages bring in the specific content to give a finished look. This is also the stage where we can really begin to test out variations in content, using test cases to wrinkle out any issues. </p>
+                
+                <p>How this is actually implemented within a design system involves file/directory structure, naming conventions for the files, templating languages, such as Mustache, testing data (can be in the form of JSON), the variations of data (default/filler, best case data, variation scenarios). </p>
+                
+                <p>This also involves documenting, annotating and providing component lineages. Documenting is about describing what each component, usually in the form of an organism or a molecule, is for, how it is to be used, and other details that can be helpful for designers and developers. Documentation also involves providing a means to view the code related to the component in all the necessary layers (template code, rendered html, css) and to see the finished result. </p>
+                
+                <p>Annotating is useful and is essentially a way to put the components within the context of an actual page and giving the capability to click on a button to reveal all the documentation related to the component itself.</p>
+                
+                <p>Documenting the component lineage is a part of documentation as well. This provides information on what atoms, molecules, organisms make up the component, as well as what organisms contain the component. It goes both downward and upward. This is useful for testing, troubleshooting and adjusting.</p>
+
+                <h3>Learning: Atomic Design</h3>
+                <p>Finished Chapter 4. This chapter broke down a potential workflow from idea to full implantation and how that looks in a non-linear/waterfall way.</p>
+
+                <p>It started by going over the standard way of moving a project from ida to finished product, which is linear and how this doesn’t make sense in the environment of web development. </p>
+                
+                <p>My take aways from it: a project can be broken into 3 sections/teams (this is another abstracted layer): UX, Visual Design, and Front-End Development. These layers are in a constant dance with one another. </p>
+                
+                <p>For the UX, creating lo-fi sketches is more useful than full on mockups. It’s about creating the minimum viable product to create discussion.</p>
+                
+                <p>Visual designers can utilize a method called the 20 second gut check, which I think is pretty cool. It involves gathering a number of other similar sites, spending 20 secs looking at each and ranking them. After this, it’s about discussing the one’s that received low marks, high marks and the ones that received both low and high marks from different people. The next phase involves creating style tiles and elemental components.</p>
+                
+                <p>Front-end developers can start to set up project dependencies, get the file structure down, and begin marking up basic patterns so that early design ideas can be seen in the context of the web earlier. </p>
+            </div>
+        </section>
+        
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">October 4, 2022</h2>
