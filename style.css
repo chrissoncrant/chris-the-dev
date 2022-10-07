@@ -44,8 +44,8 @@ input, button, textarea, select {
 }
 
 ol, ul {
-    list-style: none;
-    padding: 0;
+    /* list-style: none; */
+    padding: 8px 32px;
 }
 
 h1, h2, h3 {
@@ -63,6 +63,10 @@ p {
     max-width: 65ch;
 }
 
+h1 {
+    font-size: 36px;
+}
+
 p {
     color: var(--white);
 }
@@ -78,9 +82,10 @@ p a {
     text-decoration: underline;
 }
 
-h1 {
-    font-size: 36px;
+li {
+    color: var(--white);
 }
+
 
 .inner-column {
     padding: 0px 16px;
