@@ -21,3 +21,12 @@ p:not(:last-child) {
 .entry:not(:last-child) {
     border-bottom: 2px dashed var(--white);
 }
+
+code {
+    color: var(--accent-red);
+    
+}
+
+pre {
+    margin-bottom: 18px;
+}
