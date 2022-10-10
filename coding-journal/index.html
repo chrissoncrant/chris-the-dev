@@ -30,6 +30,78 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 9, 2022</h2>
+                <p>This is supposed to be a day off, but I just can’t help myself here.</p>
+
+                <h3>Learning: Just JavaScript</h3>
+                <p>Today I went through Chapter 8: Properties.</p>
+                
+                <p>This expands on the variable mental model of wires connecting to values. Essentially properties behave like wires and just like all wires in this mental model they must be connected to a value. </p>
+                
+                <p>One difference between properties and variables is that variables are code which point/connect to values. Properties don’t start from code, but start from values (object values). Variables are code connecting to values; properties are values connecting to other values. </p>
+                
+                <p>Another aspect is that properties are not inside objects, but are simply connections that are grouped together via the object value. The object value is a sort of hub for values and the properties are what connect the values to the hub. </p>
+                
+                <p>The reason this is helpful is because the values of connected to properties are available to other variables and other object values. They don’t enter the object to gain access, but simply connect via their own wires to these values. </p>
+                
+                <p>How can something be in two boxes at the same time? This is the problem with the box mental model. The wire mental model is more accurate in explaining the behavior of variables and properties. </p>
+                
+                <p>I also learned about what the ‘this’ keyword does. The course doesn’t go over ‘this’ but through one of the problems I learned more about it.</p>
+                
+                <pre><code>//The code below would throw an error because the 'next' property is pointing to the 'president' variable's value before it has been declared. 
+                
+let president = {
+    name: "Goofy",
+    next: president
+}
+                
+// Without the 'this' keyword this is accomplished like so:
+                
+let president = {
+    name: "Goofy",
+}
+
+president.next = president;
+                
+//The same thing above can be accomplished with less code by using the 'this' keyword:
+                
+let president = {
+    name: "Goofy",
+    next: this,
+}</code></pre>
+                <p>When an object gets more complicated ‘this’ becomes even more useful. Encountering this problem helped me understand how ‘this’ behaves and what it replaces. I now have a better grasp on what ‘this’ is abstracting. </p>
+                
+                <p>I also learned about how the dot operator works in regards to accessing properties. </p>
+                
+                <p>If the value to the left of the ‘.’ is undefined or null an error is thrown, otherwise it moves forward.</p>
+                
+                <p>This makes sense because ‘undefined’ and ‘null’ are primitive values and do not posses any properties in and of themselves. </p>
+                
+                <p>If a property of an object hasn’t been declared, trying to access it will result in undefined. This does not mean that in doing so a property is created and wired to the value ‘undefined’. In other languages trying to access a property that doesn’t exist would result in an error. In the Universe that is JavaScript, this results in the value ‘undefined’. It’s just a law of this Universe. </p>
+                
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>Continuing with the introductory module. Continued learning about units by reading <a href="https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/">Josh’s article</a>.</p>
+                
+                <p>I found this article informative. It revealed a bad habit I have developed of using pixels for font sizes. This is bad for accessibility reasons. Moving forward I will be using rem units for font-sizing.</p>
+                
+                <p>He made an interesting case for using ems for vertical margins, which prevents excess code writing. For example: if I wanted my margins for all headers no matter what type to be 0.75x their font-size size I would have to calculate that value for every header if I were using rem units. However if I were to use ems for the margins I could just have one rule with a selector for all headers and set the margin (vertical) to 0.75em and this would take care of it  that size, then I would have to calculate that rem value.</p>
+                
+                <p>The article also made a very interesting case for using rem units for media queries. I am still wrapping my head around this. The example he uses to highlight the usefulness of doing this has to do with a page layout that has a vertical navigation on the left hand side. If a user bumped the default browser font size to 32px and pixels were used in the media query, then the navigation would end up taking up a larger portion of the available space, squeezing the main content. </p>
+                
+                <p>By using rems for the media query, when the user bumps up the font size, then the media query breakpoints would also change. In this case what would occur is the page would be following the mobile specifications and the navigation would become collapsible. This is pretty neat!</p>
+                
+                <p>The article was very thorough and offered some interesting workflows and I applied some of the ideas to this website and am looking forward to making these ideas a part of my workflow.</p>
+                
+                <p>With that said it was also emphasized that there are no hard rules and that the more projects we build the more our intuition will build in regards to determining what kinds of units to use.</p>
+                
+                <p>He left me with a good mental model for deciding in the form of a simple, yet powerful question: Do I want this to scale up when a user changes a browser’s default font size?</p>
+                
+                <p>It’s all about the mental models these days. I love em!</p>                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 8, 2022</h2>
                 <p>Not a lot of time today because, y’know… life. But still getting some work in.</p>
 

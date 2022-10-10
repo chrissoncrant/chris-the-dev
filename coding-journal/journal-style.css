@@ -24,9 +24,9 @@ p:not(:last-child) {
 
 code {
     color: var(--accent-red);
-    
 }
 
 pre {
-    margin-bottom: 18px;
+    margin-bottom: var(--18px);
+    white-space: pre-wrap;
 }
