@@ -73,7 +73,6 @@ h5,
 h6,
 p {
     overflow-wrap: break-word;
-    max-width: 65ch;
 }
 
 h1 {
@@ -103,7 +102,7 @@ li {
 .inner-column {
     padding: 0px 16px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 65ch;
     margin: 0 auto;
 }
 
