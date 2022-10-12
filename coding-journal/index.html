@@ -30,6 +30,59 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 11, 2022</h2>
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>Revisited my CSS reset stylesheet and compared and contrast it with both <a href="https://www.joshwcomeau.com/css/custom-css-reset/">Josh’s</a> and <a href="https://piccalil.li/blog/a-modern-css-reset/">Andy Bell’s</a> (2 developers I look up to).</p>
+                
+                <p>Some things I adopted into my own CSS are scroll-behavior being set to smooth on the root element and a media query for users that prefer reduced motion. The latter sets the scroll-behavior to its default as well as reduces animation and transition durations. </p>
+                
+                <p>Much of today’s learning was review for me, but useful review. What was reviewed and gone over in detail was the Box Model. There was good practice in reiterating the difference between content-box and border-box and it makes even more sense now.</p>
+                
+                <p>Learned about a nifty feature of the margin property: by setting negative margins on left and right an element can be stretched.</p>
+                
+                <p>I also learned that the fit-content width value requires a vendor prefix for Firefox. I love encountering things like this. Information that corrects and updates my current mental models seem to stick so much more.</p>
+                
+                <p>I also learned more about the Flow Layout and the different behaviors of the display values: block, inline, and inline-block.</p>
+                
+                <p>Again, this was most review, but these are foundational aspects so reviewing doesn’t hurt.</p>
+                
+                <p>Next up I went through the section on width. I learned some stuff here.</p>
+                
+                <p>Specifically I learned about the difference between width: auto (this is the default value) and width: 100%. When the width of an element is set to 100% it means that the element’s content-box will always be 100% the size of its parent. If horizontal margin is added to the element, then there’s a chance the element may break out of its parent because that margin will be added to the width which is already 100%. This is good to know~</p>
+                
+                <p>I also learned about some keywords to use for width. In addition to fit-content, which I already knew about, I learned about min-content and max-content. These keywords are interesting because they are intrinsic values, which means the width is not based on the parent (extrinsic), but is based on the width of the children.</p>
+                
+                <p>With min-content this means the element looks for the longest single word and then makes its width be equal to that word. That longest word becomes the width of the element.</p>
+                
+                <p>With max-content the width of the element is equal to the width of the widest child. If a header is very long it means the width will be as long as that line is without any line-breaks. This can break outside of a parent. </p>
+                
+                <p>Both of these methods are interesting ways to shrink wrap content, but the most straight-forward one seems to be fit-content (just have to be sure to add the vendor prefix for Firefox!)</p>
+                
+                <h3>Learning: Just JavaScript</h3>
+                
+                <p>Finished Chapter 10: Prototypes</p>
+                
+                <p>This is the last chapter in this course. </p>
+                
+                <p>I spent some time learning about prototype chains awhile back. This chapter helped me better understand what these are, especially in the context of the ‘wiring’ mental model.</p>
+                
+                <p>Prototypes are mostly relevant when reading property values. If a property is being written, this will occur on the object that the property is being written to, not a prototype.</p>
+                
+                <p>It is possible to write to an object’s prototype. This is called Prototype Pollution and for the most part should be avoided. </p>
+                
+                <p>Every newly created object has as its prototype a default Object Prototype which is where all those fancy methods and properties live and are accessible from. The prototype of the Object Prototype is just null. This is the end of the line for every prototype chain. </p>
+                
+                <p>Like properties, prototype chains are unidirectional. They flow down stream in the form of object chains. A prototype cannot access the properties of the object of which it is a prototype. </p>
+                
+                <p>This course was simply awesome. Probably one of the most useful courses I have taken in my coding journey. I will most likely be revisiting it over and over. </p>
+                
+                <p>The exercises provided were crucial for reinforcing the mental model. I am looking forward to diving into some projects to continue the reinforcement. </p>
+                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 10, 2022</h2>
                 <h3>Learning: Just JavaScript</h3>
 
