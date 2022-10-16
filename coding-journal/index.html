@@ -28,6 +28,50 @@
             </div>
         </section> -->
 
+         <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">October 15, 2022</h2>
+                <h3>Building: Space Tourism Site</h3>
+                <p>Continued with the Design System page.</p>
+                
+                <p>Realizing that building this page is mostly about practice. Building it out isn’t very helpful for identifying component patterns or design patterns because all the markup here is outside of the context of the actual website itself. </p>
+                
+                <p>The most challenging thing of this is simply naming the classes. Sometimes the class name is mostly accurate. For example, in the Typography section, there is a sub-headings component and I created a styling class for the header of this component and because I didn’t see a reason to create a whole new class for the ‘body text’ section (it was using almost all the same styling, except for the color), I used this class name on it. </p>
+                
+                <p>A fix for the problem would be to come up with a less specific class name. However, naming things is a bitch.</p>
+                
+                <p>This pain of naming is actually a good case for using utility classes. Instead of creating a new class for each of the headings and subheadings I was able to utilize the utility classes to quickly style them within the HTML. </p>
+                
+                <p>After I prepped the page I continued watching the tutorial. This is definitely the better order. Make first then watch. Yes, it may mean me redoing some of the work I’ve done as I learn how to do something more efficiently, but this is not bad at all. Making “mistakes,” for me at least, is the best way to learn.</p>
+                
+                <p>This actually reinforced a decision I made when it came to the numbered titles on the page. Because all of these shared the same kind of styling I created a class instead of using utility classes. This is exactly what Kevin Powell did, however he did it a bit more efficiently. </p>
+                
+                <p>When I selected for the titles I used element sectors, whereas he created an actual class with a perfectly descriptive name, “numbered-title.” (Why the hell didn’t I think of that?!).</p>
+                
+                <p>I then went ahead and finished the last section of the design system on my own. I will watch the tutorial on how he did this and make adjustments where necessary. </p>
+                
+                <p>I did mess around with using inline-styles, despite myself. Specifically I used this for specifying different values for variables. I am not so sure about this workflow though. But I think messing with it is allowing me to come up with an experiential reason why to avoid them (or use them).</p>
+                
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>Continuing with Module 2.</p>
+                
+                <p>Wrapped up stacking contexts by learning about portals, which are libraries of a sort to use when working with React. These allow one to create modals that will be rendered alongside the root element, thus allowing DOM order to control the stacking order by declaring <code class='code-inline'>isolation: isolate</code> on the root element.</p>
+                
+                <p>Right now this is now so relevant, but I made a note of it.</p>
+                
+                <p>I moved on, learning about Fixed Position. Fixed position is always in relation to the viewport.</p>
+                
+                <p>When searching about the default positioned ancestor on an absolutely positioned element that does not have an ancestor with a position declaration I have seen people say that it is the body element. However through some explorations I have not found this to be so true. What I did find is that the viewport is the parent. This is also the case with Fixed position.</p>
+                
+                <p>There are exceptions to this rule. The first exception is that if there is any ancestor, no matter how far up the DOM tree that has a transform declaration, then the fixed element will behave as an absolutely positioned element in relation to this ancestor.</p>
+                
+                <p>The other exception is if an ancestor has a declaration of  <code class='code-inline'>will-change: transform</code>. </p>
+                
+                <p>There is a pretty nifty script that Josh introduced to hunt up the DOM tree to find the parent. This script is simple, yet quite helpful. I love things like this.</p>
+
+            </div>
+        </section>
+
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">October 14, 2022</h2>
