@@ -30,6 +30,88 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 17, 2022</h2>
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>Almost finished module 2. Went over how to hide things via <code class='code-inline'>display: none</code>, <code class='code-inline'>visibility: hidden</code>, and the opacity property.</p>
+                
+                <p>This section discussed the differences between these. The <code class='code-inline'>display: none</code> declaration removes an element completely from the DOM and it becomes truly inaccessible.</p>
+                
+                <p>The <code class='code-inline'>visibility: hidden</code> declaration makes the element invisible, but does not remove it from flow. Its box with all its box properties are still there. This can be useful for selectively revealing items, such as answers to questions. </p>
+                
+                <p>Interestingly, with this property one can set a parent element to be visibly hidden, and then selectively set children to be visible. </p>
+                
+                <p>This property also removes items from being clickable, selectable, and focusable.</p>
+                
+                <p>The last property, <code class='code-inline'>opacity</code>, works similarly to <code class='code-inline'>visibility: hidden</code> in that the element remains in flow. However, a key difference is that the element is still clickable, selectable and focusable which can create weird user experiences for people using screen readers.</p>
+                
+                <p>The most important section of this section, I think, is how to visually hide things for screen users, while keeping them “visible” for screen-reader users. This is important for items like buttons that only contain icons.</p>
+                
+                <p>There are many ways to do this. One method is to set the <code class='code-inline'>aria-label: “Button Label Here”</code> attribute, but this sometimes works and sometimes doesn’t depending on context. </p>
+                
+                <p>The method described by Josh involves a CSS utility class called ‘screen-reader-only’ or ‘sr-only’. What this does is it takes the element and moves it out of the way through clever declarations so it is not visible to screen users, yet will be ‘visible’ for screen reader users.</p>
+                
+                <p>I added this useful utility to my utilities.css template. </p>
+                
+                <p>I am leaving the project portion of this section for tomorrow as today is filled with non-coding related chores. I am now moving on to the Space Tourism website.</p>
+                
+                <h3>Building: Space Tourism Website</h3>
+                <p>Last time I left off by finishing up the Design System html file. I wills tart today by reviewing what I did, then watching the tutorial on this section and making adjustments if I feel it improves what I’ve already accomplished. After this it will be time to get started on the actual site!</p>
+                
+                <p>While watching the tutorial:</p>
+                <ul>
+                    <li>I changed the class name of the large button from ‘main-button’ to ‘large-button’. This makes
+                        sense because it is less specific and so this component could be used elsewhere in the site in
+                        the future if it is needed. ‘main-button’ is too specific as it implies only one, whereas
+                        ‘large-button’ only indicates size, not importance.
+                    </li>
+                    <li>The other thing changed was the element itself. I changed it from a button to a link. I did this
+                        because it is what Kevin did, however it led me to the question: When should I use a button and
+                        when should I use a link? This led me to researching on the web and reading a few different
+                        articles.
+                        <ul>
+                            <li> What I seen several times is that buttons should be used when a change is made to the
+                                front or back-end and a link should be used when directing to a new page or section. But
+                                isn’t a new page opening a change to the front-end?
+                            </li>
+                            <li> I read about how links should look like links, and not like buttons to work with the
+                                expectations of users. However, this does not seem to be something that is followed very
+                                often. For example, this link I am styling right now in this project.
+                            </li>
+                            <li> I read about how there is a difference when it comes to accessibility as well and I
+                                think this is the more important thing to consider.
+                            </li>
+                            <li> For this project, I know that this ‘button’ will be leading to a page, so it is
+                                definitely a link, not a button and therefore the markup should follow this. So it makes
+                                sense to use a link tag.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Styling this link was another opportunity to play around with the balance between component
+                        styling and using utility classes. The link component ‘large-button’ has certain dimensions, but
+                        there are aspects of this component that could change in different sections. Things like the
+                        background-color and the font-color and maybe even the font-family itself. The things that
+                        change are great utility class use candidates.
+                    </li>
+                </ul>
+                
+                <p>Very happy to learn about a new way of creating a circular ‘button’ with centered text. This method utilizes vertical padding along with aspect-ration property. This creates the circle. To center the text I would usually utilize display:flex with justify-content and align-items set to center. But I really like this new (for me) way of using display:grid with place-items: center. This saves me a line of code. I like it. </p>
+                
+                <p>When it comes to creating the large border that shows up on hovering, there are several options. For sure I know I do not want the layout to change when this border appears. </p>
+                
+                <p>I thought that if I create the border I could just make its color be transparent/0% opacity and alter this upon hovering, but this didn’t work. What occurred is the background color was revealed. I did not realize setting a border extends the background to the outer edge of the border. I thought that the background-color would stay within the content box itself. I tried changing the box-sizing back  to content-box , but this didn’t work either. </p>
+                
+                <p>The next thing was to set the border to be the same color as the background itself. This works, however in the actual website it looks like a background-image is being used and so this border may be visible depending on the background-image, and this is not what I want either. </p>
+                
+                <p>The next thing is to use an outline. Outlines do not alter the layout. Using an outline means that I would want to add a margin to this button that is at least the width of the border so the outline does not clash with other content.</p>
+                
+                <p>After setting the move up using outline, I watched Kevin’s methodology. The way he went about it was by using the ::after pseudo element. This method was interesting and I did feel like I learned a bit more about how these work, however I feel this was an extremely complex way to go about it. </p>
+                
+                <p>I could accomplish the same thing with a whole lot less lines of code. I wish I could ask him why he chose the method he did versus using outline, especially given that when he set the :hover pseudo class he also defined the :focus pseudo class along with it, which is setting the outline behavior. </p>                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 16, 2022</h2>
                 <p>Today is Sunday. For the most part this is a day off for me. With that said I did makes some progress. I also spent time organizing some of the notes and resources I have that are coding related to make them more efficient and logically structured.</p>
 
