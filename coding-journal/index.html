@@ -30,6 +30,31 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 24, 2022</h2>
+                <h3>Building: Select Element Reference Project</h3>
+                <p>Today I finalized a select element method for having a functional and custom designed element. This project is in relation to the 2nd challenge in Module 3 of CSS for JavaScript Developers course. </p>
+                
+                <p>I made notes on why each rule and declaration’s purpose is so when I reference it again it should be clear what the heck is going on. </p>
+                
+                <p>I added this to the reference project and updated this project by adding links to all the reference projects within. </p>
+                
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>I then finished the 2nd challenge for the select element by applying the HTML and styles via styled components. </p>
+                
+                <p>I started the 3rd challenge where we are styling up an input that has an icon within it. This is a tricky challenge and I encountered the methodology before. It is a pattern that’s definitely “out there.”</p>
+                
+                <p>Before I get to the discussing this pattern, I just want to mention that how I have been doing the last two challenges is to code it up outside of React and styled components, then once I have it working with vanilla CSS and JavaScript (JS for the second challenge; not for the third) it is super easy to convert it into React components and style it with styled components and it helps with my understanding. </p>
+                
+                <p>Back to the pattern for these input elements: The pattern is to use the label element as the container. The icon is removed from flow using absolute positioning and then given space to exist using padding on the input. </p>
+                
+                <p>There is a trick here. When the padding is added to the input, this extends the input by that amount. So using width: 100% on the input element will not work as expected. It will break out of the label container by the amount of padding that was added. This is solved using the calc function on the input.</p>
+                
+                <p>Over the course of these challenges I have become much more familiar with the usefulness of relative units. What I have been doing is setting sizes with rem units on the parent and then using ems for all the descendants. This just makes a lot more sense to me and give me one source of control on the parent container. Or at least it seems to be the case. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 22, 2022</h2>
                 <h3>Learning: CSS for JavaScript Developers</h3>
                 <p>Last night I made really good progress on the progress bar component. I took advantage of the progress HTML element. Once I got it looking good I started watching the solution video.</p>
