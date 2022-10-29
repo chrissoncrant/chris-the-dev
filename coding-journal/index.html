@@ -30,6 +30,29 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 28, 2022</h2>
+                <h3>Learning: Proxy Objects</h3>
+                <p>Continuing with he Hamburger Menu javascript function, I am led to Proxy objects. I had no idea what these were or how they worked. I now know much more, not only about these special objects, but also about what getters and setters are in general.</p>
+                
+                <p>Proxy objects are, to me, like secretary objects. They are a layer between the object and the outside world. Almost like how an API endpoint is between the data and the request being made. Proxy objects wrap the “target” object and any calls made to the proxy will go through the specified handler object. </p>
+                
+                <p>There are many methods that can be specified on the handler object. The most used are probably the getters and setters. Whenever a read request is made to the proxy object, they will be “intercepted” within the get “trap”. Whenever a write request is made on the proxy object these will be intercepted by the set trap. </p>
+                
+                <p><a href="https://javascript.info/proxy" target="_blank">This resource on proxy objects</a> was helpful for my understanding.</p>
+                
+                <p>I created a reference project for proxy objects as well.</p>
+                
+                <p>I limited my dive into this potential rabbit hole via how the Proxy element was being used within the Burger menu code. </p>
+                
+                <h3>Learning: Burger Menu JavaScript</h3>
+                <p>With my newfound knowledge and began going through the huge custom element class and all of its methods, commenting out what each method and property is doing and how they are all tied together. This has been an enlightening experience. I feel like I have learned so very much. Form doing this. </p>
+                
+                <p>Based on my commenting I now know how the Resize Observer is being used and how it works. Instead of using media queries, this Resize Observer is determining whether or not to display the burger menu button based on the size of the <p> <code class='code-inline'>&lt;burger-menu&gt;</code> </p>custom element’s parent’s width when compared to the ‘max-width’ attribute’s value that is set on the burger-menu element. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 27, 2022</h2>
                 <h3>Learning: JavaScript Classes</h3>
                 <p>Today I thought I’d take apart that crazy class that was coded yesterday from  <a href="https://piccalil.li/tutorial/build-a-fully-responsive-progressively-enhanced-burger-menu/" target="_blank">Andy Bell’s Hamburger Menu tutorial</a>. I started reading through the code noting what I needed to learn. This started off with classes in general.</p>
