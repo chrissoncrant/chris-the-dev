@@ -30,6 +30,36 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 29, 2022</h2>
+                <h3>Learning: Burger Menu JavaScript</h3>
+                <p>I am continuing analyzing the burger-menu JavaScript. I do this by commenting each method and each statement within the methods. </p>
+                
+                <p>I reorganized the class’ methods to better represent the flow. I am now so much more familiar with this class and how its pieces work.</p>
+                
+                <p>I am seeing now how cool custom elements are. The API for customElements gives access to the connectedCallback, which is called whenever the connected HTML custom element is added to the DOM. </p>
+                
+                <p>One thing that really helped in growing my understanding was taking a step back and examine what actions I want the code to take. Going back up to pseudo-code level.</p>
+                
+                <p>This is where I saw how the burger button’s visibility and the navigation was dependent up the width. I saw how in addition to this, once the button is visible the navigation’s visibility is controlled by the button clicks. </p>
+                
+                <p>That’s two actions there. The burger buttons visibility is related to the “enabled” attribute and the burger button’s ability to alter the visibility of the navigation is related to the “status” attribute.</p>
+                
+                <p>These attributes connect to CSS as well, as that’s where visibility will ultimately be altered. </p>
+                
+                <p>Behind the scenes there is an object that essentially keeps track of where everything is at was for incoming write operations to make the appropriate adjustments. This is the State object. </p>
+                
+                <p>When a user resizes or clicks the button, some JavaScript is triggered, which updates the State object, which triggers other functions to adjust certain behaviors and update certain HTML attribute values, which in turn alters what CSS is applied to the element. </p>
+                
+                <p>That’s basically what happens. But it’s quite a chunk of code that makes it happen.</p>
+                
+                <p>Speaking of CSS, I began playing around with the attributes and made some rules to define the button’s visibility and the menus visibility. </p>
+                
+                <p>I think tomorrow, or Monday I will be able to move forward from this awesome side adventure and start on the space-tourism website. </p>                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 28, 2022</h2>
                 <h3>Learning: Proxy Objects</h3>
                 <p>Continuing with he Hamburger Menu javascript function, I am led to Proxy objects. I had no idea what these were or how they worked. I now know much more, not only about these special objects, but also about what getters and setters are in general.</p>
