@@ -30,6 +30,76 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">October 31, 2022</h2>
+                <h3>Learning: Burger Menu</h3>
+
+                <h4>Summary of the Burger project and the JavaScript</h4>
+                <p>Had a nice Sunday off yesterday. Days off are good. No coding was done, yet at the same time I know that some behind-the-scenes processing was taking place. </p>
+                
+                <p>Today I continue with this Burger Menu. I had no idea that it would turn out to be a multi-day side-adventure, but I already feel I know so much more about JavaScript and other specialized APIs such as Resize Observer, Custom Elements, and Proxy objects. I also have learned a lot about state and its use. This will definitely come handy when I start learning React. </p>
+                
+                <p>A sloppy summary of this Burger Menu:</p>
+                
+                <p>We have a button. The good ol’ burger button that we are all familiar with.  When the screen is at a certain size it appears and the navigation goes away, and vice versa.</p>
+                
+                <p>When the button is present, it has a basic functionality of revealing and concealing the navigation. </p>
+                
+                <p>These are the two visibility concerns. </p>
+                
+                <p>Then there is the case of focusability. When the button is not showing, we want links to be focusable as they naturally would be. When the button is showing and the menu is closed, we don’t want the links to be focusable. When it is open we do. </p>
+                
+                <p>These are the conditions that the Burger Menu JS works with. Another word for these conditions is “state”. </p>
+                
+                <p>Between the user interaction and the resulting changes in the HTML is a state-controlling object. There are two states that need to be controlled: “status” and “enabled”.</p>
+                
+                <p>The “status” state relates to whether or not the menu is open or closed. This state is only relevant when the button itself is visible.</p>
+                
+                <p>The “enabled” state relates to whether the button itself is visible. If it is visible, then the “status” state becomes relevant. If it is not visible, then the button is unclickable and so the “status” state is irrelevant.</p>
+                
+                <p>The initial loading of the page triggers the script to run and set the initial states. The window width will determine the visibility of the button. If the button is initially visible, the menu will be closed (“status” = ‘closed’).</p>
+                
+                <p>At this point the user can resize the window or click the button and it is these two actions that cause changes to the state object. The state object itself has a handler that will trigger changes in the HTML (attribute values and focusability).</p>
+                
+                <p>User interactions change the state object, which triggers changes in the HTML. The state object is like a controlling buffer. </p>
+                
+                <p>The state object is necessary for memory. In order for a thing to open, it must somehow know that it is closed. In order for a thing to be set to be focusable or not, it must know what its surroundings are like. The state object is what conveys this information.</p>
+                
+                <p>It’s extremely nifty.</p>
+                
+                <h4>Styling the Burger Menu</h4>
+                <p>I completed the styling and there are some very cool things happening here.</p>
+                
+                <p>Here’s a link to the final project: <a href="https://chrissoncrant.github.io/reference-projects/hamburger-menu/" target="_blank">Hamburger Menu</a></p>
+                
+                <p>The intricacies of the CSS are definitely worth analyzing further, but not here… at least for now. </p>
+                
+                <p>A quick summary though:</p>
+                <ul>
+                    <li>Navigation menu is set to fill entire screen
+                    </li>
+                    <li>Nifty creation of the burger icon using CSS and pseudo-elements
+                    </li>
+                    <li>Cool animation of the burger icon to an X and back.
+                    </li>
+                    <li>Learned about delay time values for the transition property.
+                    </li>
+                    <li>Cool subtle animation on the menu items when they appear.
+                    </li>
+                    <li>Awesome utilization of state-related HTML attributes to control CSS.
+                    </li>
+                </ul>
+                
+                <h3>Learning: Andy Bell Tutorial on Global State System</h3>
+                <p>I followed this <a href="https://piccalil.li/tutorial/build-a-light-and-global-state-system/" target="_blank">Andy Bell tutorial on creating a global state system</a> which helped me grow even more familiar with the concept of state, how it works, and how Proxy object are very useful for doing do.</p>
+                
+                <p>I created a reference project for this, commenting it out to help with my current and future understanding of what the hell it is doing, and added it to my growing list of reference projects.</p>
+                
+                <p>I feel that I have learned so much practical JS over the course of analyzing the burger menu’s JS and this JS. I am looking forward to seeing how to implement it in the Space Tourism project, which I am about to get into next.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 29, 2022</h2>
                 <h3>Learning: Burger Menu JavaScript</h3>
                 <p>I am continuing analyzing the burger-menu JavaScript. I do this by commenting each method and each statement within the methods. </p>
