@@ -30,6 +30,31 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 1, 2022</h2>
+                <h3>Building: Space Tourism</h3>
+                <p>Alrighty! Back to the Space Tourism website. I am excited to apply what I learned over the last few days to building out the hamburger menu on this page. </p>
+                
+                <p>Okay, so I had to sort of relearn what the heck was happening in the Design System that was created. As I was coding the homepage I realized that some wackiness was happening within the CSS in regards to focus behavior.</p>
+                
+                <p>I am not pushing blame on anyone, but I found it interesting that while following along with Kevin he set focus behavior on a list item. I didn’t think anything of it while following along, but now, due to my burger menu adventure, I am much more familiar with focus behavior. This caused me to use the tab key and that’s when I discovered the problem. </p>
+                
+                <p>First, the styling was not working as expected. This was because the list item doesn’t get focused, the link gets focus. To make the list item have focus we would need to add the “tabindex=0” to the list item. However, what would be the point of doing that? That would add an unnecessary layer for keyboard users to get to the actual link! Not a good UI. </p>
+                
+                <p>So I went on another side adventure in styling up focus. I learned about using box-shadow. I learned about the potential issue of using border in that it causes things to shift around. I also learned that outline seems to now follow along with border-radius. I am not so sure if this is true, but my experiments show it to be.</p>
+                
+                <p>The next phase was applying what I learned to the CSS I already have implemented for the Space Tourism website. It wasn’t too difficult to do this. Just had to move a selector down (or up?) the rung. </p>
+                
+                <p>———————————</p>
+                <p>With the basic styling in place it was time to start applying the fancy schmancy burger menu to this project. This was another opportunity to reinforce my learnings.</p>
+                
+                <p>I began by going off my memory. This was helpful in revealing the parts I still did not comprehend. I think I am going to do this many more times over the next few weeks. I believe many important concepts and patterns of thinking will be reinforced by doing so. </p>
+                
+                <p>I got the burger menu code coded up. The next phase is styling it up. I am excited to be implementing this feature into this project.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">October 31, 2022</h2>
                 <h3>Learning: Burger Menu</h3>
 
