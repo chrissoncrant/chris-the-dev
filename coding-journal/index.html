@@ -30,6 +30,22 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 5, 2022</h2>
+                <h3>Building: Space Tourism Site</h3>
+                <p>Okay, it is finally time to start filling in the easy markup of the homepage, now that I have gotten the burger menu implemented and in a way that makes me feel proud. Good habits are being built. These good habits consist of the principles and mental models of progressive enhancement and accessibility. </p>
+                
+                <p>———————————</p>
+                
+                <p>I got the homepage styled easy enough, but then I encountered an issue where the navigation, when display, is underneath the main button in the body of the page. I can fix it easy enough by applying z-indexes to the navigation elements, however, I am not quite understanding what is happening, in regards to stacking contexts. A weakness has been revealed, so I am taking some time to understand what the heck is going on in order to make a more informed decision about how to tackle this. </p>
+                
+                <p>I solved this issue after committing to the fact that the body is going to be the parent of the absolutely positioned navigation panel. Therefore, anything that comes after the navigation panel that is positioned will lay on top of the navigation unless the stacking order is changed. </p>
+                
+                <p>In this case the main button itself is on the default stacking layer and is on top of the navigation due to the button coming after the navigation. I updated the z-index of the navigation to be 1, which required me to update the z-index of the button to 2. I will find out if this will cause issues later. For now, the homepage is complete.</p>                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 4, 2022</h2>
 
                 <h3>Building: Rebuilding the Burger Menu and Applying It to the Space Tourism Site</h3>
