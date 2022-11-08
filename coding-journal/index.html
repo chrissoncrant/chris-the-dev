@@ -30,6 +30,37 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 7, 2022</h2>
+                <h3>Building: Space Tourism Site</h3>
+                <p>Continuing with the walk-through of the homepage. We (yes, I have a mouse in my pocket) are now at the burger menu. One thing about Kevin’s tutorials that I like and dislike is his encouragement to do stuff on my own first. </p>
+                
+                <p>What I don’t like about this is it seems like a cop out for him. It means he doesn’t have to do the work. Like “Hey do this yourself because its good for you” and behind the scenes is this justification for laziness on his part for not actually doing the work and showing us what he would do. This defeats the purpose of the tutorial. Sure cheaters will cheat and they only cheat themselves., but should the one’s who don’t cheat be punished? That seems ridiculous. To me. </p>
+                
+                <p>What I like is that it’s important to not simply follow tutorials, but work stuff out for one’s self. I get this. It is inherent within me. I do this automatically. This is why I get annoyed when he doesn’t do something and uses the excuse that it’s good for me. I know it’s good for me, but at this point I want to see what you would do because that would be good for me too damnit.</p>
+                
+                <p>With that said, I did code the burger menu up using Javascript and have it functioning in a. Way that is pleasing to me and it took, maybe 10 mins. Now I will watch how he did it and code along if I feel it is necessary.</p>
+                
+                <p>———————————</p>
+                
+                <p>I liked how he did it. He utilized data attributes. This made for simpler code ultimately. He challenged us to change the icon and set up the animation. I did this, then watched how he did it. </p>
+                
+                <p>Again, he utilized the aria-expanded attribute to change the background-image in CSS. I am not sure if there is an advantage to doing it this way, but I think I like it better.  </p>
+                
+                <p>There seems to be a sense of separation of concerns. The JavaScript updates the attributes based on state, then within the CSS data-attribute selectors are used to update the styles. It keeps styling within the styles sheet and keeps the updating of attributes which control the styling within the JS. I loik it. I loik it a lot.</p>
+                
+                <p>———————————</p>
+                <p>Good progress in styling the homepage and making it responsive. My favorite part was solving a tricky design dilemma. This highlights the gap between designer and developer. It’s so easy to just place a design element like a line within a graphics program, yet when it comes time to actually implement it in code, it is not so easy.</p>
+                
+                <p>I enjoyed mulling over different ways to save this dilemma where a horizontal line was added between the logo and the navigation. Logo and navigation lived on either side of the viewport, but between these there is a horizontal line that only serves a stylistic purpose. </p>
+                
+                <p>At first it tied using a pseudo element because these are not part of the HTML markup and so don’t gum up the works for screen readers, but I just couldn’t get it working in a way that was reliable between different screen sizes. I needed the line to be anchored on the left and on the right, but in a way where it could grow and shrink.</p>
+                
+                <p>The solution that came to mind was adding a spacer div to the markup and then taking advantage of the display flex set on the header, then simply setting flex-grow to 1 on this spacer element. I then just gave it a height of 2 px with a background-color and set the inline margins so they worked appropriately. This worked awesomely. I have yet to see how Kevin solved this problem, but I am looking forward to it. I feel very pleased with my solution and it is a sort of marker for growth in skills and knowledge.</p>                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 6, 2022</h2>
                 <h3>Building: Space Tourism Site</h3>
                 <p>Since I completed the home page I decided to watch the tutorial up to where I am. </p>
