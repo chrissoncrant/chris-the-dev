@@ -30,9 +30,44 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 11, 2022</h2>
+                <h3>Thoughts</h3>
+                <p>Starting to feel that this project is dragging a bit. Yet, I feel I have learned a lot in that dragging. A lot has been captured in the dragnet, so to speak. I’ve learned a lot about accessibility and focusability. I learned a lot about JavaScript and its APIs like Proxy Objects, Custom Elements, Media Query Lists, as well as classes and objects.</p>
+                
+                <p>I also learned that building design systems isn’t helpful until one has a certain vocabulary of building without them. This Space Tourism website has shown me what I already knew: following tutorials is not a good way to learn in general, but is nice for gathering tricks from more those more experienced. </p>
+                
+                <p>I have a couple goals for today: learn more about the difference between the focus and focus-visible pseudo classes as well as those of links and how all of these are related to one another. The other goal is to get the rest of the Javascript working to dynamically fill the destinations page. If I accomplish both of those goals, then this destinations page will be completed and there will only be two more pages left.</p>
+                
+                <h3>Building: Space Tourism Site</h3>
+                <p>Phase One complete (which is actually goal 2 of the above paragraph… typical). The JavaScript is functioning and filling in the appropriate information. I remember when this was more difficult, but now certain things seem so much more obvious. With that said, giggles of joy arose with each correctly functioning button press. I am the rat and these buttons are releasing chemicals of pleasure. Press, press, press, press, press.</p>
+                
+                <p>The whole process is “simply” this: collect the information needed within JS objects, then collect each of the objects within an array. Arrays are nice because they have all those fancy methods and are easier to iterate through. Or at least that’s my thoughts at the moment. Already feeling second guesses at such a statement. But we will continue on.</p>
+                
+                <p>Next up, gather the button elements that will be needed. These buttons are the triggers. These triggers will initiate the action of updating the information on the page with that collected in the destination objects. </p>
+                
+                <p>With these collected it is time to add the event listener to each of the buttons. At this point I realize it would be nice to have a check to make sure that the button that is clicked is not associated with the information already loaded/displayed on the page itself.</p>
+                
+                <p>To do this I created (I realize I am bouncing around in tense, for that I apologize) a variable wired up to the first button element in the collection of the buttons I gathered earlier. I wired it up to the first simply because this is the initial information that the page will load with. </p>
+                
+                <p>With that done I set up a simple check to make sure that the button clicked is not the currently selected destination. If it is, well, click away my fine fellow, but nothing will happen. The action wired up to the click will simply return. However, if it is in fact different, then that’s when the fun begins. Oh yes. </p>
+                
+                <p>The first thing that is done is a state change. This occurs by updating the value of the aria-selected attributes of the selected destination and the, what is now, previously selected destination. This will update the styles accordingly.</p>
+                
+                <p>With that done, the correct destinations object is filtered out of the destinations array. This is done by grabbing the text content of the button itself which is the name of the destination. </p>
+                
+                <p>Next, each of the elements that need updating (title, summary, and stats) is wired up to a variable, then updated based on the values of the properties of the destination object. It is that easy.</p>
+                
+                <p>I love that I can now say that it is that easy. However, I know that that there is still a whole lot to learn (understatement) and I am sure the process I have implemented can be greatly improved upon with more experience. I am not cocky. Just grateful for progress and, more so, for the revelation of it.</p>
+                
+                <p>Phase Two will have to wait until tomorrow.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 10, 2022</h2>
                 <h3>Building: Space Tourism Site</h3>
-                <p>Last night was a brutal night of no sleep. Energy was extremely low today. Eventually I set myself in front of the computer. The hardest part is pushing through the borderlands of inertial. Once I get going then going becomes easier.</p>
+                <p>Last night was a brutal night of no sleep. Energy was extremely low today. Eventually I set myself in front of the computer. The hardest part is pushing through the borderlands of inertia. Once I get going then going becomes easier.</p>
                 
                 <p>I managed to get the destinations page styled up pretty quickly and easily, though I feel the CSS is a bit messy. I would like to rebuild this site again from the ground up and see if I can make it more orderly. With that said things are working and it looks good.</p>
                 
