@@ -30,6 +30,46 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 12, 2022</h2>
+                <h3>Building: Space Tourism Site</h3>
+                <p>Phase two of yesterday’s goals commences today: The link and focus styling analysis.</p>
+                
+                <p>What I learned:</p>
+                <ul>
+                    <li>:focus styling a link requires it being in the right order of the other link pseudo-classes.
+                        LVFHA. A nice mnemonic for this: LoVe Fears HAte (it’s so precious)
+                    </li>
+                    <li>If :focus is styled, but no outline declaration is specified within the rule, then the default
+                        styling supplied by the browser will be applied in addition to the styles declarations within
+                        the rule.
+                    </li>
+                    <li>If the :focus pseudo class is used, then it will behave a bit differently than the default
+                        browser focus styling for links and buttons. The default styling doesn’t style buttons and links
+                        that are clicked on with the mouse. The styling only applies to items focused on via the
+                        keyboard. With :focus, this changes. The :focus styling will apply to clicked buttons and links
+                        and will remain that way until the page is clicked elsewhere. This may not be desirable
+                        behavior.
+                    </li>
+                    <li>Styling using :focus-visible seems to behave like the default styling in that the styling will
+                        only be applied when the item is focused on via keyboard commands. The styling remains even when
+                        the focused on item is click or entered.
+                    </li>
+                    <li>The ordering of :focus and :focus-visible matters. It works with the cascade. Later styles will
+                        overwrite earlier ones.
+                    </li>
+                    <li>The :active link pseudo class is a momentary styling and is not useful for indicating a
+                        currently selected tab.
+                    </li>
+                    <li>The :target class is pretty neat in that it is a way to style popups and tooltips.
+                    </li>
+                </ul>
+                
+                <p>With all this mind it is time to apply these learnings to the Space Tourism site.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 11, 2022</h2>
                 <h3>Thoughts</h3>
                 <p>Starting to feel that this project is dragging a bit. Yet, I feel I have learned a lot in that dragging. A lot has been captured in the dragnet, so to speak. I’ve learned a lot about accessibility and focusability. I learned a lot about JavaScript and its APIs like Proxy Objects, Custom Elements, Media Query Lists, as well as classes and objects.</p>
