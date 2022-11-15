@@ -30,6 +30,47 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 14, 2022</h2>
+                <h3>Building: Space Tourism Site</h3>
+                <p>Yesterday I fixed up the focus styling for the tabs on the destinations page of the space tourism website. Thanks to the study I did 2 days ago I knew exactly what I had to do. No guesswork.</p>
+                
+                <p>Today I will get the destinations page functional for across all sizes.</p>
+                
+                <p>———————————</p>
+                
+                <p>The first issue I ran into was text overflowing the provided grid size at the minimum point for the desktop view.</p>
+                
+                <p>To solve this I first had to determine why the text was overflowing. This was layered. The first layer involves the allotted container space. The size of the width of the content columns is the viewport width - (the size of the padding + the minimum size of the first and last columns + the 3 gap sizes), all divided by two. </p>
+                
+                <p>Calculating this wasn’t necessary per say, but helped to pinpoint why the content columns were fixed at the size they were fixed at.</p>
+                
+                <p>Next I had to find what element within the overflowing column was causing the overflow. I used Dev Tools for this and found it had to do with the inner-column header as well as the tab gap sizes. </p>
+                
+                <p>I decided to solve this I would use the CSS clamp function.</p>
+                
+                <p>In order to use the clamp functioning precisely required me to identify first what values I would be clamping (gap size and header size), then identify the minimum font size and gap size at the desktop breakpoint that reduce/eliminate the overflow.</p>
+                
+                <p>For the header’s minimum font size I went to the header that was the longest then started reducing the font size in the inspector until it was below the width of the grid column. I then adjusted the gap size similarly.</p>
+                
+                <p>The initial sizes set by the design spec were to be the max font and gap sizes. </p>
+                
+                <p>Next I found the minimum viewport width size needed for the initial overflow to fit properly. </p>
+                
+                <p>With all these values I was able to calculate the clamp value needed. </p>
+                
+                <p>Awhile I ago I spent some time going through this article on how the clamp function works and how to get the correct values necessary. I was glad I created a note summarizing the formulas because I didn’t want to read it again. </p>
+                
+                <p>Because the formulas are a bit involved I decided to create the start of another reference project that would help me get the correct clamp value to copy and paste into my CSS.</p>
+                
+                <p>This evolved into creating a simple JS function that took in the necessary inputs and outputted the clamp value. I also coded in the option to have the output be in pixels or rems. The output is the full clamp string that can be copied and pasted as a value in the stylesheet. In the future I will make this into a legitimate tool. For now it is just JavaScript.</p>
+                
+                <p>——————————</p>
+                <p>The styling for the Destinations page is completed. I am debating whether I will watch Kevin’s tutorial for this or not. </p>                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 12, 2022</h2>
                 <h3>Building: Space Tourism Site</h3>
                 <p>Phase two of yesterday’s goals commences today: The link and focus styling analysis.</p>
