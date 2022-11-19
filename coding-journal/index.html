@@ -30,6 +30,41 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 18, 2022</h2>
+                <h3>Building: Space Tourism Site</h3>
+                <p>One of the things about learning something new, grid in this case, is the lack of consistency in implementation. This is par for the course. With less experience one is still finding methodologies and efficient patterns of operations. </p>
+                
+                <p>This website displays this. However, not that I am almost through with it I am finding that I would like more consistency throughout, especially with the components that are consistent throughout.</p>
+                
+                <p>What this means is I am going to rework the grid for the 2nd through 4th pages to make the page title and grid system more consistent.</p>
+                
+                <p>———————————</p>
+                
+                <p>Updating the grid system went easily enough. Now the page titles are consistent and the code itself is also more consistent.</p>
+                
+                <p>The next, and “last” thing to do is to set up the dynamic loading of content for the technology page.</p>
+                
+                <p>This is less straightforward than the other two in one way: there are two orientations for the images based on the viewport width. In desktop mode the image is to be in the portrait orientation. In all others it is to be landscape. </p>
+                
+                <p>I know what I am going to use to help me with this. It is the Media Query List API that I used for the smart focusing. I will use this to help me determine when to change the image out.</p>
+                
+                <p>The page loads initially with the landscape. That’s what’s in the initial HTML. When the script runs initially it will check to see if it is desktop mode, and if so it will perform the ol’ switcharoo on the image. </p>
+                
+                <p>Next I need to set up a listener so that images will be changed based on the media query. To do this I first had to check which button/tab is the active tab, which will allow me to select for the correct image. Then whenever the media query changes it will set the appropriate image.</p>
+                
+                <p>The last part is simply setting up the click listener for the tabs. I took advantage of the function I wrote for the media query event listener function and just ran that again based on the button selection. </p>
+                
+                <p>With this in place, everything is now working! Well… except the main Explore button on the first page. This button seems a little tricky in that it is really a link, not a button. It leads to the Destinations page. I am curious to see how to make this function on the backend with JavaScript. </p>
+                
+                <h3 id="Building: Fluid Type Calculator">Building: Fluid Type Calculator</h3>
+                <p>I decided to whip up a quick and functional Fluid Type calculator, improving upon what I made yesterday by adding the html and some simple styling. It works and it did not take too long to put together. I am sure there are calculators out there already that I could have found, but damnit I like mine. </p>
+                
+                <p>You can check it out here: <a href="https://chrissoncrant.github.io/reference-projects/fluid-type-calculator/index.html">Fluid Type Calculator</a></p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 17, 2022</h2>
                 <h3>Building: Space Tourism Site</h3>
 
