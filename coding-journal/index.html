@@ -30,6 +30,65 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date"><November 22, 2022/h2>
+                    <h3>Learning: CSS for JavaScript Developers</h3>
+                    <p>Jumping back into Josh’s course. For now the plan is to spend at least an hour everyday on the course. Currently I am in module 3 which is about the basics of flexbox.</p>
+                    
+                    <p>I already am pretty familiar with flexbox so this module should go by quickly, however when I am already familiar with the main content, it is a perfect opportunity to become aware of more subtle concepts. So I will keep my eyes peeled. Plus, practice is practice. </p>
+                    
+                    <p>————————————</p>
+                    
+                    <p>Just had a discovery about how align-contents works. This has been a bit vague to me, mainly due to it not being relevant. However today I discovered one area where it comes into play.</p>
+                    
+                    <p>Usually a flex container’s height will be set based on its content. However if a flex container has a specific height set and the flex-direction is row with wrapping enabled, when the wrap becomes active, each flex child will fill out the space specified (we’re assuming no overflow happening). </p>
+                    
+                    <p>This specified space is the flex-child containment area, however, the actual element living within this containment, doesn’t necessarily have to fill this space. By default align-items is set to stretch, and so in the cross-axis the element is set to stretch the cross space of the containment. </p>
+                    
+                    <p>Changing align-items to say flex-start will make the element within the containment its natural size in the cross direction, and then move the element to the start of the containment cell itself. </p>
+                    
+                    <p>The key here is the containment cell in the cross direction is always taking up the full allotted space, which is determined by factors such as the height of the flex container and the content of the flex-children. It is the area within which the element can be placed.</p>
+                    
+                    <p>Now to change how the containment itself is laid out, we use align-content. Its default value is stretch. If we change this to flex-start, what this does is shrink down the containment to the size of the element itself, and moves them to the cross-axis start of the flex container. In a way, what this does is alters the flex-child containment size. </p>
+                    
+                    <p>When the flex-child containment size is no longer stretching, now align-items isn’t effective. </p>
+                    
+                    <p>Align-content shrinks the flex-child containments, which means that these containments can be moved within the flex-parent’s containment area. </p>
+                    
+                    <p>Align-content isn’t very useful if height is not specified on the flex-parent (assuming flex-direction being row).</p>
+                    
+                    <p>————————————</p>
+                    <p>Another thing I learned: there is no justify-content: stretch. In order to have a flex-child stretch to fill in a horizontal direction is to switch the flex-direction altogether. Stretching only occur in the cross-axis direction, not the main axis. Good to know!</p>
+                    
+                    <p>————————————</p>
+                    <p>Understanding Vertical-Align:</p>
+                    <p>This declaration and its values still tend to confuse me, but I spent a little time today and I think I understand it more. Maybe.</p>
+                    
+                    <p>The variables:</p>
+                    <ul>
+                        <li>inline or inline-block items
+                        </li>
+                        <li>font-size of elements
+                        </li>
+                        <li>line-height
+                        </li>
+                        <li>baseline
+                        </li>
+                    </ul>
+                    
+                    <p>With no line-height set, it will be set by the font-size and all inline elements will align on the baseline. </p>
+                    
+                    <p>The height of the containing block of all the inline elements (not necessarily the container, but the pseudo-inline container is determined by the height of the element with the largest font-size.</p>
+                    
+                    <p>This declaration is all about how the baseline of one inline elements relates to the baseline of others.</p>
+                    
+                    <p>How it works I am still a bit confused. Will continue with <a href="https://christopheraue.net/design/vertical-align" target="_blank">this article on how vertical-alignment works</a>.</p>
+                    
+                    <p>I still get caught using “center” instead of “middle” with this damn declaration. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 21, 2022</h2>
                 <h3>Organizing</h3>
                 <p>Since I have completed the Space Tourism site I am now ready to retire my old 2011 MacBook Pro. I have this fancy new MBP that has patiently been waiting for its time in the sunshine.</p>
