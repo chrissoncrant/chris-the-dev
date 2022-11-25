@@ -30,6 +30,34 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 24, 2022</h2>
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>Happy Thanksgiving!</p>
+                
+                <p>Note for yesterday: yesterday I spend some time looking into <a href="https://christopheraue.net/design/vertical-align#centering-an-icon" target="_blank">how the vertical alignment declaration works</a> and I found a helpful article that I will be using in the future. </p>
+                
+                <p>This morning I have been learning more about the subtleties of how flexbox works. I feel I have learned quite a lot so far.</p>
+                
+                <p>What I have learned is first that there are two sizes to know about. There’s the minimum-content size and there’s the hypothetical size.</p>
+                
+                <p>The minimum-content size is essentially the minimum size a flex-child will shrink to no matter what. This is the width of the longest word, plus whatever inline padding is applied. </p>
+                
+                <p>The hypothetical size is the size the element would naturally be. The text is not wrapped and the padding is applied. </p>
+                
+                <p>Flex-shrink and flex-grow are properties that deal with either side of the hypothetical size of the element.</p>
+                
+                <p>The easiest to understand for me is flex-grow. We have a flex-child that naturally takes up so much space, and in the main axis direction there is so much space left over. Flex-grow deals with this leftover space and tells the element how much of that leftover space it can take up. The value of the property determines what proportion of that available space is taken up. </p>
+                
+                <p>Flex-shrink is different. First, if a flex-child only has one word, then flex-shrink will do nothing because technically that element is already at its minimum-content size. Or, to put it another way, its minimum-content size and its hypothetical size are equal. </p>
+                
+                <p>If a flex-child has two words, then the flex-shrink distance comes into play the moment that second word wraps to the next line. Now there’s a difference between the hypothetical size and the minimum-content size. The distance that flex-shrink applies to equates to the difference between the current size of the flex-child element and the minimum-content size. </p>
+                
+                <p>The flex-shrink value and shrink rate has nothing to do with the rate at which an element goes from its flex-grown size to its hypothetical size. It only applies to the difference between hypothetical size and the minimum-content size. As soon as the hypothetical size is breached, then flex-shrink comes into play.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date"><November 22, 2022/h2>
                     <h3>Learning: CSS for JavaScript Developers</h3>
                     <p>Jumping back into Josh’s course. For now the plan is to spend at least an hour everyday on the course. Currently I am in module 3 which is about the basics of flexbox.</p>
