@@ -30,6 +30,36 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">November 25, 2022</h2>
+                <h3>Learning: CSS for JavaScript Developers</h3>
+                <p>Spending some more time becoming familiar with these hidden concepts that make up the functionality of the beloved flexbox.</p>
+                
+                <p>First there’s the axes: main and cross. The main axis is the axis where stuff gets applied. By ‘stuff’ I mean flex-grow, flex-shrink, flex-basis… all these work in the main axis direction. </p>
+                
+                <p>I also found it interesting that there is no justify-content: stretch. Align-items property has the default value of ‘stretch’. Align-items always deals with the cross axis, never the main axis, which is justify-content’s axis. It makes sense that there is no ‘stretch’ value for the main axis because it is along the main axis that we generally want to have things set next to each other or stack, depending on the flex-direction. Just thought that was interesting.</p>
+                
+                <p>The sizes: there’s the hypothetical size, which is the natural size the element would be and then there’s the minimum-content size. The landscape that exists between the hypothetical size and the minimum-content size is the realm of flex-shrink. </p>
+                
+                <p>The landscape between the available unused space and the hypothetical space is the realm of flex-grow. </p>
+                
+                <p>Without specifying widths (or heights depending on the flex-direction; we will assume the default row direction for now), the minimum width any flex-child can be is the minimum-content width, which is the width of the padding plus the width of the longest word. </p>
+                
+                <p>Setting a width comes in 3 flavors: minimum, static, maximum. Setting a minimum-width will overwrite flex’s minimum-content limitation to be that value. Essentially any minimum-width value set will become the minimum-content width in terms of how flex-shrink works. </p>
+                
+                <p>Setting a max-width is capping the width that the flex-child can grow. It will grow up to that size. That is straight forward.</p>
+                
+                <p>Setting a static width sets the hypothetical size. Statically sized elements can still grow if given the value, and they can also shrink. </p>
+                
+                <p>Flex-basis will always win over width/height. No matter where the width declarations are made in the cascade. Flex-basis sets the hypothetical size.</p>
+                
+                <p>When flex-grow is applied evenly, the distribution of space for the elements will depend on the hypothetical space. If element A is 100px wider than element B, when both elements grow to fill the space, the difference in width between the two will still be 100px. They will both be wider, but the difference in the hypothetical width will be retained.</p>
+                
+                <p>Flex-wrap comes into play as soon as the hypothetical size limit is reached. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">November 24, 2022</h2>
                 <h3>Learning: CSS for JavaScript Developers</h3>
                 <p>Happy Thanksgiving!</p>
