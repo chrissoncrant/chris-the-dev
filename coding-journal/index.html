@@ -30,6 +30,85 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 12, 2022</h2>
+                <p>Spent some time revisiting my learning game plan this morning, which bites into the time I get to spend on CSS for JS Devs, but that’s okay. I feel refocused. </p>
+
+                <h3>Learning: CSS for JS Devs</h3>
+                <p>Continuing with module 5 on Responsive and Behavioral Design.</p>
+                
+                <p>To aid in my understanding of using media queries, when going through the exercises I am doing both mobile-first and desktop-first. </p>
+                
+                <p>What this entails is, generally, a swapping of where certain CSS declarations are made. I think it is a good practice as it reinforces the two methodologies. For instance, if I am going with a mobile-first approach then the media query will involve a min-width condition, whereas with a desktop-first approach it would be a max-width condition. </p>
+                
+                <p>To help with my mental model of these conditions (max-width versus min-width), it helps for me to say to myself something like “These styles will apply when a screen is at or above size of X” (for mobile-first and min-width condition) or “These styles will only apply when the screen is at or below the size of X” (for desktop-first and max-width condition).</p>
+                
+                <p>The min-width condition is easier, more intuitive (perhaps due to more familiarity with using it), than is max-width and so expressing the media query in a kind of pseudo-code to myself helps a lot. </p>
+                
+                <p>————————————</p>
+                
+                <p>I like that Josh has introduced me to the ‘revert’ property value. I like this because it seems more flexible, less strict. </p>
+                
+                <p>For example, instead of using “display: none” and then changing it to “display: block” within the media query, the media query property would be “display: revert. “</p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Reviewing scope. This is such a foundational concept of JS that I am happy to be reviewing this.</p>
+                
+                <p>Function calls create new scopes and the variables that are created within the function body are created only until the return value is reached, then the variables are removed (behavior changes depending on whether ‘let’ or ‘var’ are used to declare the variable). </p>
+                
+                <p>There is the Global Scope and then there are function body scopes. Globally declared variables are available to function body scopes.</p>
+                
+                <p>I am thinking of Russian nested dolls. That is a sort of mental model I have. Funny enough, after typing this the instructor made the same connection, so that was affirming. </p>
+                
+                <p>Declaring a variable using the ‘let’ keyword will allow for the changing of the assignment to that variable within narrower scopes.</p>
+                
+                <p>At first I thought this was good, but as the instructor continued, I can see a bit more how this could create issues downstream.</p>
+                
+                <p>This is why it is good to use ‘const’ by default. It is safer and it allows for the opportunity of intention to come in when it comes to changing a variable’s value, and why and where that variable was declared in the first place.</p>
+                
+                <p>———————————— </p>
+                
+                <p>‘var’ keyword</p>
+                
+                <p>To me this keyword is similar to the ‘==‘ equality in that it is not as strict, which means that weird things can arise.</p>
+                
+                <p>What I learned about is that the difference in behavior between ‘var’ versus ‘let’ has to do with Block scope, which is different than Function scope. </p>
+                
+                <p>This difference between function scope and block scope is interesting to me. Function scope seems to be a more specific kind of block scope. Not sure if this is correct. </p>
+                
+                <p>I know now that block scope has to do with the curly braces. Curly braces aren’t only used with functions - they are used with conditionals and loops, and objects and classes. This is why I feel like saying that Function Scope is a more specific type of Block Scope. There are many flavors of Block Scope. </p>
+                
+                <p>Within a block scope, that’s not a function scope flavor, if we declare a variable with ‘let’, a whole new variable will be created, even if a variable was declared using ‘let’ in the global scope. Whatever we do to this block-scoped variable will not affect the globally scoped variable, even though they have the same name. </p>
+                
+                <p>If we use ‘var’ to declare a variable within the block scope that has the same name as a variable declared int eh global scope of the same name, then within the block scope, the globally scoped variable will be accessed and affected, even though we used the ‘var’ keyword to try and create a whole new variable.</p>
+                
+                <p>————————————</p>
+                <p>Next topic, which is more review, are Events. </p>
+                
+                <p>Events are essentially in-built conditionals. There are many events that can happen in a browser and each one is attached to a keyword (like ‘click’). Event Handlers allow us to say “If this kind of event occurs here, then do this stuff”.</p>
+                
+                <p>There are 2 essential components to events: listeners and handlers.</p>
+                
+                <p>Events are fired whether there is as ‘listener’ for it or not. The tree does make a sound when it falls in the forest, even if there are no ears to listen for it.</p>
+                
+                <p>We assign listeners to elements and then when that specific event occurs we can add a handler to it. The handler is the body of the conditional. </p>
+                
+                <p>Creating Event Handlers is like declaring a function and then assigning the calling of that function to the event itself. Each time the event is fired a new function scope is created and destroyed. </p>
+                
+                <p>While going through the exercises, I encountered a little ‘A-ha’ moment related to state. The insight was that state variables are generally going to be globally scoped, that way when the event is fired that state is checked against and updated. If the variable was declared within the function scope, there would be no state because every time the event calls the handler function, the state variable will be created anew with the original value, which would not be helpful.</p>
+                
+                <p>———————————</p>
+                <p>I ended today’s FE Masters session by watching the first video on conditionals. This is super review. Almost too simple of a concept for me at this point. </p>
+                
+                <p>Conditionals introduce the concept of ‘truthy’ and ‘falsey’, which is also review for me.</p>
+                
+                <p>Coming up we will be learning about the Ternary operator which is still review, but is also a bit more complex. This complexity arises due to its quality of implicitness, whereas writing conditionals traditionally is more explicit. And just typing that last sentence was useful. </p>
+                
+                <p>There is always value to be found. The trick is how to find it. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 9, 2022</h2>
                 <p>Things got busy in my neck of the woods. Back to it. </p>
 
