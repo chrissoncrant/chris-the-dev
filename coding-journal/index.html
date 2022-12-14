@@ -30,6 +30,47 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 13, 2022</h2>
+                <h3>Learning: CSS for JS Devs</h3>
+                <p>Redid one of the exercises from yesterday to get warmed up. Learned more about modals and the some of the important aspects of a modal. </p>
+                
+                <p>There are 5 things that were mentioned in making an accessible modal, which is not a straight-forward thing. </p>
+                
+                <p>When the modal is open, focus should be moved to the close button (usually a button at top right), focus should cycle within the modal, escape key closes the modal. When the modal is closed (after being opened) focus should return to the button which opened it initially. </p>
+                
+                <p>The last thing is to make the modal friendly to screen readers, it needs to be annotated that a user has been moved into a modal. This is accomplished by adding HTML attributes. These attributes are:</p>
+                <ul>
+                    <li>aria-modal=“true/false”
+                    </li>
+                    <li>role=“dialog”
+                    </li>
+                    <li>tabindex=“-1” (when aria-modal=“true”)
+                    </li>
+                    <li>aria-label=“title-of-modal”
+                    </li>
+                </ul>
+                
+                <p>I ended today’s adventure in Josh’s course by going over breakpoints. I can dig Josh’s philosophy of setting breakpoints within dead zones between device sizes (phones vs. tablets vs. laptops vs. desktops) versus setting them at device specific sizes (iPhone 12, etc). </p>
+                
+                <p>Generally different devices come in clusters of sizes. Instead of setting a breakpoint at a device specific size of say 375px, we would add in some wiggle room and make it 550px. This wiggle room would account for similar devices (bigger and smaller). Basically, similar devices should be falling within the middle of the breakpoint, rather than setting the edges of the breakpoints. </p>
+                
+                <p>The breakpoints Josh uses are:</p>
+                <ul>
+                    <li>0-550px — Mobile
+                    </li>
+                    <li>550-1100px — Tablet
+                    </li>
+                    <li>1100-1500px — Laptop
+                    </li>
+                    <li>1500+px — Desktop
+                    </li>
+                </ul>
+                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 12, 2022</h2>
                 <p>Spent some time revisiting my learning game plan this morning, which bites into the time I get to spend on CSS for JS Devs, but that’s okay. I feel refocused. </p>
 
