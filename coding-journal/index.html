@@ -30,6 +30,63 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 14, 2022</h2>
+                <p>Over the course of the last 3-5 days I have been plagued with a sleeplessness that I am afraid is verging on insomnia. Yesterday and this morning I feel like a total zombie. It’s not fun. But I will make do with the energy I have. </p>
+
+                <h3>Learning: CSS for JS Devs</h3>
+                <p>Reviewing where I left off yesterday and the rest of the material from module 5 before continuing with it.</p>
+                
+                <p>Learned about CSS Variables. This is review for me, but still helpful. For instance I did not know that CSS Variables were, by default, inheritable to the element it is declared on, and all its children. </p>
+                
+                <p>This inheritance was sort of hidden from me due to the fact that when using CSS Variables I would declare them on the :root pseudo-element (funny that :root only uses one ‘:’ even though technically it should be two to stay consistent with other pseudo-elements)</p>
+                
+                <p>I also learned about a new at-rule that allows us to change this default inheritance and set other default values. This at-rule is the @property. This isn’t widely supported as yet, but it is good to know about I suppose. </p>
+                
+                <p>CSS Variables are pretty neat in that they allow for a single source of truth, which is generally a desirable trait within coding in general. With that said, sometimes it can be annoying to read CSS that uses a lot of CSS Variables as the actual value of the property using the variable is not evident. All that’s evident is that the value is being set by a variable and so to get what that value actually is one must search a bit further. It is good to know about this factor when it comes to deciding whether or not to use a CSS Variable to begin with.</p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Reviewing more conditionals as well as logical and ternary operators. I thought this would be a good time for me to review the short-circuiting effects of logical operators.</p>
+                
+                <p>When using an ‘and’ (&&) operator, if the first evaluated value is truthy, then the second value is returned. If the first value is falsy, then that falsy value is returned.</p>
+                
+                <p>With the ‘or’ operator, it is the opposite. Exactly. If the first evaluated value is truthy, that value is returned. If the first value is falsy, then the second value is returned.</p>
+                
+                <p>This is generally something that is still a bit fuzzy in my head to keep track of what exactly will happen. It is, however, easy to check and verify. </p>
+                
+                <p>As a whole, the ‘or’ operator evaluates to truthy if at least one of the values is true. The ‘and’ operator evaluates to truthy if both the values are truthy. </p>
+                
+                <p>It seems to me that these are two different things. Short-circuiting is used for assigning variables, whereas the evaluation of the whole logical operator expression is used within the parentheses of conditionals. </p>
+                
+                <p>On closer inspection, these aren’t separate at all. It’s just a matter of recognizing that the logical operators are a sort of two part expression. </p>
+                
+                <p>Within the parens of the conditional, if we are using the ‘and’ operator, if the first value is falsy, it makes sense to return that value, then that first value is evaluated and, on its own, will return falsy. With the ‘or’ operator, if the first value is falsy, then it makes sense to return the second value and have that value be what decides the truthiness/falsiness of the overall expression. </p>
+                
+                <p>It is now making a lot more sense to me. Again, it is all a matter of taking a layered expression and breaking it down through to the simplest expression which ultimately decides the value that is returned/assigned. </p>
+                
+                <p>————————————</p>
+                <p>Going over ‘for loops’. This is, as par for this course thus far, review. However, it is also an opportunity to become more familiar with the ‘for…of’ loop. </p>
+                
+                <p>‘For…of’ loops are useful for iterating over an entire array (and strings too!), one value (or character if a string) at a time. It is very similar (if not the same thing said differently) to how the .forEach() method works.</p>
+                
+                <p>One thing I looked up and knew, but still was fuzzy and am now less fuzzy on is the ‘for…in’ loop. Basically, it seems to me that ‘for…of’ loops are short-hand loops for arrays and strings and ‘for…in’ loops are useful for iterating over all the properties of an object. </p>
+                
+                <p>Digging a bit deeper, I see that the difference between ‘for…of’ versus ‘for…in’ has to do with iterableness. Arrays and strings are iterable, objects are not. </p>
+                
+                <p>It is another opportunity for me to revisit the technical terms of the ‘for’ loop. The syntax of the ‘for’ loop consists of the ‘for’ keyword, followed by, within parens, the initializing variable assignment, the stopping condition, and the iteration statement. This is all followed by the body of the ‘for’ loop, which is within a block scope (i.e. within curly braces). </p>
+                
+                <p>————————————</p>
+                <p>Whilst doing the exercises for today, I learned that if I am to use a ‘for…of’ loop I must use the ‘let’ keyword within the parens, otherwise it will work in a way that is, at first, unexpected. I say ‘at first’ because if I break down what is happening if I don’t use the ‘let’ keyword, it actually makes sense the behavior I am witnessing. If I don’t use ‘let’ it behaves similarly to how it would if I were to use the ‘var’ keyword to declare a variable within the block scope. This is cool!</p>
+                
+                <p>One thing I am noticing about this ‘app’ at this point is that it is pretty simple in that there’s only one question and one answer to check against, but again, this is an opportunity to really simplify the steps in general. Complexity is best derived from simplicity. </p>
+                
+                <p>In this case, the one question would become an object within a larger array of questions. Of course the other element that is missing from this ‘app’ is the capability to move to the next question. </p>
+                
+                <p>I previously created a version of this ‘app’ that did do this, which I erased so I could follow along, so I don’t feel like I am missing out. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 13, 2022</h2>
                 <h3>Learning: CSS for JS Devs</h3>
                 <p>Redid one of the exercises from yesterday to get warmed up. Learned more about modals and the some of the important aspects of a modal. </p>
