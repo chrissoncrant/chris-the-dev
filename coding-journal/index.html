@@ -27,6 +27,31 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">December 19, 2022</h2>
+                <p>I did make some progress yesterday. Mostly this was studying the shuffling algorithm I found the day before yesterday (<a href="https://javascript.info/task/shuffle">Fisher-Yates shuffling algorithm</a>). </p>
+
+                <p>I spent some time exploring a couple things. First, how the destructuring syntax was working. This was confusing to me at first, but then I just took it apart in my head using the mental model that was ingrained via the Just JavaScript course I took a few months back. This cleared it right up for me. It’s all about knowing what is happening on either side of the assignment operator. </p>
+                
+                <p>The next thing I spent time exploring was the for loop within the algorithm. I wanted to know why it was stopping at the second item in the array. This was cleared up as I walked through what the algorithm was doing. It stops short because this algorithm is all about cycling through an array starting from the last item and randomizing the current index value with all the preceding items. The first item in the array has no preceding items. This is why it stops short. </p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>I worked through the first couple of TODOs on my own. This involved creating a function that would utilize my utility functions to take in 3 arguments (choice count, correct choice, array of possible choices) and return a randomized array consisting of the number of choices provided. </p>
+                
+                <p>I don’t know why doing things like this makes me happy, but it does. </p>
+                
+                <p>One thing I liked was being able to utilize the Set…Spread to make sure there were no repeat items in the returned array. I remember when this syntax didn’t make much sense to me, but now it makes sense. The syntax creates a new Set instance of the passed in array and then Spreads the values of this instance into a new array. </p>
+                
+                <p>This is done within a while loop which uses the array’s length as its stopping condition. </p>
+                
+                <p>At first I was wondering about the efficiency of this as it is creating a new array each time through the loop. I figure this would only be a problem if the array length was long. In this case, the array length will be 4 so I think the ‘inefficiency’ is okay.</p>
+                
+                <p>With that said I wanted to figure out another way to do this using conditionals. This utilized the .includes array method. Basically it will only push an item if it is not in the array. This works too. It does involve a similar thing in that each and every iteration within the while loop will still iterate over the array we are pushing to. I am not sure which method is more efficient. I am sticking with the Set…Spread for now though.</p>
+            </div>
+        </section>
+
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">December 18, 2022</h2>
