@@ -31,20 +31,27 @@
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">December 22, 2022</h2>
-                <h3>Learning: Frontend Masters Course</h3>
-                <p>Progressing on the dog app. The dog app on my end is functional so I am watching the video to see where my own app can be improved.</p>
+                <h3 id="Learning: Frontend Masters Course">Learning: Frontend Masters Course</h3>
+                <p>Finished the FE Masters first JS course today. </p>
                 
-                <p>While doing this I did make my own JavaScript more modular as far as functions go. The renderQuiz function was doing a lot of things that could be wrapped in their own functions. This is what I did.</p>
+                <p>Wrapping up the dog quiz app by adding certain features, like adding styles for correct and incorrect guesses. This wasn’t covered within the course itself. </p>
                 
-                <p>I also created a new utility function for capitalizing letters. I will be using this within the dog quiz app. While doing this I learned of the subtle differences in capabilities between standard for loops and for…of loops. or…of loops are useful when one wants to do something with the data within the array, but not mutate the array itself. There is no way to change the index value of the item within the array in the way there is when using standard for loops.</p>
+                <p>I added the styling for correct and incorrect guesses. I then added functionality for adding the “Next” button. For this I created a simple utility function which took in as an argument the parent element to which the button would be appended to. </p>
                 
-                <p>With standard for loops, within the loop block, I can reference the item within the array by using array[i]. There’s no way to do this with the for…of loop. I ended up using a .map array method in the capitalize function I created. This still ended up being similar to using a for…of loop anyways as I did create a new array of the original in the end. I wonder if this is less efficient than using the for loop… </p>
+                <p>Implementing this function on the correct guess path was simple. For the incorrect guess it was a little bit more involved. First I created a global state variable for guess count. Basically I wanted stuff to happen after 3 incorrect guesses. </p>
                 
-                <p>With the for loop I could have taken the inputted string, converted it to an array by splitting at the space, then mutated that original array using a for loop, and returning the string by joining and trimming the mutated array. In this manner only one array is ever stored in memory. I am sure this only really matters if the input was a really really really long string. Still, it is good to think about these things, I think.  </p>
+                <p>The stuff I wanted to happen was adding the correct class to the correct guess. This involved looping through the existing guess buttons to find the correct guess and then adding the correct styling to it. Then it was a simple matter of adding the Next button.</p>
                 
-                <p>One thing that sillily excited me was setting up the button loading function to be called when the image loaded. Before this the buttons were arriving before the image, which wasn’t ideal. Now, by using the ‘load’ click event, I not only will the buttons wait for the image before being rendered, but there is also a fancy little “Fetching dogs…” message in the image frame that shows while the image loads. </p>
+                <p>The functionality of the Next button utilized the location.reload() method. I learned about this awhile ago when creating my <a href="https://chrissoncrant.github.io/rock-paper-scissors/" target="_blank">Rock, Paper, Scissors game</a>. I remember how much difficulty I was having at getting the game to reset, then while on a walk it hit me that I could just have the page refresh. Once home I googled how to do this and BOOM. Project complete. </p>
                 
-                <p>While implementing the loading message I learned about the .replaceChildren() Element method. I think it is quite a nifty little method and I am glad to have learned about it. </p>
+                <p>Of course it would be nice to add a score keeping functionality to this game, which would require having some way to store the score. I am thinking that there may be a way to do this without using a database to persist this data. Perhaps using the local storage or caching. I’ll have to look into this. </p>
+                
+                <p>————————————</p>
+                <p>The next challenge was getting this accessible on GitHub Pages. The challenge involved getting the file path in the link tag correct. Took me a couple shot. In the end the problem had to do with me not adding a ‘.’ in front of the relative file path. </p>
+                
+                <p>The problem with this was that when I would open with the live server it would work just fine. With GitHub pages it wouldn’t and each update and push took about 5 minutes before I could check to see if the change fixed it. </p>
+                
+                <p>All is working now. Plus the more I make these mistakes, the less I will make them in the future so I am grateful.</p>
             </div>
         </section>
 
@@ -57,6 +64,8 @@
                 <p>I then continued with the course videos. Reviewing async JS. The instructor is using the async await syntax. In my code I went with the Promise syntax, utilizing .then() methods on the Promise object. I am glad I did it this way because converting from Promise syntax to Async Await syntax is a good exercise as I know I will probably encounter both “in the wild”.</p>
                 
                 <p>Next up was reviewing destructuring syntax. What I did learn here is that when destructuring arrays a comma can be used to skip over values. This is useful if I know what index the value I want is. If the index is 4 and I don’t need the other values that come before it I would put in 3 commas before the variable name that I am assigning to the value I want: [,,, varaiableName]</p>
+
+                <p>“Finished” product: <a href="https://chrissoncrant.github.io/Frontend-Masters/courses/javascript/first-to-pro/dog-quiz/" target="_blank">The Dog Quiz</a></p>
             </div>
         </section>
 
