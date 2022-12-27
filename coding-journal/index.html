@@ -30,6 +30,42 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 26, 2022</h2>
+                <p>Had a nice 3-day holiday break. Time to get back to it. </p>
+
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Starting new course today. JavaScript: The Hard Parts, v2. I have been looking forward to this course a lot. I was a bit impatient to get through the last one, but I think it was still valuable. My understanding of JS is getting stronger, but needs a lot of work still. I think the most important thing that I need to improve upon is actual application on all the levels: Functionality, Design (CSS), HTML. </p>
+                
+                <p>The first part of this course is a nice review and another way to cement certain terms, which are important to know and use for the sake of communicating clearly with other JS developers.</p>
+                
+                <p>The following is me using these terms to describe the basics of what JavaScript is doing.</p>
+                
+                <p>JavaScript involves two basic principles: thread of execution and storing data (memory). </p>
+                
+                <p>The nature of JavaScript is such that there is a single thread of execution. When we write JS code we are creating a line by line thread of execution. Each line is either storing some form of data or is executing an expression or statement. </p>
+                
+                <p>In regards to memory, the means to store data is variables. The properties of a variable consist of 3 things (as I see it): identifiers, a wire, and data. Identifiers are the names of the variables. These are used to summon the data. The wire is the connection between the identifier and the data. The data is that which is stored. This comes in many forms, but essentially is either a primitive data type, of which there are 7 flavors, or an object, of which there are various flavors, such as functions. </p>
+                
+                <p>Functions are special kinds of objects. When a function is declared a block of code is being wired up to an identifier. Parameters are also declared (they are not required, but are an essential property of functions). </p>
+                
+                <p>Parameters are special kinds of variables. They too consist of identifiers, wires and data. They are special because they are not yet wired up to data. They are waiting for the connection to be made. They are also special because they can only be used within the execution context of the function body.</p>
+                
+                <p>In order for the execution context of the function to be run, the function must be called. This is when those parameters are wired up to data or expressions that express data. The actual data that is wired up to a parameter is called an argument. </p>
+                
+                <p>When a function is called the stored block of code runs, creating a new thread of execution within the grand/global thread of execution. A function’s execution context is like a bubble. Within this bubble a new scope, a local scope, is created. </p>
+                
+                <p>Local scopes have access to the variables that were created in the global scope, but not vice versa. Local scopes are bubbles that pop. The global scope is a bubble that exists as long as the thread of execution of the code exists. It is the Grand Bubble, so to speak. Once it pops, all that was stored within memory within that bubble dies. However this bubble can be ran again and again. </p>
+                
+                <p>I am seeing how very fractal-like all this is.</p>
+                
+                <p>The Call Stack is how JS keeps track of what needs to run and when. JS can has only one thread of execution and can only do one thing at a time. The ordering of what runs when is crucial and the Call Stack ensures that properly written code will run in the right order. </p>
+                
+                <p>The global scope is the main thread of execution. Functions create local scopes which are execution context that grow like bubbles and then pop. As the bubbles grow certain things are occurring that are affecting what is happening within the global scope. After the bubble pops, JS moves on to its next task, but with an altered memory environment. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 22, 2022</h2>
                 <h3 id="Learning: Frontend Masters Course">Learning: Frontend Masters Course</h3>
                 <p>Finished the FE Masters first JS course today. </p>
