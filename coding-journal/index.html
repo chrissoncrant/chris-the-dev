@@ -30,6 +30,88 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 27, 2022</h2>
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Before continuing, here is a bit of review of what I learned yesterday. Intervallic recall is the best way to retain.</p>
+                
+                <p>The 3 pillars of JS: Thread of Execution, Storing data and code in memory, call stack. </p>
+                
+                <p>The thread of execution is the line by line execution of code. This consists of storing data in variables and arrays, storing code in functions, and storing both within objects. </p>
+                
+                <p>The storing of data involves variables. Variables have 3 parts (this wasn’t mentioned in the course, but is my own observation). First, there is the identifier. Second, there is the “wire”. Third, there is the data. </p>
+                
+                <p>The identifier is the name of the variable. This, in a sense, is the key used to access the data wired up to the variable. The wire is created by the assignment operator - the good ol’ =. The data can be primitive or an object (including all the special objects - arrays, functions, etc). </p>
+                
+                <p>Storing data is crucial. Without this ability there would be no such thing as coding. </p>
+                
+                <p>The last pillar is the call stack. At the bottom of the call stack is the global() function. This is sort of like a constantly running while loop. While the call stack is empty, wait for something to be executed. Once something to be executed arrives, then execute the code, in order. </p>
+                
+                <p>When a function is called a new execution context is created. The execution context is a fractal of the global context in that it has its own local thread of execution and a local storage. </p>
+                
+                <p>Each execution context is added to the top call stack. The call stack is cleared from top to bottom. This is a useful mental model. </p>
+                
+                <p>————————————</p>
+                
+                <p>Yesterday I got to the Higher Order Functions section. Before actually getting to how Higher Order Functions work and why they are useful, we wrote out some functions that were very similar. They only changed by one character, which was an operator character (multiply, divide, add, subtract, etc.). </p>
+                
+                <p>It’s interesting to me because there is this principle in coding called DRY (Don’t Repeat Yourself). However, as a learning tool, repeating one’s self is actually crucial in understanding how NOT to repeat one’s self. </p>
+                
+                <p>By repeating ourselves (as a learning tool) we see what is changing and what is staying the same. This helps to reveal what can be parameterized. </p>
+                
+                <p>By repeating myself in the code I was able to see that the mathematical operators could be made into their own smaller, succinct and specialized functions and these functions could become arguments. </p>
+                
+                <p>When a function has a parameter that takes in a function as its argument, this function is called a Higher Order Function.</p>
+                
+                <p>————————————</p>
+                
+                <p>Created a cool Higher Order Function. Did it differently than the course. Made my utility functions (the lower order functions) even more general. They are using functions like multiplyBy2, but I made 4 functions: add, subtract, multiply, divide.</p>
+                
+                <p>These utility functions take in two arguments. The parameter names/identifiers are such that they use the technical names for the parts of the relative expressions. </p>
+                
+                <p>For example:</p>
+                <pre><code>function divide(dividend, divisor) {
+                    let quotient = dividend / divisor;
+                
+                    return quotient
+                }
+                
+                function add(addend1, addend2) {
+                    let sum = addend1 + addend2;
+                
+                    return sum
+                }</code></pre>
+                <p><br></p>
+                <p>I had to look up what the names for the parts were. I figured if I am writing the function I may as well make it as specific as possible. </p>
+                
+                <p>By doing this I made these lower order functions even less specific. One can pass in two numbers, instead of only passing in one number. </p>
+                
+                <p>By doing this it meant that the higher order function needed one more parameter. The third parameter would be the number by which each value within an array would be changed by.</p>
+                
+                <p>The higher order function looks like so:</p>
+                <pre><code>function copyArrayAndProcess(array, processor, processBy) {
+                    const output = [];
+                
+                    for (let i = 0; i &lt; array.length; i++) {
+                        output.push(processor(array[i], processBy));
+                    }
+                
+                    return output
+                }</code></pre>
+                <p><br></p>
+                <p>I think this is really cool. It’s a simple thing really, but by repeating myself at first I was able to see more clearly how I could strategically repeat myself less. I am not just doing what a person has said I should do, but doing it because of my own personal exploration and seeing why this is not only more efficient, but simply more pleasing aesthetically. </p>
+                
+                <p>Essentially, what the above function is is the map array method. </p>
+                
+                <p>————————————</p>
+                
+                <p>More reviewing. Higher Order functions take in functions as arguments. These input/argument functions are… wait for it… callback functions.</p>
+                
+                <p>Higher order functions are also those which return a function. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 26, 2022</h2>
                 <p>Had a nice 3-day holiday break. Time to get back to it. </p>
 
