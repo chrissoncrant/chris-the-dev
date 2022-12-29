@@ -30,6 +30,52 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 28, 2022</h2>
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Yesterday, the last thing from the second section was <a href="http://csbin.io/callbacks" target="_blank">a series of coding challenges</a> (<a href="https://github.com/CodesmithLLC/cs-bin-solutions/blob/master/callbacks.js" target="_blank">and here’s solutions to some of them</a>). I am going to spend a bit more time on them today. What I like about them is that they are opportunities to come to grips with how to write higher order functions. </p>
+                
+                <p>Writing higher order functions is different because the callbacks within the higher order functions leave room for functionality. Lower order functions are explicitly laid out, line by line. Higher order functions are not like this. </p>
+                
+                <p>With that said, the callback within the higher order function, though not specifically coded, does have some structure. The parameters have an order to them. Each parameter is expecting a certain type of data. </p>
+                
+                <p>This is why documentation is important. </p>
+                
+                <p>The challenges are neat because they have me recreating certain array methods, such as map, forEach, and reduce. This is a useful exercise and is boosting my understanding of how callbacks work, as well as what is going on under-the-hood of these array methods and why they are so useful. </p>
+                
+                <p>————————————</p>
+                <p>Coding out an intersection function which takes in an array of arrays and returns all the values that exist within every array.</p>
+                
+                <p>This was an interesting challenge. I utilized 3 for loops. The first loop grabs each individual array within the array of arrays. The next loop grabs each value within the grabbed array. The last loop grabs the next array in the array of arrays and checks it for the grabbed value.</p>
+                
+                <p>I used a counter variable (a state variable) and if the counter is equal to the length of the array of arrays minus 1 (in other words not including the current array), then that value is pushed to the array that will be returned.</p>
+                
+                <p>While doing this I discovered (or rediscovered) the ‘continue’ keyword. I like this keyword because it has the function of efficiency built within it. It allows me to stop an iteration and move on to the next iteration. This is different than the ‘break’ keyword which would break out of the loop altogether. </p>
+                
+                <p>I spent some time going through and finding ways to make the function more efficient, adding checks at certain layers to avoid unnecessary iterations. </p>
+                
+                <p>————————————</p>
+                <p>I started on the section about Closures. According to the instructor, Will Sentance, closures are one of those things where if I can come to grips with what it is doing, then I will know how JavaScript works in general. This is an exciting statement. I do not take it lightly.</p>
+                
+                <p>What I’ve learned so far is that what a closure is is essentially a function that is returned by another function. When a function is declared within the execution context created by the calling of another function, and that function definition is then returned, we have a closure. </p>
+                
+                <p>Due to my mental model which was corrected and cemented by the Just JavaScript course, I believe a lot of work will be saved in this adventure into understanding closures. </p>
+                
+                <p>The key part of that mental model is that the identifier is essentially a simple expression that expresses its assigned value/data. Along with numbers, strings, boolean, etc, function definitions are a value. </p>
+                
+                <p>When a function that was declared within the execution context created by the calling of another function is returned, it is not the identifier itself that is returned, though it may look like that. Rather it is the function definition that was assigned to that identifier. </p>
+                
+                <p>I know I am repeating myself here, but it is the repetition that helps with my understanding, as well as my technical communication capabilities (which I also mentioned yesterday).</p>
+                
+                <p>Now I think the most crucial part of understanding closures will be in their application. Knowing something technically is okay, but knowing how to use those things is truly awesome. </p>
+                
+                <p>On to the next video…</p>
+                
+                <p>Tomorrow…</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 27, 2022</h2>
                 <h3>Learning: Frontend Masters Course</h3>
                 <p>Before continuing, here is a bit of review of what I learned yesterday. Intervallic recall is the best way to retain.</p>
