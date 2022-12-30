@@ -31,6 +31,38 @@
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">December 30, 2022</h2>
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Continuing on with the Closure section of this course. </p>
+                
+                <p>I learned the technical name for the ‘backpack’ of stored data that comes with the closure is itself called a closure. This is, to me, not the best term.</p>
+                
+                <p>With that said, Will has a neat term for it, other than ‘backpack’, that I like much better as it is more descriptive: Persistent Lexical Scope Referenced Data.</p>
+                
+                <p>Persistent because the data within this special storage area does just that: the state of the data is saved and can be read and updated as needed. </p>
+                
+                <p>Lexical Scope because the data stored follows JavaScript’s rules regarding scoping and what variables and constants are accessible. </p>
+                
+                <p>Referenced Data because only the data that the function itself references goes into this storage area. I think this optimization is neat. At the same time it follows programming best practices regarding the prevention of memory leaks. </p>
+                
+                <p>Lastly, this label for this storage compartment sounds smart. It could be impressive to use in an interview. Of course, to use it and not know what each of the components of the term itself means would not be so smart. </p>
+                
+                <p>————————————</p>
+                <p>I also learned through exploring myself and then having Will go over what I was exploring is that these functions that create closures are closure factories. Each time the function is called and the closure is stored with a new identifier creates a new instance of that closure. Multiple instances of the same closure do not interfere with one another.</p>
+                
+                <p>I am seeing a lot of connections between closures and objects. They seem so very similar. One big difference is that a closure cannot be edited and changed like objects can be. </p>
+                
+                <p>Hmmmm… perhaps the code within a closure is similar to how static properties and methods of a class work. Static properties and methods cannot be accessed by an instance of the object created by the class. Only the non-static properties and methods can be changed. I am just spit balling here. Even if I am wrong, just the act of being wrong and then later being corrected means that information becomes extra sticky. I don’t know why that is, it just is. I have learned this through a lot of experience of having this be the case.</p>
+                
+                <p>We can’t be afraid to be wrong. We should be wary of needing to be right though. Another way of saying that is being resistant to being corrected. </p>
+                
+                <p>————————————</p>
+                <p>The more I think about closures the more the make sense. If a function is being returned by an ancestral function, then whatever variables, constants, functions, objects, etc that were not declared within that closures body, but make reference to the data must come with the function definition for that function definition to be functional. If they didn’t ride along with the function definition in the Persistent Lexical Scope Referenced Data area, then when the closure is called, there would be an error.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">December 30, 2022</h2>
                 <h3>Thoughts and Review</h3>
                 <p>I was thinking about what I have been learning the last weeks and months about Javascript. I mentally go over the concepts. I take walks and review while walking. I have dreams about JavaScript… </p>
                 
