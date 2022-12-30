@@ -30,6 +30,67 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">December 30, 2022</h2>
+                <h3>Thoughts and Review</h3>
+                <p>I was thinking about what I have been learning the last weeks and months about Javascript. I mentally go over the concepts. I take walks and review while walking. I have dreams about JavaScript… </p>
+                
+                <p>I was thinking about the second pillar of JavaScript, which is storing data and code in memory. I was thinking about the term ‘variable’ which is used a lot of the time to describe a piece of data being stored in data. I sense that using this as an umbrella term is okay, but it is also inaccurate. </p>
+                
+                <p>Technical communication is important and so I feel accuracy is important as well. A variable is assigned a value only when the keyword ‘let’ (or the now antiquated ‘var) is used. This is a variable because the value assigned to it can vary. This is accurate.</p>
+                
+                <p>But when we say a variable is declared when we use the keyword ‘const’ this is not accurate. What is declared with the keyword ‘const’ is not a variable, but a constant. Its assigned value cannot change. A constant variable is an oxymoron. </p>
+                
+                <p>Perhaps the above can be considered as huffy and snobby, but I don’t think so. I am liking more and more the idea of accurate description and communication. I think this will set me above others when I begin to apply for that hard to hunt, ever elusive, first job as a web developer and coder. </p>
+                
+                <p>————————————</p>
+                <p>Storing stuff in memory comes in different flavors. We store primitive data and collections of both primitive data and code (objects). </p>
+                
+                <p>In order to store stuff in memory generally requires 4 components within the statement: keyword, identifier, assignment operator, the thing to be stored. </p>
+                
+                <p>The keyword will define the nature of the thing to be stored. There’s ‘let’ (and the antiquated ‘var’) for variables, ‘const’ for constants, ‘function’ for functions, ‘class’ for classes, etc. </p>
+                
+                <p>The identifier is simply the label applied to the wire. It allows us to summon up the thing that is tied to the identifier. Identifiers are crucial. Naming them is an art form and is one of the harder things when one is wanting code to be readable by one’s future self and others. </p>
+                
+                <p>The assignment operator (=) is what, in a sense, connects one end of the wire to the identifier and on the other side of the assignment operator is the data to which the other end of the wire is connected. </p>
+                
+                <p>This is what it takes to store ‘stuff’ in memory in JavaScript. </p>
+                
+                <p>I am still so grateful for <a href="https://justjavascript.com/" target="_blank">Dan Abramov’s Just JavaScript course</a> for helping me with creating more accurate mental models of how this works. </p>
+                
+                <p>————————————</p>
+                <p>Yesterday I started learning about closures. The term ‘closure’ is fine. It had to be called something. With that said I don’t think it hurts to use another term to describe these to myself. I think of them as bubbles. </p>
+                
+                <p>Closures are functions that were defined within another function’s scope and then that function definition is returned by the parent functions. All the data stored in the local memory of the parent function’s scope are forever intertwined with that returned function definition, even though the parent function’s locally scoped storage is deleted after that parent function’s execution context has run its course. </p>
+                
+                <p>This is interesting. I wonder where this stored stuff lives. It’s not within the global scope. It’s not within the parent function’s local scope which birthed and returned the function definition. Yet the state remains, persists.</p>
+                
+                <p>I will be learning more about this today, and I am excited. I am also concerned because learning this is fine and dandy, but as I said over and over, the real value comes through application. And yet, even without immediate application, when the opportunity for application comes, the learning of this now will aid me if I must review it in the future. There is still value in the learnings even without the immediate application. It’s just not ideal. And that’s okay.</p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>I have learned where a closures stored stuff lives. </p>
+                
+                <p>It is all about where a function is defined. If a function is defined within the global scope, there is no closure. Perhaps there is, but everything that would be stored in this special storage space is globally accessible. </p>
+                
+                <p>If a function is defined within an ancestral function’s body, then all the variables and constants created within that scope (there are caveats, which I haven’t gotten to yet) are connected to that function definition.</p>
+                
+                <p>If that function definition is not returned by the function then there is no closure. For the closure to exist that function definition must be returned by the ancestral function. </p>
+                
+                <p>When that ancestral function is called and the closure comes into existence and then that closure is called, the data are accessible within the execution context of that calling. </p>
+                
+                <p>It is where those data exist that is interesting. They don’t exist within the local storage of the execution context, though this is the first place checked when one of those stored data is summoned. Rather they exist in a special storage compartment. </p>
+                
+                <p>This special storage compartment is a hidden property of the function definition called <code>[[scope]]</code>. This is the next place that is checked after the local storage. </p>
+                
+                <p>This is similar, if not the same, as an object’s prototypal inheritance. First the local storage is checked, then the hidden property is checked. Multiple closures can exist and so each closure’s hidden property is check until the global storage is checked.</p>
+                
+                <p>This hidden property created by the closure is a permanent/persisting cache of data. It is also (and this is what makes it truly special) a private cache of data only accessible within the execution context of that closure. </p>
+                
+                <p>Pretty freakin’ neat. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 28, 2022</h2>
                 <h3>Learning: Frontend Masters Course</h3>
                 <p>Yesterday, the last thing from the second section was <a href="http://csbin.io/callbacks" target="_blank">a series of coding challenges</a> (<a href="https://github.com/CodesmithLLC/cs-bin-solutions/blob/master/callbacks.js" target="_blank">and here’s solutions to some of them</a>). I am going to spend a bit more time on them today. What I like about them is that they are opportunities to come to grips with how to write higher order functions. </p>
