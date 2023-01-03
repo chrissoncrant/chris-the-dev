@@ -30,6 +30,43 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 2, 2023</h2>
+                <p>Woohoo! The new year is here and all the holiday madness is done and over, other than putting away all the decorations, which is an opportunity to set up next year’s process. </p>
+
+                <h3>Thoughts and Review</h3>
+                <p>Since I’ve been away from the coding for the last couple days I figure I would spend a bit of time here revisiting what I have been learning. With that said, during my morning walk I like to review, so even though I haven’t been learning new things, I have been consolidating and ingraining the information. </p>
+                
+                <p>I like the framework of the 3 pillars that Will Sentance established for me. The first pillar is the Thread of Execution. This is the flow through which JavaScript runs its commands. There is only one thread and it flows line by line. There are ways to manipulate the flow, sending some processes to the back of the line, or the bottom of the call stack, but it only ever flows in a single thread, line by line. </p>
+                
+                <p>I do have some thoughts on this and it has to do with the term Execution Context. It seems to me that the thread of execution makes up one part of all execution contexts. The other part of this is the memory associated with the execution context. </p>
+                
+                <p>There is the global execution context, which is the main execution context within which everything occurs. This means there is the global thread of execution and global memory. </p>
+                
+                <p>There is the local execution context, which is created by the calling of a function. Every function call creates a local execution context, with a local thread of execution and a local memory. </p>
+                
+                <p>The ordering of how these execution contexts run is kept in check by the Call Stack (one of the three pillars). I know that the call stack works in conjunction with what is called the Heap. I have learned about these things a bit ago and so my knowledge isn’t so up to date. I will be looking into these further. I know that the browser provides a lot of additional supporting aspects, such as Web APIs, the event loop and the callback queue. But again these are things I will be learning about more. </p>
+                
+                <p>The last thing I want to touch on is closures. Specifically, that there are two distinct phases of closures: defining the function that returns the closure and creating an instance of the closure. </p>
+                
+                <p>The more I see closures in action (and at this point, this hasn’t been a whole lot) the more I am reminded of classes. Classes too have these two distinct phases, defining the class and creating an instance of it. They are similar. </p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>What I did today was continue with the challenges. I first revisited the callback challenges, which served as good review. I reworked the challenge I did the last time with the intersection and the union algorithms, but this time using the reduce and filter methods.</p>
+                
+                <p>This was a good exercise and the more I do this the more I get better at thinking in loops and tracking what is going on. It is still challenging, but much less so. </p>
+                
+                <p>Next, I revisited the closure challenges. This was… challenging. The challenge that challenged me, and still is challenging to me, is one that defines a function which returns a closure. The closure is one that takes in as an argument a callback and its purpose is to condition this callback in a way where it can only be called once. The first time it runs the code. The second time it just returns the value that was returned the first time no matter the argument passed into it. </p>
+                
+                <p>This required some mental aerobics and time away for processing to occur. I was out shopping and while driving back something clicked. I really enjoy these kinds of moments. </p>
+                
+                <p>I realized that one thing I do is try to generalize too much. This is what made the task harder for me. Now I realize that closure ‘factories’ are going to be specific to the closure they generate. </p>
+                
+                <p>In this case, with the closure ‘factory’ that was challenging me, the returned closure must contain as many arguments as the function passed in as an argument has parameters. Yeah. That sentence is a mind twister in and of itself. Such is coding. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">December 30, 2022</h2>
                 <h3>Learning: Frontend Masters Course</h3>
                 <p>Continuing on with the Closure section of this course. </p>
