@@ -30,6 +30,107 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 3, 2023</h2>
+                <h3>Thoughts and Review</h3>
+                <p>Regarding yesterday’s closure and callback exercise/challenge, what follows are some thoughts that are helping me mentally grasp what is happening. </p>
+                
+                <p>Within the closure ‘factory’ function, I find that returning an anonymous function instead of a function identifier makes more sense. I can visualize more easily what is occurring when an instance of the closure is created. </p>
+                
+                <p>Next, understanding that the callback the closure ‘factory’ takes in and the function the factory returns need to match in regards to the parameters. The parameter name doesn’t need to be the same within the closure factory, but the number of parameters ought to be the same.</p>
+                
+                <p>If I were to make a more generalized closure factory that takes in a callback and returns a closure with matching number of parameters, I would first grab the number of parameters within the callback (is this possible? I think it may be with the argument property), then create an array of the parameter names, spread this array within the closure’s parentheses. </p>
+                
+                <p>The question is: What changes? What is staying the same?</p>
+                
+                <p>This closure factory is taking in a callback and returning a closure that only allows the callback to be called one time. Every call after the first one returns the value of the first calling. That’s the purpose of this closure factory and the closure it returns. </p>
+                
+                <p>As of now, this ‘once’ closure factory will only work for callback arguments that only have one parameter. This is due to the definition of the closure. It is too specific in the closure parameter definition. </p>
+                
+                <p>————————————</p>
+                <p>After a little bit of research I did manage to find a way to make this more generalized. With that said, I don’t quite understand what exactly is going on. It involves the use of the Function.prototype.apply() method. </p>
+                
+                <p>The original ‘once’ closure factory (the more specific one) looks like this:</p>
+                <pre><code>function once(func) {
+                    let count = 0;
+                
+                    let value;
+                
+                    //Notice that the defined parameter 'arg' is setting up and limiting the returned closure to be able to only accept one argument when an instace is called.
+                
+                    return (arg) =&gt; {
+                        if (count === 0) {
+                            
+                            value = func(arg);
+                
+                            count++; 
+                
+                            return value;
+                
+                        } else {
+                            return value;
+                        }
+                    };
+                }</code></pre>
+                <p><br></p>
+                <p>The more generalized ‘once’ closure factory looks like this:</p>
+                <pre><code>function generalizedOnce(func) {
+                    let count = 0;
+                
+                    let value;
+                    
+                    //The identifier that will store the parameters:
+                    let params;
+                
+                    //Storing the original callback function:
+                    let originalFunc = func;
+                
+                    func = function() {
+                        //This line of code is being added to the callback via the apply() method below. It is grabbing the arguments and creating an Array of them, then assigning this array to the params identifier. 
+                        params = arguments;
+                
+                        //I don't quite understand what is going on here...
+                        return originalFunc.apply(null, arguments);
+                    }
+                
+                    //spreading the array of the callback's arguments
+                    return (...params) =&gt; {
+                        if (count === 0) {
+                
+                            //storing the value of the callback when it is called with all its arguments
+                            value = func(...params);
+                            
+                            count++; 
+                
+                            return value;
+                        } else {
+                            return value;
+                        }
+                    };
+                }</code></pre>
+                <p><br></p>
+                <p>The above has revealed to me an area I need more understanding on (the .apply() method) and it has also bolstered my confidence. The pseudo-code I wrote above was actually doable, which shows that my thought process is not super crazy. This was also an instance of not knowing how to do something, but exercising the research muscle to find the answer and implementing it. </p>
+                
+                <p>I did not just copy and paste the answer either. I had to take the answer and make adjustments to it. I had to place it within my specific environment. I also changed the first argument of the .apply method. The answer utilized the ‘this’ keyword. I changed this to null and it still worked. Again I don’t exactly know why it worked with or without ‘this’, but I feel happier to not have a frivolous argument being passed in nonetheless.</p>
+                
+                <p>With that said, something interesting is definitely happening here and it is, like, way over my head…</p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>It is time to continue with the course and moving on to the Asynchronous section of the course.</p>
+                
+                <p>Today was a lot of review, but not just review, a new perspective on information I have taken in previously. This means there is value!</p>
+                
+                <p>The new perspective gained is that JS needs help in order to do things in an asynchronous manner. Where that help comes from is the environment within which JS was created for: The Web Browser.</p>
+                
+                <p>The Web Browser runs on the computer and so therefor has access to lower languages and can therefore do things that our single-threaded JS cannot do on its own. </p>
+                
+                <p>There are many ‘facade functions’ that look like JS, but are only means for JS to interact with these outside helper features. These features are things like Web APIs, the Timer feature, Dev Tools (such as console, which we all know and love so very much), the ability to render web pages in the first place (HTML DOM) and the feature which makes the Browser itself relevant: Network/HTML requests. </p>
+                
+                <p>Today we went over the ‘facade function’ setTimeout and Will explained what is going on when this function is called in a way I haven’t encountered yet which helped my understanding a lot.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 2, 2023</h2>
                 <p>Woohoo! The new year is here and all the holiday madness is done and over, other than putting away all the decorations, which is an opportunity to set up next year’s process. </p>
 
