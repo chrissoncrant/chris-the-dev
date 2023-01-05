@@ -30,6 +30,66 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 4, 2023</h2>
+                <h3>Learning: this, apply()</h3>
+                <p>In light of yesterday’s exploration in how to create a more generalized closure ‘factory’ that wraps a callback in such a way where when the instantiated closure is called, the passed in callback can only be called once, and subsequent calls will simply return the value returned by the first calling, I wanted to explore what I did in hopes of understanding how the heck it works. Because I didn’t understand it at all.</p>
+                
+                <p>I am planning on giving this a 45 minute burst of time each day for the next several days until I can confidently say “I understand this… better”.</p>
+                
+                <p>Today’s task involved trying to find a decent article that explains what the apply() method does. Though I read several articles, so far what I learned is that, unsurprisingly, the apply() method is related to the ‘this’ keyword, as well as the call() and bind() methods. I also learned that these are important methods in the land of JavaScript.</p>
+                
+                <p>I started my journey updating my knowledge of how ‘this’ works. </p>
+                
+                <p>‘This’ is all about referring to the context. It is an implicit thing. Everything in JavaScript occurs within a context. The context ‘this’ refers to depends upon where it is being used. </p>
+                
+                <p>When used within a function body that is being called in the global scope, ‘this’ will refer to the global object, which, within a browser is the Window object (unless strict mode is being used, then what ‘this’ refers to is undefined). </p>
+                
+                <p>When ‘this’ is used within a method (which is just a function that is defined within an object), ‘this’ behaves the same - it refers to its containing context, which is the object within which the method lives. </p>
+                
+                <p>What I found interesting is that if ‘this’ is referred to as a property value, that value is the global object, even if the property value is within an object nested in another object. </p>
+                
+                <p>All of this ‘this’-ness makes sense to me. I have been learning JS for long enough now that certain things are becoming intuitive. This review helped me make it even more so.</p>
+                
+                <p>Now on to the fun part: the call() and apply() function prototypal methods.</p>
+                
+                <p>These make a whole heckuva lot more sense to me now and that is exciting! I see now that what these do is explicitly define the context of ‘this’. If I have a function that uses ‘this’ within its body and I want to change the referring context of ‘this’, then I can use call() or apply() and the first argument of these methods would be the object I want ’this’ to refer to.</p>
+                
+                <p>If I am not using ‘this’ within the function body, then the first argument would have no impact, whether I pass in an object or pass in the value ‘null’ or ‘undefined’.</p>
+                
+                <p>I also understand now what the second parameter of the call() and apply() methods want as an argument: they want the arguments of the function that the methods are being evoked on.</p>
+                
+                <p>Let’s say I have a function (a rather dumb one albeit) that takes in three arguments and prints a sentence using these arguments, as well as prints the context that ‘this’ refers to:</p>
+                <pre><code>function callMe(name, age, number) {
+                    console.log(this);
+                
+                    console.log(`Hi my name is ${name}, I am ${age}, and my number is ${number}. Call me, maybe?`);
+                }</code></pre>
+                <p><br></p>
+                <p>Calling this function in a normal way (without call() or apply()) would print the Window object and then would print the sentence based on the arguments passed in.</p>
+                
+                <p>But if I wanted to change the context by using call() or apply() to do so, where would I pass in the actual arguments?</p>
+                
+                <p>This is where the second argument of these methods come in. I was confused by this, but am no longer so. Huzzah!</p>
+                
+                <p>The difference between call() and apply() is how the function’s arguments are passed in. Using call(), I would just pass in the arguments after the thisArg argument comma separated. With call(), the arguments are passed in as an array as the second argument of the method itself. </p>
+                
+                <p>Tomorrow I will continue this exploration by utilizing this newfound understanding to get a better grip on what the heck is going on within the closure I created yesterday. </p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Continuing with the Async section of Will Sentance’s The Hard Parts v2.</p>
+                
+                <p>Learning that the Callback Queue is part of the runtime environment within which JS code is executed. It is not a part of JavaScript in and of itself, but is a crucial component to keeping order in regards to when asynchronous code will run. </p>
+                
+                <p>The component that ensures that the callbacks in the queue don’t get added to the call stack until the call stack is empty is the Event Loop.</p>
+                
+                <p>All these terms I have been hearing about for awhile. Now it seems like it is all coming together in more profound ways. </p>
+                
+                <p>The Call Stack itself is JavaScript, it is one of the 3 pillars. The Callback Queue is where callbacks go to wait. The Event Loop is what triggers the callbacks in the queue to be added to the Call Stack so they can be executed by JavaScript. The Callback Queue would be useless without the Event Loop. Both the Event Loop and the Callback Queue are part of the runtime environment within which JS runs. They are not JavaScript, but are very helpful components of the environment that make JavaScript run better. They are like the reservoirs of water that make the flowers of JavaScript bloom more fully.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 3, 2023</h2>
                 <h3>Thoughts and Review</h3>
                 <p>Regarding yesterday’s closure and callback exercise/challenge, what follows are some thoughts that are helping me mentally grasp what is happening. </p>
