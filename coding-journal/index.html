@@ -27,7 +27,47 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
-        
+
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">January 14, 2023</h2>
+                <h3>Learning: Brilliant.org</h3>
+
+                <p>Today’s section is all about naming. Though this course is about computer science in a more generalized manner I find it helpful to see the teachings in the context of JavaScript.</p>
+                
+                <p>This section describes how names are there to make values more memorable and retrievable. The values are more easily read by computers, the names by humans. In order to bridge the gap between the two, there needs to be a system that resolves names to the values.</p>
+                
+                <p>This makes me think of variables in JavaScript, DNS for the internet, phone books for phone numbers (I know, getting pretty antiquated here). </p>
+                
+                <p>The section describes the importance of having some central authority to do the resolving so that names are consistent with the values. There are pros and cons with the pros outweighing the cons for the most part.</p>
+                
+                <p>One of the cons has to do with time required to respond to a request. This is definitely something browsers, servers and clients deal with. One of the ways this problem is reduced is by way of caching. Caching simply stores the response from previously made request.</p>
+                
+                <p>Of course adding a cache can create its own issues such as having an out of date cached item, or potentially making a system slower because a cache must be check first before making a request. With that said, for the most part, caches are useful and beneficial.</p>
+                
+                <p>Caches remind me of Memoization in JavaScript. It seems these are the same thing, perhaps with Memoization being a more specific form of caching.</p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Continued with the async practice problems from the course. Realized that the strange behavior I was experiencing yesterday with setTimeout and setInterval were in fact due to caching issued in Chrome. Love the relevancy of that.</p>
+                
+                <p>Moving forward with the Promises section of the course. This will be more review, but I am looking forward to it. </p>
+                
+                <p>I have already learned about the terms Macrotask list and Microtask list and I know that before moving to a new Macrotask list (which would be created by a browser Timer function like setTimeout or setInterval) the Microtask list is cleared. I know that Promises occur within the Microtask list.</p>
+                
+                <p>————————————</p>
+                <p>Will Sentance describes Promises as a two-pronged ‘facade’ function. By ‘facade’ function he means those things that look like JS, but are actually done by the browser using lower level languages supplied by the computer on which the browser operates. Things like setTimeout. It looks like JS, but is not JS, is a ‘facade’ function.</p>
+                
+                <p>The 2 prongs of the Promise facade function are the network requests, which occur in the background, and the immediately return JS object. The JS object has state. The states are unfulfilled, fulfilled and rejected. </p>
+                
+                <p>The specific function he is referring to is the ‘fetch’ function. I think he makes an important point in saying that JS does not have the ability to make Network Requests. This is what the ‘fetch’ facade function allows us to do. One of the prongs is the Network Request, the other prong is the object that is immediately returned by the function into JS territory. It is this facade function that lets us do things with the internet within JS territory.</p>
+                
+                <p>————————————</p>
+                <p>Random thoughts hitting me: The beauty of async JS is that it allows the code that’s already there and ready to be run, to run without being blocked by the code which is going to take time.</p>
+                
+                <p>The code that takes time is generally in the form of a Network Request. I am now remembering what I learned a couple days back how a professor of Computer Science carried around with her a 30cm (I think?) length of copper cable, which equated to a nanosecond. Yes, this is super fast to us humans, but it is time nonetheless. It may seem instantaneous to us that a website responds, but what is happening is electricity is being moved along a wire across the globe and in response to the this electricity, some more electricity is being sent back. </p>
+            </div>
+        </section>
+
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">January 12, 2023</h2>
