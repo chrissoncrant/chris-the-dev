@@ -30,6 +30,54 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 17, 2023</h2>
+                <p>I recently finished reading <a href="https://www.freecodecamp.org/news/learn-to-code-book/" target="_blank">Quincy Larson’s book on learning to code and landing the first developer job.</a>. This was an inspiring and helpful read and confirmed an idea that I had, that learning for the sake of learning isn’t useful. What’s useful is building out projects. Finishing a project from start to finish. Taking one’s time within the project, being patient and sensitive to ideas, inspirations, ah-ha moments. Using the project itself as the guide on what to learn, that way what is learned is being applied in a practical way.</p>
+
+                <p>I also think that rebuilding a project over at least twice (more depending on the complexity) is good strategy that I need to implement. We can see more fine details by doing this. Just like anything first encountered and then encountered again.</p>
+                
+                <p>The book also confirmed my notion that I need to get out there and meet some coders, join some Hackathons, start listening to coding podcasts, immerse myself into the mindset and tribe.</p>
+                
+                <p>I don’t know what the purpose of this coding journal is just yet. I don’t know if I will be continuing it. I do feel it is a nice way to practice writing, though I wonder what kind of habits I am building because the writing itself isn’t that great. </p>
+                
+                <p>We will see. For now, the Coding Journal continues.</p>
+                
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>This course has already helped me a lot in regards to my fundamental understanding on how JavaScript works. More importantly I am working on a project that allows me to apply the learnings. </p>
+                
+                <p>I think at this time a review of what I learned so far would be good. </p>
+                
+                <p>The first thing that was hammered in was the importance of being able to communicate in a technical manner. Throughout the course this was practiced. I can now describe line by line what is occurring. </p>
+                
+                <p>The 3 Pillars of JavaScript is a good mental model that was hammered on as well. The pillars being: thread of execution, storing data and code in memory, call stack. </p>
+                
+                <p>While learning this the use of the word ‘scope’ became more clear to me. ‘Scope’ specifically refers to stored value access. It works in a bottom up sort of way. A scope can reach up to its parent scope, but cannot reach down into children scope. </p>
+                
+                <p>I have a better understanding of how callbacks work. I clearly understand now that what a callback is is a function passed into a Higher-Order function. Callbacks and Higher-Order functions go hand in hand. The Callback is the argument of the Higher-Order function. Can one exist without the other? I am not sure. I do see that they clearly need each other. </p>
+                
+                <p>I have learned about closures and how these work. I can say what a closure is: A function that is returned by another function. In a way it’s sort of an opposite of a Higher-Order function, although Higher-Order functions can result in closures. </p>
+                
+                <p>I clearly understand how closures work with the Persistent Lexical Scoped Referenced Data i.e. the backpack of variables that go along with the returned function. </p>
+                
+                <p>This layered functional process is still challenging for me, especially when a Higher-Order function takes in a callback as an argument, then returns that callback wrapped in a closure. But the blurry image in my mind of what is happening with this is becoming a bit clearer, especially as I use it.</p>
+                
+                <p>I learned about asynchronous JavaScript. My mental model of the entire runtime within which JavaScript plays out has become much more clear. I know more clearly now that there are many functions, like fetch and setTimeout, that look like JavaScript, but whose functionality occurs outside of JavaScript itself, usually within the browser via Web APIs. Many of these functions help JavaScript do the things it cannot do on its own and give JavaScript its asynchronous capabilities. </p>
+                
+                <p>The JavaScript Runtime: JavaScript engine, which consists of the call stack and the heap. The 3 pillars of JS are encompassed within these two things. Outside of the JavaScript engine we have the Callback Queue, which is filled up by functions that work via Web APIs (setInterval and setTimeout, for example). Going along with the Callback Queue is the Event Loop, which is constantly whirring, checking the callstack and adding into it callbacks waiting within the Callback Queue when the current callstack is emptied. </p>
+                
+                <p>Explaining these things is still a bit fuzzy, but the whole process itself is so much less so.</p>
+                
+                <p>I am now in the process of learning about Promises. What I like about Will’s presentation is he is directly tying Promises to the Web API fetch function, which performs one of the most important non-JS tasks within any internet based environment: making Network Requests. </p>
+                
+                <p>What I’ve learned about Promises so far: It is a two pronged ‘facade’ function (the name Will gives those functions that look like JS, but really call upon Web APIs to do stuff outside of JS). The first prong is it takes in a web address in order to make the Network Request. The second prong is like the bit which catches the Request once the server sends it back. It is a JS object (actual JS, not ‘facade’ JS) with two properties: ‘value’, and a hidden property called onFulfilled, which is an array and holds the callbacks that will be run once the Request is fulfilled. </p>
+                
+                <p>Promises are always in one of 3 states: pending, fulfilled, rejected.</p>
+                
+                <p>And this is where I am picking up today.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 14, 2023</h2>
                 <h3>Learning: Brilliant.org</h3>
 
