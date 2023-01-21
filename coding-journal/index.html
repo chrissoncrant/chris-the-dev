@@ -30,6 +30,24 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 18, 2023</h2>
+                <h3>Learning: Frontend Masters Course</h3>
+                <p>Continuing with Promises today. Yesterday I spent some time reviewing my old notes on Async JS and updating them. </p>
+                
+                <p>What I hope I can clear up is how this Fetch API works in regards to micro and macro task lists. I know that fetch utilizes promises, but because fetch also utilizes the Network Request feature of the Web Browser I think there is something else going on.</p>
+                
+                <p>I just looked it up. Fetch requests create a new macrotask list/queue and it is here that the microtasks that result from the fetch’s promise get added. </p>
+                
+                <p>I found <a href="https://javascript.info/event-loop" target="_blank">an interesting article on macrotask and microtask lists and the event loop</a>. I think the examples are good and I am spending some time working through them to improve my understanding of how these work. It is a bit of a side adventure, but I sense it may pay off by improving my understanding of how async works and what its purpose is.</p>
+                
+                <p>One aspect that this article has revealed to me is that when blocking code is running, it is blocking listeners from being able to do their things, such as mouse movement, clicking, etc. These events are hyper-related to a user’s experience. Having these interactive listeners be blocked results in poor user experience. Being able to bump a long running task to the background and periodically giving moments for code that would be blocked to come up and ‘breathe’ so to speak greatly improves user experience.</p>
+                
+                <p>This notion of moments to breathe is interesting to me as well. This is what setTimeout allows us developers to do. We can use loops that run a chunk of the blocking code, then after the chunk runs, the next chunk is scheduled to run with a setTimeout and this allows other code that was blocked to run before the next chunk of blocking code runs. I have never thought of it like this, but I think it is a useful piece to add to my mental model. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 17, 2023</h2>
                 <p>I recently finished reading <a href="https://www.freecodecamp.org/news/learn-to-code-book/" target="_blank">Quincy Larson’s book on learning to code and landing the first developer job.</a>. This was an inspiring and helpful read and confirmed an idea that I had, that learning for the sake of learning isn’t useful. What’s useful is building out projects. Finishing a project from start to finish. Taking one’s time within the project, being patient and sensitive to ideas, inspirations, ah-ha moments. Using the project itself as the guide on what to learn, that way what is learned is being applied in a practical way.</p>
 
