@@ -30,6 +30,41 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 22, 2023</h2>
+                <p>What I have been working on is a project that shows the purpose of the setTimeouts and how they work from a user interface perspective. </p>
+
+                <p>I created a rough interface with a button to click and there’s a counter for how many times it has been clicked.</p>
+                
+                <p>I have 4 buttons to run a specific process. The first button runs the ‘hungry’ process, which doesn’t use any setTimeouts at all. Engaging this button then clicking the counter button gives a discernible lag between the clicks and the counter. </p>
+                
+                <p>The other 3 buttons break up the process into pieces, and there is no lag in the Click Counter because the nested setTimeouts provide an opportunity for other code to be run.</p>
+                
+                <p>The difference in the buttons has to do with how the process runs.</p>
+                
+                <p>The mechanics of emulating a process in this app involves a loop and counting up to a certain number (the process appetite). If the appetite is larger, the process takes longer.</p>
+                
+                <p>The functions triggered by these latter 3 buttons involves a total appetite size and a chunk size. </p>
+                
+                <p>The first counts up to the appetite size even when there’s only a leftover amount that’s less than the chunk size. The second button will only count up to the size of the remainder of the appetite, if it is less than a chunk size.</p>
+                
+                <p>Even though this process emulation isn’t too real-world-y I also saw there was an opportunity to make the process more efficient. Making things more efficient is definitely real-world-y.</p>
+                
+                <p>An interesting trade-off I noticed:</p>
+                <p>The chunk size is important; too small of chunks the code takes longer. Too large of chunks, then it defeats the purpose of chunking the process to begin with. The best chunk size is somewhere in the middle. The chunks are large enough to reduce the number of times the code has to run, the chunks are small enough to provide space for other things like clicking, etc to be accounted for and allowed to run. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">January 20, 2023</h2>
+                <p>Lots of stuff going on that I had to bump my learning yesterday. I did make a bit more progress in going through that article. I am creating a reference script for it so I can concretize my learning. </p>
+
+                <p>I am still not sure what is happening with the code I am running. It is curious and interesting to me. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 18, 2023</h2>
                 <h3>Learning: Frontend Masters Course</h3>
                 <p>Continuing with Promises today. Yesterday I spent some time reviewing my old notes on Async JS and updating them. </p>
