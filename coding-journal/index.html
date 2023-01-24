@@ -30,6 +30,99 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 23, 2023</h2>
+                <p>I spent a bit too much time yesterday on the project exploring setTimeout. I think some interesting things were happening that could be worthwhile to explore further. </p>
+
+                <p>The first interesting thing is this: I had a for loop and just incremented a variable up to 1e9. I connected the function triggering this for loop to a button. When I click the button the first time after page reloading (in Chrome), it shows the process took 1.5 secs roughly. Every time after that it would take almost twice as long. Not sure why. </p>
+                
+                <p>Also, in Firefox, the same function would take a bit longer, but would take the same amount of time each time I clicked, so it was more consistent.</p>
+                
+                <p>The other interesting thing had to do with user interactivity. When I had buttons connected to the process functions, it would prevent me from getting the user feedback when hovering or clicking other buttons, though the clicks themselves would get registered and queued up. One of the functions took almost twice as long as expected and I am not sure why.</p>
+                
+                <p>All of this makes me want to create some sort of playground project that helps people (and me!) understand the practical application of async javascript. One that replicates slowness on a site and then shows how to make that same slow process occur in a way that is not interrupting to the UX.</p>
+                
+                <h3>Learning: Frontend Masters</h3>
+                <p>Picking up on Will Sentance’s JavaScript The Hard Parts v2. Finishing the Promises section. </p>
+                
+                <p>One thing that is bugging me is that the example he is using seems to be inaccurate. Using fetch() returns a Promise, but it seems that the promise itself ends up getting wrapped into a new macrotask list. I can see this is the case because of a simple example:</p>
+                
+                <pre><code>console.log('Start of Macrotask List 1');
+                
+                setTimeout(() =&gt; {
+                    console.log("Start of Macrotask List 2")
+                });
+                
+                setTimeout(() =&gt; {
+                    console.log("Start of Macrotask List 5... Note the duration parameter is set.")
+                }, 1);
+                
+                Promise.resolve()
+                    .then(() =&gt; console.log("Start of Microtask List 1"))
+                    .then(() =&gt; setTimeout(() =&gt; console.log("Start of Macrotask List 4")))
+                
+                const fetchedData = fetch('https://dog.ceo/api/breeds/image/random');
+                
+                fetchedData
+                    .then(() =&gt; console.log("I would expect this to be in Microtask 1, but it is actually the last thing to print. This tells me that the microtask from the promise is wrapped into a new macrotask list."))
+                
+                Promise.resolve()
+                    .then(() =&gt; console.log("End of Microtask list 1"))
+                
+                console.log('End of Macrotask List 1');</code></pre>
+                <p><br></p>
+                <p>So using fetch creates a new Macrotask list. What’s interesting to me is how the behavior of the setTimeout changes when I add just 1ms to the duration of the timeout. </p>
+                
+                <p>1ms is a long time from a computer’s perspective. A lot of action can happen during that 1ms. In this case it seems that the response from the API in the code above occurs within 1ms. This is crazy. It invites some thought into how my code works versus the limitations of what I can visualize.</p>
+                
+                <p>For example: if I code a for loop to iterate up to a number, it will only take a short amount of time, but if I add a print command into the for loop’s body, the loop will have finished, but there will be a lot of print commands queued up. The printing process takes far longer than the actual cpu process of counting. </p>
+                
+                <p>Finished the Promises section. Feeling good about the time spent here. I added the async.js and promises.js files I created to my Reference Project directory.</p>
+                
+                <h3>Building: ChatGPT Project #1</h3>
+                <p>I started working on this tutorial a few days ago. I am continuing it now. The tutorial is <a href="https://youtu.be/2FeymQoKvrk" target="_blank">walking me through building a code generator app that utilizes ChatGPT in the background</a>.</p>
+                
+                <p>The project uses Vite, which seems to be s simple way to generate a static site. I’ve never used Vite. It seems easy. This will be interesting to see how it is utilized here.</p>
+                
+                <p>All the css and html are provided, but I still took a little bit to read through it. I like reading other html and css. It gives me ideas and it’s good practice as I am constantly thinking through the layers and identifying what declaration is doing what and how is it affecting what’s around it. </p>
+                
+                <p>When I don’t understand something I will isolate it out and build it in my playground project.</p>
+                
+                <p>I also like commenting out lines that don’t seem like they are doing anything. It’s fun to either see when a specific declaration becomes relevant or to find code that doesn’t need to be there. </p>
+                
+                <p>After spending some time with the html and css, I then got lost in the JavaScript.</p>
+                
+                <p>By ‘lost’ I mean going on detours myself, which tend to lead to other detours. These detours occur because this is how I do tutorials: The tutorial describes what a function is going to do and then I pause and go off to build that functionality myself. I don’t think it’s a bad thing to do this, until it is. </p>
+                
+                <p>The first function that led to a detour was creating a loading function. This functions job is to animate a ‘…’ one dot at a time. This was a good moment for me to practice all the async JS I have been learning. I created this, then compared and was happy to see the instructor had a very similar solution. </p>
+                
+                <p>The next function was a text typing function. A string is the argument and that argument is then displayed one letter at a time in the display section of the UI. </p>
+                
+                <p>I coded this myself as well and doing so made me very happy. It was another opportunity to not only exercise the async JS by way of setInterval, but also reinforced my learnings about closures.</p>
+                
+                <p>The next function was a random number generator, which is  a simple thing, but my mind took it a bit further. </p>
+                
+                <p>First I explored the Number.toString(\#) feature, which allows us to easily take a number using a different Number system. </p>
+                
+                <p>The random number generator spits out a decimal number. I wanted a function to take that random number and move the radix so the long decimal becomes a really big integer. </p>
+                
+                <p>The problems: 1) determine how many digits the number is; 2) create a function that will move the radix by the number of the digits in the input. </p>
+                
+                <p>The first problem is just me saying, yes I can make a function that is for numbers of a certain digit-length, but wouldn’t it be neat to be able to convert any number from a decimal point to a non-radix number? Perhaps.</p>
+                
+                <p>The problem with this is that I want to avoid data type conversion, as I know it is costly, and the challenge to figure that out without converting the number to a string to get its length property is fun.</p>
+                
+                <p>I ended up settling for the data conversion as it was leading me further astray than I wanted to be. </p>
+                
+                <p>The next little function I made based off my own side-exploration was to create a function that would generate a number that would shift the radix by a certain amount. It takes in as an argument, the number of spaces one wants to shift the radix by. The return value is simply a 1 with however many zeroes appended to it.</p>
+                
+                <p>For this one I did not use type conversion. I used a simple for loop that multiplies by 10 and whose iteration count is the argument. </p>
+                
+                <p>For this function to work its return value would be multiplied by the number whose radix is being shifted. So I created a function to do this. Of course this function has nothing to do with the original project as the generated number will be in hexadecimal format. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 22, 2023</h2>
                 <p>What I have been working on is a project that shows the purpose of the setTimeouts and how they work from a user interface perspective. </p>
 
