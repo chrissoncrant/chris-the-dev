@@ -27,6 +27,39 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+        
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">January 24, 2023</h2>
+                <h3>Learning: Frontend Masters</h3>
+                <p>Starting on the objects section of Will’s Sentence’s course. This will be review, but Will’s perspective and ways of explaining things give me a new perspective and thus my understanding is broadened.</p>
+                
+                <p>Will described OOP as a means of keeping one’s code organized. Specifically he mentions 3 goals all code, no matter the language, should aim for: 1) to be readable, understandable, easy to reason out; 2) easy to add new features; 3) efficient and performant.</p>
+                
+                <p>He describes OOP as a means to accomplish this. </p>
+                
+                <p>He shed a new perspective on objects and methods: using the dot notation allows us to answer multiple questions: What are we accomplishing (what function is being called? What changes are being made?)? To what data is this being applied to? </p>
+                
+                <p>This perspective of all applications being data and actions taken using that data, whether to read, create, update, delete (the 4 main data related actions) adds a new layer of understanding of what programming is essentially doing at root and why OOP is such a useful paradigm. </p>
+                
+                <p>————————————</p>
+                
+                <p>Another concept that is becoming more clear is the importance of inheritance and prototypes. When individual instances of objects are created, they will all share properties and methods, based on the constructor. Some properties will have unique values to the instance itself. There will be properties and methods that we want the instances collectively share, to have a single source of truth of. This is especially true for updating features. </p>
+                
+                <p>If I come out with a new feature which is essentially adding a new method to an object, say a User object for example.  But what if I have many users that are already created? Without a single-source of truth for each user instance to reference, in order to add the feature, each individual object will have to be updated, and this is a pain.</p>
+                
+                <p>This is wrapping around to the mental model that Just JavaScript implanted into me and is reinforcing it and vice versa. </p>
+                
+                <h3>Building: ChatGPT Project #1</h3>
+                <p>Spent a bit of time going over yesterday’s code and where I left off. I left off at trying to understand this scrolling functionality implemented in this project.</p>
+                
+                <p>New messages get added to the chatContainer section. Doing this will eventually cause the chatContainer’s height to expand. New messages are at the bottom and when new messages are added, they are scrolled into view. </p>
+                
+                <p>To do this the .scrollTop property of the chatContainer is set to be equal to the .scrollHeight property. What confuses me is that this doesn’t necessarily set the .scrollTop to be the exact value of .scrollHeight, but rather scroll the specific container down as much as it can. </p>
+                
+                <p>I think this is what the point of setting .scrollTop to be equal to the value of .scrollHeight. When new messages are added we can’t know the height of the element added - this will be a constantly varying thing. To account for this we just give .scrollTop a value that will ensure it always scrolls to the bottom. Explaining this right here just helped me a lot. </p>
+            </div>
+        </section>
 
         <section class="entry">
             <div class="inner-column">
