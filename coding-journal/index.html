@@ -27,6 +27,60 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">January 25, 2023</h2>
+                <h3>Building: ChatGPT Project #1</h3>
+                <p>Yesterday, I finished getting the front end logic set up. There are some things happening in this tutorial that I am not sure about and/or have questions about. </p>
+                
+                <p>One thing I am not sure about is the use of .innerHTML to generate the message containers. I have read about some of the disadvantages of using .innerHTML, yet how else could this be done?</p>
+                
+                <p>I found this nifty article, <a href="https://gomakethings.com/a-safer-alternative-to-innerhtml-with-vanilla-js/" target="_blank">A safer alternative to innerHTML with vanilla JS</a>.</p>
+                
+                <p>One of the major reasons to be wary of .innerHTML are the security risks namely in the form of Cross-Site Scripting (XSS). This occurs when malicious scripts are injected into a website. When we use .innerHTML and give a third-party access to our site’s DOM, that access can be taken advantage of. </p>
+                
+                <p>I found it useful to know that .innerHTML is okay when injecting our own markup into the DOM. I would still like to know a bit more how the XSS works. </p>
+                
+                <p>The article also goes over a way to sanitize 3rd-party markup before it gets added to the DOM. </p>
+                
+                <p>————————————</p>
+                
+                <p>How some classes are generated bugs me. There’s a class that uses an and statement short-circuit. The problem is that if the first data is false, then a false class is added to the rendered element. I don’t like a useless class. But I will let it slide for now.</p>
+                
+                <p>————————————</p>
+                
+                <p>I learned about form events. I did not know an event handler listening for ‘submit’ could be added to the form element. </p>
+                
+                <p>This gave me a flash of insight into HTML elements and the DOM, and how each specific element has their own custom features built into them. How each specific HTML element is built on top of a more generalized class called Element, and so on and so forth. </p>
+                
+                <p>This connects back around to what I have been learning recently in Will’s course. Everything is essentially an object (even when the language is a functional programming language. The way to package up inheritable qualities (properties) and behaviors (methods) is to use objects. </p>
+                
+                <p>————————————</p>
+                
+                <p>Exploring the FormData object. Exploring MDN to see what I can do with these kinds of objects. </p>
+                
+                <p>Apparently the data from the inputs is packaged up in a key/value pair based on the ‘name’ attribute of the input element and its input, which is text in this case. </p>
+                
+                <p>To access, or get to this data, we use the .get() method that comes with FormData objects. The argument is the value of the ‘name’ attribute of the HTML element.</p>
+                
+                <p>I am thinking I need to just build like 100 forms with a functioning front and back end, so I can be more familiar with building these crucial components. </p>
+                
+                <p>————————————</p>
+                
+                <p>Yesterday I got started on the backend. This is where the tutorial starts venturing into ChatGPT land. </p>
+                
+                <p>OpenAi’s website is quite helpful and nicely put together. I am still struggling a bit with understanding how to query ChatGPT appropriately, but this is because I haven’t explored it much yet. That’s the biggest point of doing this tutorial.</p>
+                
+                <p>It’s been awhile since I was in back-end land and so its nice to be back. This is where there’s just a whole new layer of thinking in regards to design and data and all that. I am looking forward to what new ways I will be encountering this.</p>
+                
+                <p>————————————</p>
+                
+                <p>Spent time creating a simple server to test out an issue I was having that I couldn’t pinpoint. The issue: forgot the ’s’ in ‘headers’. </p>
+                
+                <p>Even though the problem was due to something small, the effort was still good. Just spinning up a mini front and back end served as real good practice. When I start working with the back end I get the sense that this is truly where the excitement lie. This is where APIs are interacted with, this is the brains of the front-facing site. </p>
+            </div>
+        </section>
         
         <section class="entry">
             <div class="inner-column">
