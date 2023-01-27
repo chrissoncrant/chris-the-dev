@@ -30,6 +30,100 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 26, 2023</h2>
+                <p>Yesterday I spent all my coding time on the ChatGPT project. It involved starting to build out the back end. There was a lot of review going on as well. It’s been several months since I spun up a server. Building projects with both front and back ends is what really makes me excited about coding. </p>
+
+                <h3>Learning: Frontend Masters</h3>
+                <p>Spending an hour today continuing with Will Sentance’s JavaScript The Hard Parts v2 course. I am on the last section on OOP and classes. </p>
+                
+                <p>Quick review of last time:</p>
+                <p>All code should do 3 things: Easy to reason out, easy to add new features to, and efficient and performant.</p>
+                
+                <p>OOP paradigm helps with all three of the features above. By using objects we can group our functions along with the data that those functions do work on. This makes it easy to read what is happening.</p>
+                
+                <p>Prototypal inheritance is excellent for adding new features in an efficient manner. The prototype is a special object, a lower level object, that serves as a collective reference for the many objects that are based on that prototype. </p>
+                
+                <p>One of the places I can see this layering of object types is in the DOM. Each  element is built on top of an Element class that has a number of methods and properties. Each specific element has specific features and properties that are layered on top of the Element class. </p>
+                
+                <p>One way to assign an object a prototype is by using Object.create(prototypeObjectName). </p>
+                
+                <p>End of review</p>
+                
+                <p>————————————</p>
+                
+                <p>There are 2 main things that coding requires: code to run and memory to store stuff.</p>
+                
+                <p>What prototypes and inheritance helps us to achieve is efficiency. This efficiency comes in the form of a single source of truth for certain properties and methods, which makes adding features less complicated. </p>
+                
+                <p>Efficiency also comes in the form of storage. By having the single source of truth (i.e. prototypal inheritance) we don’t have to make multiple copies of the same data. </p>
+                
+                <p>Both of these efficiencies become more important an application grows in complexity.</p>
+                
+                <p>————————————</p>
+                
+                <p>I am curious how the ‘this’ keyword is working within objects set as prototypes. Let’s say a prototypal object has a property of ‘score’ and a method of ‘this.score++’.</p>
+                
+                <p>What’s interesting to me is that if a new object is created and assigned the previous object as its prototype, but doesn’t have a ‘score’ property, the method that increments the score will depend upon the score property within the prototype. But if the new object does have a score property, then that score property will be incremented by the method on the prototype.</p>
+                
+                <p>The ‘this’ keyword seems work in the same fashion as the prototypal chain functionality. If an object method is called, the object itself will be checked for the method, if it is not present it will move down the chain. When it encounters the method, if the ‘this’ keyword is present, ‘this’ will refer first to the top of chain and its referenced object will move down the chain as well. </p>
+                
+                <p>‘This’ is an implicit parameter. It is implied. </p>
+                
+                <p>‘This’ is all about context. It starts on its outermost container on which a ‘this’ is evoked and goes down from there. </p>
+                
+                <p>————————————</p>
+                
+                <p>Will is going over the difference is terms of the <code>__proto__</code> property, which is a link to the next object down the chain, and the term ‘prototype’. He hasn’t gotten there just yet. </p>
+                
+                <p>I think the difference has to do with action. A prototype is a lower foundational level of an object. The <code>__proto__</code> property is an action (deprecated) that will return the object sitting at the next level down the chain.</p>
+                
+                <p>————————————</p>
+                
+                <p>Will went over the interesting thing that happens with ‘this’ when a function is defined and called within a method. This brought me back around to the .call() method and how that works. There’s a lot of the wrapping back around action happening as of late. This is a very good thing. It means that it’s not all new territory anymore and so reinforcement occurs more regularly and more subtler details emerge.</p>
+                
+                <h3>Building: ChatGPT Project #1</h3>
+                <p>I am going to spend some time rebuilding the little server project. I can tell that there are lots of gaps in my understanding.</p>
+                
+                <p>I am starting to get a better idea of how the front and back end interact. The means to the interactions are HTTP requests. The front end needs to some stuff from the back end and so sends out a request. No matter what kind of request is sent (GET, POST being the two most common), there is always a response from the back-end with some form of status for the transaction, some way to tell whether the transaction succeeded or failed.</p>
+                
+                <p>This is not in-built necessarily. If we humans had to code our existence, we would learn that an important aspect of surviving is being able to tell if something is worth doing. We would learn to code for blood and pain. These would be the responses we get back with precious information.</p>
+                
+                <p>For me, the GET request is obviously going to get a response back. That is the whole purpose of the GET request. The POST request is less obvious simply because it is sending information to the server. But like Certified Mail, it is nice to have some sort of signifier that things went well over in back-end land. This is the purpose of the response for a POST request. It is necessary. </p>
+                
+                <p>The means to communicate between front and backends are addresses. There’s the protocol (HTTP or HTTPS), there’s the domain name (in my case most of the time this is localhost:PORT), then there’s the path itself. </p>
+                
+                <p>These can be anything we want them to be. For them to work though there needs to be something to receive a request to a specific address. </p>
+                
+                <p>That’s where the back-end comes in. This is essentially what APIs are. They provided a specific address where a specific task can be completed. The back-end tasks assigned to the address are essentially tied to an event. That event is the front-end calling to the back-end (or even one back-end calling to another). If a call is made to a specific domain name with a relevant path, that event is handled accordingly.</p>
+                
+                <p>There’s a couple things to help differentiate what to do. There’s the request method (GET, POST, etc), and there’s the address, but most importantly, as far as setting up specific actions, is the path.</p>
+                
+                <p>Paths generally point to collections or items. </p>
+                
+                <p>When a call is made, there is some processing of data that usually needs to occur. This occurs on the back and front ends. There is a standard of how front-ends and back-ends should communicate. This standard is REST. </p>
+                
+                <p>The general format data takes is JSON. This provides a certain level of predictability in regards to data processing on either end (front or back).</p>
+                
+                <p>The front-end is all about human interaction. Clicking buttons, seeing things, highlighting, copying and pasting, entering in information. </p>
+                
+                <p>The back-end is all about doing the stuff that needs to be hidden from the front-end. Without this hidden layer, then there would be no means of securing the internet. Everything on the front-end is accessible and viewable. The back-end is not. </p>
+                
+                <p>I know that certain paths can be revealed by inspecting the code on the front end, but ultimately what goes on in the back-end is, well, more secure. </p>
+                
+                <p>The other aspect of the back-end is communicating with databases. The internet itself is based on data. Data is everything. Everything is in bits and bytes, ultimately strings, numbers, boolean. At my current low experience level I would say these are the 3 main forms of data. With the data, coding can be done. </p>
+                
+                <p>So databases are where the information is stored, read, updated, and deleted. Why can’t a front-end just access a database without using the back-end? This is a good question.</p>
+                
+                <p>I am able to venture an answer. If the internet is all about data, then that data needs to be secured and protected. If something were to happen to the data itself, then all the value that that data provided becomes lost.</p>
+                
+                <p>The back-end connects to the database behind the public scenes. It is where credentials are exchanged out of sight (if done properly). This means that the ones who have access to the database and how interactions with the database take place are those who need to know. The public not only doesn’t need to know, but if they did know, would most likely make a mess of things. </p>
+                
+                <p>Matter of fact I bet that in the early stages of the Internet, the public did have some sort of access to this information and it led to messes, that resulted in the solutions we see today.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 25, 2023</h2>
                 <h3>Building: ChatGPT Project #1</h3>
                 <p>Yesterday, I finished getting the front end logic set up. There are some things happening in this tutorial that I am not sure about and/or have questions about. </p>
