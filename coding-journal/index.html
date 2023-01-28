@@ -30,6 +30,85 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 27, 2023</h2>
+                <h3 id="Thoughts">Thoughts</h3>
+                <h4>Why Coding</h4>
+                
+                <p>Spent some time today thinking about why I am learning to code. What got me started was certainly the job prospect. What kept me learning is still the job prospect for sure, but there’s something else too. There’s an interest. I don’t know where the interest comes from. I simply think coding is cool.</p>
+                
+                <p>Okay. But why? I like the problem solving aspects. When I first started learning it had been sometime since I exercised those kinds of thinking muscles. I forgot how good it felt to do so. So that kept me going for a bit.</p>
+                
+                <p>Taking a project out of the abyss of abstraction and putting something together that does something cool and potentially useful gives me a nice, wholesome feeling. It exercises the creative muscle as well. </p>
+                
+                <p>But there’s other things. Things that feel deeply philosophical, and also deeply intimate, in some way, with the Nature of Reality itself. But I am still unclear.</p>
+                
+                <p>So I asked myself, what is it that devices allow us to do? What are computers? What can they be used for? They allow us to create data (music, writing, movies, art, educational material) in a way that can be shared easily. They give us access to the others who would want to consume our data. They help us to find other data to consume. Find others whose data output we can appreciate. Interact with others remotely, synchronously and asynchronously (building a global collective self-awareness). At the root is data, information. Processing information in creative ways. Using these devices which are extraordinarily capable, to take in, process, and send out information packets. </p>
+                
+                <p>What for? </p>
+                
+                <p>Consumption. This can be distraction, entertainment, education. </p>
+                
+                <p>Connection (or lack thereof). Email, messaging, social networks, conferencing.</p>
+                
+                <p>Production. Creating, educating, processing (in some form or another), sharing. </p>
+                
+                <p>Information and its processing is not new. This is how humans evolved. The ability to capture information into more stable forms to outlast the flow of time. To quicken the learning of the next generation. Information has been a sword with two edges ever since it came to be.</p>
+                
+                <p>So what do I want to use it for? </p>
+                
+                <p>I want to do good. What is good? See how it gets deep and philosophical?</p>
+                
+                <p>Learning to code is ultimately about learning to utilize the capabilities of these highly programmable machines that have GPS, wifi, cameras and microphones, etc. But it is also about finding where my own creativity meets these capabilities. The creativity is there. But it also blossoms in new ways when my own capacity to interface with these machines grows. </p>
+                
+                <p>Having a bigger picture of what computers are, what they do, stepping back into broader strokes of abstraction, helps me to feel more connected to the pursuit for the sake of the journey, not the catch. Chasing the catch for the sake of the catch is not a good use of time. Chasing the catch for the sake of the chase itself is more profound. And, it is never too late to change styles. Good thing and bad thing.</p>
+                
+                <h3>Learning: Frontend Masters</h3>
+                <p>Continuing with the section in Will’s course on Classes and OOP.</p>
+                
+                <p>Today he discussed this interesting ‘feature’ with arrow functions and how they alter the object referenced by ‘this’.</p>
+                
+                <p>Here, using declaration (same behavior with function expression as well), ‘this’ will refer to the object on which it is called, so obj1.</p>
+                <pre><code>const obj1 = {
+                    someMethod() {
+                        console.log(this); //'this' refers to obj1
+                    }
+                }</code></pre>
+                <p><br></p>
+                <p>Here, using arrow expression, when obj.someMethod() is called it will log the Window object. Here the function</p>
+                <pre><code>const obj2 = {
+                    someMethod: () =&gt; {
+                        console.log(this); //'this' refers to Window
+                    }
+                }
+                </code></pre>
+                <p><br></p>
+                <p>————————————</p>
+                
+                <p>Started going over the ‘new’ keyword and all the things that happen behind the scenes that we don’t have to do anymore.</p>
+                
+                <p>Will went through a useful progression here, which is helping me see and appreciate the ‘new’ keyword.</p>
+                
+                <p>The method used prior to this was to store an object of stored functions. This object would be set as the prototype of objects created by the object factory function.</p>
+                
+                <p>Within the object factory, properties and methods were created and assigned to the newly created object and was returned.</p>
+                
+                <p>This is not a bad way of doing it. There is a good sense of obvious control over the functions within the prototype, making it easy to update.</p>
+                
+                <p>The ‘new’ keyword does this for us. The question I have is, if I am not creating this prototype object with the functions/methods, then how do I access it? How do I store stuff within it?</p>
+                
+                <p>To be continued…</p>
+                
+                <h3>Building: ChatGPT Project #1</h3>
+                <p>I spent time today building out a better looking front end. Learned how to add some styling to the scrollbar as well. I wouldn’t have bothered with doing so, except the default scroll bar was breaking out of the rounded borders of the container. </p>
+                
+                <p>I built out this front end because I want to share the basic server project I created the other day with you, but it was looking super plain.</p>
+                
+                <p>I also spent some time reviewing the server code itself. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 26, 2023</h2>
                 <p>Yesterday I spent all my coding time on the ChatGPT project. It involved starting to build out the back end. There was a lot of review going on as well. It’s been several months since I spun up a server. Building projects with both front and back ends is what really makes me excited about coding. </p>
 
