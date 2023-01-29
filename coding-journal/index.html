@@ -27,6 +27,41 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+        
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">January 28, 2023</h2>
+                <h3>Building: ChatGPT Project #1</h3>
+                <p>Continuing with the simple server project I made a couple days ago. It is looking much nicer since yesterday’s work on it. </p>
+                
+                <p>It’s a simple project. The front end consists of  2 parts: a text input and submit button within a form, which when submitted, the text input is displayed in the message container window below it. The second part consists of a button that sends a GET request to the back end and adds the response data to the message container below.</p>
+                
+                <p>There is a very simple database of random phrases/responses. This database has no persistent qualities to it.</p>
+                
+                <p>The more I think about this project the more opportunities I see for different sections that would demonstrate server functionalities. I am thinking the basics of RESTful, so CRUD operations. </p>
+                
+                <p>————————————</p>
+                <p>So far today I built out a first draft of the response feature. The user types in a greeting, the greeting is sent to the back end in a POST request. The greeting is then passed along to ChatGPT (not in this app, but let’s pretend here). While we wait for the response we see a little dot animation.</p>
+                
+                <p>Right now I feel like the functions that run this are a bit of a mess and kind of tangled. A lot of this tangling is just me wanting to implement a ‘thinking’  feature: the dots running for 3 seconds or so and then adding in a response.</p>
+                
+                <p>How it works as of now is there is a ‘loadingDots’ function. I initially intended for this to be a simple function. One that takes in an element as an argument, then runs a simple dot animation, building up to 4 dots, then resetting to one, over and over.</p>
+                
+                <p>For this basic functionality I am using setInterval. Each interval runs the callback which concatenates a new ‘.’ onto the end and checks if four dots are present, if so, it resets it back to 1 ‘.’</p>
+                
+                <p>The problem is that I want these dots to play on the screen for a certain amount of time, which means I need to tie the running of the response to the end of the ‘timer’. </p>
+                
+                <p>To do this I added a time checking function into the loadingDots function and then once the time went passed say 5 secs, then it would do the rest of the stuff. </p>
+                
+                <p>But this made the loadingDots functions way more complicated.</p>
+                
+                <p>To fix this, I moved the getting response and adding the response to a new container and typing the text out into a new function. I then used setTimeout to mimic some async code running in the background.</p>
+                
+                <p>At first I tried using a code blocking function, but this halted everything, no dot animation or anything, then everything came in all at once. The reason is because the dot jobs were being added to the queue while the blocking code was running, then once the blocking code finished, all the jobs went all at once, which destroyed the effect. </p>
+                
+                <p>But setTimeout to the rescue.</p>
+            </div>
+        </section>
 
         <section class="entry">
             <div class="inner-column">
