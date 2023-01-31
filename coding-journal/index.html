@@ -30,6 +30,61 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 30, 2023</h2>
+                <h3>Learning: Frontend Masters</h3>
+                <p>It is the day to finish Will’s course. </p>
+                
+                <p>More reviewing and going over OOP and specifically what the ‘new’ keyword does. </p>
+                
+                <p>I find that the details get a bit tiresome if one loses sight of what the details are for and what they do.</p>
+                
+                <p>When creating multiple instances of objects that have some shared pattern, it makes sense that certain shared patterns be shared amongst all the instances. This is good for memory in general. This is also great for updating and adding features to the objects.</p>
+                
+                <p>This object of shared behaviors (and sometimes properties) is the prototype that all instances would be built from.</p>
+                
+                <p>Before the ‘new’ keyword was introduced in ES6 it was a common practice to create some object that would serve as the prototype of all the instances created from it. Then, within the constructor function, a new object would be created using <code>Object.create(identifierOfPrototype)</code>, then poperties would be assigned, and that new object, with its connection to the prototype object, would be returned.</p>
+                
+                <p>Each calling of this function created a new version of the object, but each version was connected to a single source of truth for the shared behaviors.</p>
+                
+                <p>The ‘new’ keyword came along with ES6 and replaced some of the tasks we had to manually do before. By using the ‘new’ keyword an object is created, connected to ‘this’ and returned. The <code>.__proto__</code> property of the new object is assigned to the constructor function’s object’s .property object value. </p>
+                
+                <p>This prototype object is accessed and updated by the .prototype property of the object connected to the constructor function itself. It is automatically there and connected to each new instance of an object created using the ‘new’ keyword.</p>
+                
+                <p>————————————</p>
+                
+                <p>Another way of putting it. When the constructor function is called, the new keyword causes action within</p>
+                
+                <p>————————————</p>
+                
+                <p>This pattern of replacing steps that are being done over and over is the DRY principle in practice. But again, in order to become more DRY compliant, we had to go through the desert of repetition to build up a standard that could then be functionalized. In order to not repeat ourselves we had to first repeat ourselves to see what wass repeated. </p>
+                
+                <p>————————————</p>
+                
+                <p>I think the biggest take away for today (so far) has been diving more deeply into how functions are special objects. Will went over how whenever a function is defined, there is also an object connected to the function value. It’s not talked about much, but it is there. </p>
+                
+                <p>This object has a ‘prototype’ property. The value assigned to this is an object (empty by default). </p>
+                
+                <p>————————————</p>
+                
+                <p>I have a better understanding of what ‘class’ does now. Will has done a good job at walking me up through the old ways that established the ‘shortcuts’ (‘new’ and ‘class’) that do all those things for us. </p>
+                
+                <p>I can now say what ‘new’ does. ‘ It does three things: creates a new object, assigns properties and methods to it, assigns the <code>.__proto__</code>property of the new object the object assigned to the ‘prototype’ property of the object that is connected to constructor function, then returns that object.</p>
+                
+                <p>Once the constructor function is defined/declared, then in a separate step the ‘prototype’ object is filled in with methods and properties to be the single source of truth for all instances created from it. </p>
+                
+                <p>What ‘class’ does is allows us to package both of those things (creating the constructor function and then add methods to the prototype) together, which is similar to how it’s done in many other languages that use OOP.</p>
+                
+                <h3>Building: Simple Server Project</h3>
+                <p>I feel like this project is hitting a stale mate and that is fine. I have a few more things I would like to do before finishing though. </p>
+                
+                <p>I fixed the issue where the auto scroll to the bottom wasn’t working as desired.</p>
+                
+                <p>I added some styling for the message threads.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 29, 2023</h2>
                 <h3>Building: ChatGPT Project #1</h3>
                 <p>While walking today, I realized a way I can implement the fake processing time without using the setTimeout. I realized that the fake processing time is time that would be taken on the server end, so that’s where I should implement the code blocker function. </p>
