@@ -30,6 +30,67 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">January 31, 2023</h2>
+                <h3>Learning: Frontend Masters/The New Hard Parts</h3>
+                <p>I decided to start another of Will Sentance’s courses. A lot of this is going to be review from the last one, but I think it will be helpful.</p>
+                
+                <p>I am going to do my best to not take forever on this course. </p>
+                
+                <p>What I like about Will and his style is his precision iwth communication. This creates better, more accurate mental models.</p>
+                
+                <p>Understanding where something is being stored (global, local), understanding its execution context, and understanding the call stack, event loop and callback queue (and Web APIs). These are foundational to all JS programming.</p>
+                
+                <p>It’s the same guy, but a new course and thus a new perspective on these fundamentals. Plus I trust this guy. He seems to know his stuff. </p>
+                
+                <p>————————————</p>
+                
+                <p>One of the 3 pillars of JS is the ability to store data and code into memory. Memory comes in many forms. The foundational form is global memory. These are accessible from anywhere within the program. They are globally available. It is important to keep this area clean.</p>
+                
+                <p>The next layer is local memory. These come and go with local execution contexts. They are created whenever a function runs. As soon as the new execution context created by running/calling a function comes to the end, the locally stored variables get deleted. That memory is freed up.</p>
+                
+                <p>However, there is another sort of in between storage. This is the Persistant Lexical Scope Reference Data, or a closure. Whenever a function is returned by another function, the relevant variables and states are stored with the returned function in a sort of backpack. It is a hidden property called <code>[[scope]]</code>. </p>
+                
+                <p>This in-between storage is useful in ways that I can get a glimpse of, but have yet to see practical application of. But I know about them. </p>
+                
+                <p>One way I see it to be useful is for not polluting the global namespace. This is good for memory, it is good for naming. It creates a bit of security for the function’s and the global stored data and all code depending on them. </p>
+                
+                <p>————————————</p>
+                
+                <p>What is an ‘execution context’? Every execution context is made up of two components: the thread of execution (code to be run in the main Thread of Execution) and the memory. There’s the global execution context within which the code runs. Within the global execution context, local execution contexts are created and destroyed as functions get called. Each local execution context has a thread of execution and a local storage. These get woven in and then out of the main Thread of Execution. </p>
+                
+                <p>JS is single-threaded, synchronous. Line by line. This is powerful in its own way. With it also comes challenges when it comes to blocking code. Enter Asynchronous.</p>
+                
+                <p>————————————</p>
+                
+                <p>Asynchronicity. All about transferring long running code to the end of the line, so to speak. </p>
+                
+                <p>To have code that takes a long time run in a way that lets other UI and UX features through (mouse movement, button clicking, etc.) periodically. </p>
+                
+                <p>To have work be done outside of JS, but within its runtime, using the features of the browser, to do tasks in the background, while other code is allowed to run, then when the task is finished, a callback is added to the callback queue, and added to the call stack by the event loop once the call stack and microtasks are finished running. </p>
+                
+                <h3>Learning: Frontend Masters/Node and Servers: The Hard Parts</h3>
+                <p>Started this course as well. I am super excited for this one. I don’t know why Node.js excites me. It just seems like a lot of potential lies here. This is also why I am learning JS. I feel it makes a good concurrent study along with the JS courses.</p>
+                
+                <p>Reviewing the process of moving data and files between client and server side. The HTTP request. The anatomy of the URL, which is the means of communication. </p>
+                
+                <p>Once you enter a website URL into the browser URL bar and hit enter we no longer need to interface with the URL bar’s address. All other HTTP requests are happening ‘behind the scenes’. These are connected to navigation between pages, authenticating, authorizing, and interfacing with databases. </p>
+                
+                <p>Data is important and so it is protected by a layer. This layer is the ‘back-end’. This is the code that runs on the server side. It is, in its most secure form, inaccessible without authentication and authorization. </p>
+                
+                <p>Front end sends an HTTP request to a URL. Back-end receives the request and none of the code that is running here is accessible to the client that made the request. Based on the specific value of the file path, the backend has a response. The response is either a failure, or is a success. A successful response results in Logically determined files being sent out to the client.</p>
+                
+                <p>Front-end browser receives the files and does its thing with them. </p>
+                
+                <p>————————————</p>
+                
+                <p>JavaScript on its own saves data and code and executes code. Node is like the browser in that it grants JS access to functionalities it doesn’t have, but looks like JavaScript.</p>
+                
+                <p>Node.js is the bridge between JS and C++.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 30, 2023</h2>
                 <h3>Learning: Frontend Masters</h3>
                 <p>It is the day to finish Will’s course. </p>
