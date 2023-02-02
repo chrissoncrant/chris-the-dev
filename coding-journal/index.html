@@ -30,6 +30,128 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 1, 2023</h2>
+                <h3>Thoughts</h3>
+                <p>I am falling into the trap of tutorial hell. I am learning (slowly), that there is a definite line between learning concepts and applying concepts. The application of concepts is arguably the most important bit (depending on one’s goals).</p>
+                
+                <p>I am loving growing my base understanding of JS. It is a cool technology and I believe it will help me to shift my career aims positively. With that said, learning itself is displayed via the application of it.</p>
+                
+                <p>Right now I need to prove that I can do things. This ‘proof’ comes in the form of projects. </p>
+                
+                <p>This means that there is a trick in balancing that needs to occur here. Building and learning. I am not doing very well in balancing this. </p>
+                
+                <p>Other areas I am definitely weak at: Algorithms and Data Structures</p>
+                
+                <h3>Learning: Frontend Masters/The New Hard Parts</h3>
+                <p>Going over async JS again today. </p>
+                
+                <p>Async JS is a capability provided not by JS itself, but the runtime environment. </p>
+                
+                <p>The common runtime environment is the Browser. Browsers run on computers. Browsers can interact with computers in ways JS cannot. Computers are not single-threaded. JS is single-threaded.</p>
+                
+                <p>Through ‘facade’ functions, which are labels in JS, we can interact with Web APIs, which give us capabilities beyond JS. </p>
+                
+                <p>The two biggest features that Browsers and the other runtime, Node, give us are Timers and Network features. Both of these allow us to essentially bump long-running, blocking code in the background and give us the opportunity to invite code back into the Thread of Execution at a later time, assigning tasks/callbacks to run upon completion of the blocking code. </p>
+                
+                <p>In order for this to work, there are two other runtime features: callback queue and event loop.</p>
+                
+                <p>The callback queue is where callbacks related to Timer and Network features are added. These callbacks get queued and are added to the callstack (callstack is JS) via the event loop. In a way the event loop is what connects the non-JS task results back into the JS world.</p>
+                
+                <p>The event loop monitors that callstack and once the callstack is empty, the first callback in the callback queue is added to the callstack. </p>
+                
+                <p>————————————</p>
+                
+                <p>Breaking down what setTimeout does a bit further. When setTimeout is encountered by JS, the Timer feature of the runtime is invoked, a callback and an optional duration are passed as arguments. After the TImer is invoked, JS moves onto the next line. </p>
+                
+                <p>If there is a duration for the Timer, that duration sets the time at which the callback is added to the queue. </p>
+                
+                <p>In a sense, setTimeout is saying “run this specific block of code, but do so at a later time; don’t block the rest of the code in the current Thread of Execution from running.” In another sense, it bumps the code to the end of the line. This allows other important code to run to its conclusion before the blocking code is executed. </p>
+                
+                <p>————————————</p>
+                
+                <p>Definitely the area where I am still confused/fuzzy on, is what tasks get run in what context? Another problem is simply wording this cofusion I have more accurately.</p>
+                
+                <p>I know that blocking code will prevent other actions from happening. At root, this is simply the next line of code. </p>
+                
+                <p>Code is triggered to run by events. The loading of a webpage will run any linked script. When that script is encountered, its code will run from top to bottom. Once it hits “bottom” or the end of the script, then it will be ready and waiting to run any additional code that gets added.</p>
+                
+                <p>But how does code get added?</p>
+                
+                <p>The original code was added when the script itself was authored. But this code is relatively static, in that when a webapge loads, there isn’t necessarily someone there on the other side waiting to add new lines of code. But if there was, and code was added, then what would occur is the entire script would run again, from top to bottom. </p>
+                
+                <p>Additional code is also “added” by way of events and actions tied to those events.</p>
+                
+                <p>These events are specified and the actions are tied to the events during the initial loading of the script. </p>
+                
+                <p>If there is a listener for clicks, each time the user clicks on the EventTarget, the assigned callback is executed. </p>
+                
+                <p>Where does this execution occur? It occurs via the callstack. The callback is added to the callstack and the callstack executes code in a first in, last out manner (or last in, first out… same thing). </p>
+                
+                <p>So let’s say the page loads, the initial code runs, listeners are set up and actions are attached to events. After loading, the callstack is empty and waiting to pounce on any new calls that get added to it. </p>
+                
+                <p>A user clicks the button, a new call is added to the stack. This call has some blocking code. While this code runs, the user clicks other buttons, but is getting no immediate response. What is occurring is that each button click while the blocking code is running is being added to the callstack. Once the blocking code finishes, the callstack moves onto the next function call.</p>
+                
+                <p>Where are these other button clicks being added? Is it the callback queue? I am not sure.</p>
+                
+                <p>I know that when a function is called, that function call is added to the callstack. In order to stack other calls on top of that original call, then within the execution context of that function there would need to be calls to other functions. Each call would be added on top of the original call. The only way to create a stack of calls is to have function calls within function calls. </p>
+                
+                <p>In this sense, the callstack only really takes in one function call at a time. It looks like multiple function calls are being added on top, but all that layering is due to a single function call upon which all the others depend. </p>
+                
+                <p>Once that original function call reaches the end of its execution context, then JS will move on to the next line of code within the document. If there is one. </p>
+                
+                <p>————————————</p>
+                
+                <p>Okay, so after doing a bit of reading, I see now that when an event listener is connected to a callback, when the event occurs, the callback is added to the callback queue. This makes sense to me now. </p>
+                
+                <p>Callback queue depends on an empty callstack. The event loop is the listener for the empty callback and its task is to pass in the next callback in the callback queue to the callstack. </p>
+                
+                <p>So if a user clicks a button and the callstack is empty at the time of the clicking, the callback connected to the click event on that event target will be added to the callback queue, the event loop will pass this to the callstack and that function’s execution context will be woven into JS’ Thread of Execution.</p>
+                
+                <p>If the code within this execution is blocking code, then when other clicks occur, the callback (action) tied to those clicks will be added to the callback queue and will not run until the callstack is once again empty. This delay creates poor user experience. </p>
+                
+                <p>The purpose of Async JS is to eliminate this. </p>
+                
+                <p>————————————</p>
+                
+                <p>Now I am a bit less fuzzy, but I still need some truly concrete examples of the type of stuff that is blocking and the best way to move it out of the way, so to speak. </p>
+                
+                <h3>Learning: Frontend Masters/Node and Servers: The Hard Parts</h3>
+                <p>Reviewing more of what Node is at its basic level.</p>
+                
+                <p>I spent a lot of time jsut writing about it in ways I did yesterday. I remember encountering this stuff a year ago with a different course. One of the coolest courses I’ve done (ZTM Node course). </p>
+                
+                <p>Having that first encounter is important. The potency of that encounter becomes more evident the next time it is encountered. I have a better internal mental map now of how JS works and how the internet works in general. This makes it easier to learn the detailed stuff.</p>
+                
+                <p>————————————</p>
+                
+                <p>One thing that Will has gone into detail about is wht http.createServer() is doing behind the scenes. </p>
+                
+                <p>http.createServer() is not JS. It looks like JS, but it is evoking Node. Specifically it is a Node command to open up a port on the network card of the computer. Node is the translation layer between JS and C++. C++ is used to communicate with the computer of the server, giving JS capabilities it doesn’t have on its own, such as accessing the network card of a computer. </p>
+                
+                <p>————————————</p>
+                
+                <p>Node.js is an event-driven asynchronous JS runtime. The event-driven means that there are specific kinds of server related events that occur on the computer and we can code in how to respond to those specific events. We can make up our own events. </p>
+                
+                <p>The network card on servers is an event that Node allows us to tie into using JavaScript. </p>
+                
+                <p>Event driven means there will be callbacks. Node is the one putting the parenthesis on the function identifier. Not us. We specifiy what we want to have happen. We specifiy on what kinds of inputs certain things should happen. Node is set up to listen and do. </p>
+                
+                <p>————————————</p>
+                
+                <p>The two most important data that Node works with are HTTP requests. It is set up to handle these. A request arrives at the Network card. The long HTTP request string is then parsed by Node and converted into a JS object.  As soon as Node creates the incoming request object, it creates the outgoing request object.</p>
+                
+                <p>Both of these objects will serve as the arguments to whatever callback we pass into http.createServer(doStuff).</p>
+                
+                <p>These callbacks are special callbacks, dealing with specific types of informtion: HTTP requests. The request and the response. We are given the liberty of naming the parameters whatever we want, but req and res are used quite often. </p>
+                
+                <p>Within the body of the callback, stuff is happening. Data is being taken from the request object. Data is being packaged for a response object.</p>
+                
+                <p>One key method that exists on the response object is .end(). This is what tells Node to finish packaging up the HTTP response and send it back to the client. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">January 31, 2023</h2>
                 <h3>Learning: Frontend Masters/The New Hard Parts</h3>
                 <p>I decided to start another of Will Sentance’s courses. A lot of this is going to be review from the last one, but I think it will be helpful.</p>
