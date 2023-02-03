@@ -30,6 +30,107 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 2, 2023</h2>
+                <h3>Learning: Frontend Masters/The New Hard Parts</h3>
+                <p>More reviewing how asynchronous JavaScript works. The crucial relationship between Web APIs, callback queue, event loop and the 3 pillars of JS: Thread of Execution, storing things in memory, callstack.</p>
+                
+                <p>I am getting images in my head of bubbles. Bubbles of script arising and then popping as the thread reaches its end. There is the main bubble which expands and contracts as internal bubbles expand and contract. There can only ever be one bubble within the Mother bubble (the main bubble). Within each bubble there can be infinite bably bubbles. But there is never more than one bubble within each layer. One bubble in one bubble in one bubble.</p>
+                
+                <p>The most inward bubble gets popped first, then it moves upward, layer by layer dissolving (or popping), ultimately aiming for the Mother layer to be empty again.</p>
+                
+                <p>The Mother layer is always ready to give birth to new internal layers.</p>
+                
+                <p>The first birthing, the intial run of any JavaScript program will set up variables, constants, functions, objects to use for all the birthing to come. </p>
+                
+                <p>But once the intial baby bubble arises and falls, if no other actions have been set up, that would be it. It would be pretty static. </p>
+                
+                <p>This is why the initial run of a script sets up how to react and behave based on user input. This means there needs to be something there to handle specific kinds of user input. This is what JavaScript and event listeners allow us to do.</p>
+                
+                <p>When this event happens here, run this code. That code can be something simple (dark mode, light mode) or a button that initiates a whole chain of events related to logging in.</p>
+                
+                <p>Another event is simply timing. After ‘x’ amount of time, run this code. That makes use of the browser’s Timer feature. Code will run after the time is up and the callstack is empty. Or if a duration isn’t specified, then the code will run once the callstack is empty.</p>
+                
+                <p>This idea of bubbles is interesting to me… It is making me question my current understanding of the callstack and how it relates to the macrotask and microtask lists. These would be lists of tasks to be run, in order, line by line. Each line either creates a bubble (functions), or creates and stabilizes (with identifiers) variables, constants, functions, object values, events.</p>
+                
+                <p>So there’s these two things. The actual birthing of bubbles, calling bubbles into existence, and  then there’s the creating and stabilizing the soap by which the bubbles come alive.  </p>
+                
+                <p>There’s also the phase of setting up bubble birthing opportunities. Setting up the listeners to events, to give the page its functionality, so new bubbles can come alive. </p>
+                
+                <p>So there’s the functions, which are blocks of saved code, waiting to be run. These are the bubbles. There’s the saved data (variables, constants, objects) and code (functions). There’s the events which will trigger certain functions to run, for certain bubbles to come alive. There’s the ordering mechanism that organizes the bubbles based on a certain kind of priority (this is the callback queue, event loop, and callstack). This is like the bathtub within which the soap resides. </p>
+                
+                <p>Events:</p>
+                <ul><li>initial running, the set up phase.
+                </li><li>user initiated events (clicks, mouse, keystrokes, scroll), page loading 
+                </li><li>responses from external servers (databases, CDNs, etc.)
+                </li></ul>
+                
+                <p>————————————</p>
+                
+                <p>User clicks a button that results in an HTTP request being made. The time this takes could be long, and if it was done synchronously, the callstack would be busy, no other actions could be taken. </p>
+                
+                <p>But with asynchronous capabilities, which are provided by the runtime (browser, Node), the callback, the action, attached to the event of recieving the HTTP response can be queued up to run, once the callstack is empty again. </p>
+                
+                <p>The response is being awaited, meanwhile the callstack is open to receive more events from the event loop and callback queue. Once the response is received the callback is added to the callback queue to be run, once the callstack is empty. </p>
+                
+                <p>————————————</p>
+                
+                <p>Okay, so big clarification. It seems obvious now, but I don’t think I fully got this: The event loop and the callback queue are part of the JS engine. They are fundamental aspects that make JS go.</p>
+                
+                <p>The Timer and Network features of the Web API and browser runtime insert callbacks into the queue based on certain events (user initiated clicks, time, network requests and responses). </p>
+                
+                <p>The callstack is where the magic happens. The event loop is there to ensure that only one magic happens at a time. The callback queue is there to line up the magic that wants to happen. </p>
+                
+                <p>Outside the callback queue, outside JS headquarters, is a wide world of opportunities for magic to be sent to the callback queue. But they need to be called in, defined, otherwise its all just a murk of potential. </p>
+                
+                <p>————————————</p>
+                
+                <p>There is a sort of similarity between callstack and callback queue. They both hold blocks of code that is waiting to be run. </p>
+                
+                <p>Key differences are, callback queue holds individual blocks. The callstack only ever has one block running at a time. If the callstack has a number of functions, they all have generated from the bottom-most function on the callstack. </p>
+                
+                <p>The bottom function of the callstack is the main block of code that called other blocks of code. The bottom function was called by the callstack. The callstack can only call one function at a time. One block of code. </p>
+                
+                <p>The only entrance to the callstack is the event loop. Event loop is the snarling secratary. The callback queue has lots of entrances. </p>
+                
+                <h3>Learning: Frontend Masters/Node and Servers: The Hard Parts</h3>
+                <p>Attempting to implement a new practice here. Each session, the first portion of it is reviewing what has come before. How each video built on the last. Creating a main points map somewhere.</p>
+                
+                <p>Looking back on the course. Understanding what Node is, what it does, what its purpose is. </p>
+                
+                <p>Node is an asynchronous event drive JavaScript runtime.</p>
+                
+                <p>Node is there to create servers that can handle a lot of traffic, in a way that is non-blocking (asynchronous).</p>
+                
+                <p>Node operates within a specific portion of the server. There’s the hardware and network port, there’s the language used to communicate with the computer’s parts, there’s Node which translates the C++ into and out of JavaScript. Node also utilizes libuv, which I am a bit more fuzzy on as far as what it does, or where exactly it participates… so off to research.</p>
+                
+                <p>Okay! Libuv is the part of the Node runtime that provides the asynchronous, event-driven I/O capabilities and features like timers, asynchronous file system access, etc. </p>
+                
+                <p>Libuv serves as the event loop mechanism. Node serves as a way to maneuver between the asynchronous event loop provided by libuv and the single-threadedness of JavaScript. </p>
+                
+                <p>————————————</p>
+                
+                <p>Thing that is hitting me for whatever reason: the internet is essentially a computer that is never off. More accurately, millions and millions of computers that are always on. That’s the point of the internet, to be available always. </p>
+                
+                <p>What Node allows for is efficient response to large numbers of requests.</p>
+                
+                <p>A computer, always on, being tapped all at once by millions of people, and that computer responding to each of the taps, grabbing the files necessary, making API calls, retreiving and conditioning response data, packaging the response and sending it back. Millions of times per second. Always on.</p>
+                
+                <p>Node allows us to build things like this. </p>
+                
+                <p>————————————</p>
+                
+                <p>This intersting translation pattern of client-server relations and Node.</p>
+                
+                <p>HTTP>received by Network card>C++ interacts with Network card>Node interacts with C++>JavaScript interacts with Node, then back through again. </p>
+                
+                <p>I used to overcomplicate this. I see much more clearly now what Node is for. Creating servers. Servers are all about the Network transmission. It makes sense then that, given that all HTTP requests have responses sent back, the entirety of Node is built around the Request and Response objects. </p>
+                
+                <p>Two things and what goes on in the space between. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 1, 2023</h2>
                 <h3>Thoughts</h3>
                 <p>I am falling into the trap of tutorial hell. I am learning (slowly), that there is a definite line between learning concepts and applying concepts. The application of concepts is arguably the most important bit (depending on one’s goals).</p>
