@@ -30,6 +30,37 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 3, 2023</h2>
+                <p>This journal has become a collection of random thoughts… just me explaining stuff to myself. Each time I try to explain something to myself, I am practicing writing. In order to write means one has to order one’s thoughts. This is another thing I am learning to do, though not with intent. Sometimes you can only stack so much intention on top that every second becomes too loaded with information and burn out occurs. So for now the writing and thinking practice is a side result. </p>
+
+                <p>————————————</p>
+                
+                <p>So far today I have spent time learning more about JS Promises. Wanting to learn more about async js and how it works because I can tell I am still fuzzy. I am getting less fuzzy on what I am fuzzy on, which is progress.</p>
+                
+                <p>One thing: the code that gets added to a microtask queue or macrotask queue has to run eventually, and therefore will block code from running. What are the tasks we don’t want the code to block? How does async js affect the user?</p>
+                
+                <p>————————————</p>
+                
+                <p>I used to think how async JS worked was that the code that we want to do asynchronously will run somewhere else, while the rest of the code in the document runs, then when the long running code is finished,  its result and the callback attached to the result get added to the callback queue.</p>
+                
+                <p>But this doesn’t seem to be what actually happens.</p>
+                
+                <p>If I have blocking code and I use setTimeout, the blocking code still eventually has to run in JavaScript, in the single thread. So once the current callstack is cleared that blocking code will run and it will block other things from happening when it runs. </p>
+                
+                <p>This is why I am confused about async. If the blockign code has to run sometime, won’t it just block the code at later time?</p>
+                
+                <p>Guess I just gotta build more things. </p>
+                
+                <h3>Building: Async JS User Interface</h3>
+                <p>The purpose of this project is to help with my understanding of Async JS. I spent a lot of time studying it, but this time around I am going to build an interface for the front-end in order to clearly display impact of blocking code. </p>
+                
+                <p>This project has a front-end and back-end. Most asynchronous code on the web involves HTTP requests and so the back-end will serve to better mimic this.</p>
+                
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 2, 2023</h2>
                 <h3>Learning: Frontend Masters/The New Hard Parts</h3>
                 <p>More reviewing how asynchronous JavaScript works. The crucial relationship between Web APIs, callback queue, event loop and the 3 pillars of JS: Thread of Execution, storing things in memory, callstack.</p>
