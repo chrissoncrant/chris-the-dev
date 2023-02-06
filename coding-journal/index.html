@@ -30,6 +30,46 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 4, 2023</h2>
+                <h3>Thoughts</h3>
+                <p>Just thinking about asynchronous JS some more and how JS works when it is running code. </p>
+                
+                <p>There’s the initial setup of the script. This runs through, storing data and code, calling code to run, setting up code to be run when events occur.</p>
+                
+                <p>Setup: store data and code, run code that does things to the data, attach code to events.</p>
+                
+                <p>This script is attached to a webpage/website. It runs, and once run, the script is active and listening. The callstack is ready to receive and run. But if there’s no way to run another event once the script loads, then the page would just be static.</p>
+                
+                <p>But if there was a button on a page that was supposed to make something useful happen, then during that initial running of the script, there would be an event set up with the event handler (a callback) connected to it. </p>
+                
+                <p>This idea of connecting events to something that is happening at a later, but inforseeable time. This is also what async code is. </p>
+                
+                <p>————————————</p>
+                
+                <p>While building yesterday’s async tool I encountered the whole commonJS versus ES modules syntax due to the fact that I have a front and a back end.</p>
+                
+                <p>The thing that was sinking in more is the whole concept of declaring a script file type to be a module. Which file needs this declaration?</p>
+                
+                <p>Many ways of declaring script file type:</p>
+                <ul>
+                    <li>On the script element in the html file.
+                    </li>
+                    <li>package.json object (Node related)
+                    </li>
+                    <li>extension <code>.mjs</code>
+                    </li>
+                </ul>
+                
+                <p>But I am still not sure when I need to use what and where and I read multiple docs. </p>
+                
+                <p>Another area of confusion is the use of <code>export</code> and <code>export default</code>.</p>
+                
+                <p>What I need to understand this more is simply a project.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 3, 2023</h2>
                 <p>This journal has become a collection of random thoughts… just me explaining stuff to myself. Each time I try to explain something to myself, I am practicing writing. In order to write means one has to order one’s thoughts. This is another thing I am learning to do, though not with intent. Sometimes you can only stack so much intention on top that every second becomes too loaded with information and burn out occurs. So for now the writing and thinking practice is a side result. </p>
 
