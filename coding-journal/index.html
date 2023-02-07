@@ -30,6 +30,32 @@
 
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 6, 2023</h2>
+                <h3>Building: ChatGPT Project</h3>
+                <p>Continuing with the ChatGPT tutorial I started awhile ago. Today is all about building.</p>
+                
+                <p>First portion was spent exploring what was happening with the .env file which wasn’t importing the secrets properly. Well, before this, I sent out my first request to ChatGPT to receive on the front end and it didn’t work. </p>
+                
+                <p>This was an opportunity to practice reading error messages. In the error message I got a 401 response from the ChatGPT server. 401 is ‘not authorized’. This told me that my API key was not working, which led me to the .env problem.</p>
+                
+                <p>The problem was that the .env file was at the project’s root folder (as per the instructor’s instructions), but it needed to be in the same directory as the server file that was trying to access it. After finding this out, I continued with the tutorial and sure enough the instructor encountered the same issue as me ans solved it in the same way.</p>
+                
+                <p>The next issue I encountered, which the instructor did not encounter is that when the reply from ChatGPT would be added to the front end, it added a new line, an extra return. </p>
+                
+                <p>This puzzled me so I examined the actual content of what ChatGPT was sending me back and saw that there were a number of ‘\n’ characters that were causing the issue. </p>
+                
+                <p>This led me to see that I have a big grey area in my understanding when it comes to how these characters work, where they work, how data is translated from JSON to JS and back again. </p>
+                
+                <p>In addition to this, there’s template literals and how those are parsed and displayed in HTML versus regular strings. Then there’s the ‘white-space’ property with the ‘pre-wrap’ value.</p>
+                
+                <p>These things I feel are fundamental when it comes to working between other APIs and one’s own.</p>
+                
+                <p>I spent a bit of time exploring this, thinking about how to explore it. Ultimately I threw a .trim() method onto the end of the response I was gettting from ChatGPT and that fixed the problem. However my understanding is still a bit cloudy.</p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 4, 2023</h2>
                 <h3>Thoughts</h3>
                 <p>Just thinking about asynchronous JS some more and how JS works when it is running code. </p>
