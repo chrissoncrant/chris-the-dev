@@ -27,6 +27,105 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+        
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">February 7, 2023</h2>
+                <p>I am getting an annoying behavior in VSCode. I have a node<i>modules folder, which is ignored via the .gitignore file, but the node</i>modules is highlighted in blue, and therefore the entire project folder is highlighted in blue. It is successfully ignored as I can see there are no commits, but the blue color makes me cranky. Makes it seem like there’s something that needs to be done.</p>
+
+                <p>To test this behavior, I created a new directory. Added the .gitignore file first, git init, npm init, installed express and cors (for the sake of example), added another directory and added it to .gitignore as well. Here, the ignored folders show up as blue, but the main project directory does not show in blue.</p>
+                
+                <p>Created another project. Did the same thing, only this time I added the .gitignore after npm init and installing packages to see if there is a difference. </p>
+                
+                <p>What are the factors here (no specific order here, just listing):</p>
+                <ul>
+                    <li>git init a project folder
+                    </li>
+                    <li>add .gitignore file
+                        <ul>
+                            <li> .gitignore file is irrelevant without a project being git initialized, so it makes sense to initialize
+                                first
+                            </li>
+                        </ul>
+                    </li>
+                    <li>npm init
+                        <ul>
+                            <li> This simply adds a package.json file
+                            </li>
+                        </ul>
+                    </li>
+                    <li>npm install packages
+                        <ul>
+                            <li> This is when the node_modules folder gets introduced.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>making the first git commit
+                        <ul>
+                            <li> at what time in the process, before or after?
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p>So , the solution seems to be simply closing the VSCode window and reopening it. Dumb. However I am grateful for it becuase it invited the opportunity to revisit this fundamental process of setting up a project and thinking about things that are important.</p>
+                
+                <h3>Building: ChatGPT Project</h3>
+                <p>Spending some time talking through the back-end code, using techical communication. Doing what I can to make it more natural. </p>
+                
+                <p>After getting to the line where I use <code>process.env.SECRET</code> I was led to explore the ‘process’ global object in Node.js a bit more. I limited myself to 5 minutes of this, to stay on task.</p>
+                
+                <p>I continued on with talking myself through the back-end code. This led me to talk thorugh what is actually happening within Node, which was helpful review.</p>
+                
+                <p>I was struck by how it’s important to understand what is ‘given’ and what one is ‘solving’ for. For instance, when setting up the callback for a router, it’s important to know that what is know are the objects that will be passed in.  What we are defining is the functionality itself. Given these objects, which Node will pass in for us and call the function with, what is it that you need to happen?</p>
+                
+                <p>This is another level up in thinking from passing in the arguments. We know the functionality, we know this will add 2 to what we pass in, but given this, what do we want to pass in? This is the most basic form of a function. This is easier to grasp I think.</p>
+                
+                <p>What’s a bit mroe difficult to grasp is the reverse of this. I think what makes it hard to grasp, at least for me, and today’s insight helped me with this, is that something must be defined in some way. It can’t all be abstract. </p>
+                
+                <p>When setting up a higher-order function, it’s all about setting up the arguments that will be passed in to the callback. This means the arguments are known - we know (and perhaps set up) the structure of the data that will be passed into the callback passed into the higher-order function.</p>
+                
+                <p>I hadn’t seen it quite like this before. This was helpful for me.</p>
+                
+                <p>Spent a bit of time reading the Express documentation. Reading docs is a good way for me to experience my growth in understanding. What used to be so heavy and dense, is much less so. I can picture more now of what the words are describing and in a way that is accurate to what is happening.</p>
+                
+                <p>I remember when I first was learning about Node and Express, everything was so over my head. I barely had a formed mental model yet for information to cling to . It was cool, and it took a lot of energy.</p>
+                
+                <p>Now that energy can be woven into a more accurate mental model and reveal new insights by that weaving. </p>
+                
+                <p>————————————</p>
+                
+                <p>While talking through the code I encountered the gray area I talked about earlier. The whole text serialization and deserialization thing (terms I just read about). I encountered this when talking through the express.json() middleware. </p>
+                
+                <p>When sending across HTTP/HTTPS, all the information is in a serialized style. It is raw text, squished together, not very human readable. </p>
+                
+                <p>At either end of the request is an environment that wants to do stuff with the information, and in my case the language with which that information is interacted with is JavaScript.</p>
+                
+                <p>This means there needs to be translation of information. This is where the JSON.stringify() (serialize) and the fetchResonse.json() (deserialize) methods come into play.</p>
+                
+                <p>We write the stuff we need to do in JavaScript, then when we need to make an HTTP request we have to serialize that information so it can be packaged. </p>
+                
+                <p>When the back-end receives a request, we know it is in the format of HTTP, we know it is serialized, so in order to work with Node, we want to deserialize that data so it can be used in JavaScript. </p>
+                
+                <p>So it is the serialzied form of text that certain characters come into play, such as the \n. It is in the translation that those characters gain functionality. </p>
+                
+                <h3>Learning: Unicode Characters</h3>
+                <p>I decided to give myself a bit more time down this rabbit hole of characters. I think it will pay off. </p>
+                
+                <p>So far my my understanding has already greatly improved. It’s not great, but imporved. I ahve a better idea of where Unicode comes in and how UTF-8 translates between Unicode and binary. </p>
+                
+                <p>Translation. That’s what programming is at root.</p>
+                
+                <p>Translating between the human experience and what it takes to have a computer generate those experiences. Codifying experience. Representing this with that and vice versa. </p>
+                
+                <p>Human language was the first translation of experience into a technology that could recreate that experience.</p>
+                
+                <p>The human experience and human language is at at one end of the spectrum, the laws of physics and how reality communicates with itself is at the other end. </p>
+                
+                <p>Computers are the means at which we bring these two ends together. </p>
+
+            </div>
+        </section>
 
         <section class="entry">
             <div class="inner-column">
