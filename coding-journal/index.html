@@ -30,6 +30,84 @@
         
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 8, 2023</h2>
+                <h2>Learning: Whitespace, escape characters, serialization-desierialization, etc.</h2>
+                <p>I want to spend at least another hour today studying a bit more into how text works when coding. I feel like this is important, especially when it comes to interacting with APIs. </p>
+                
+                <p>To start this exploration I just wrote out a quick note to myself of the different variables (white-space property, regular strings, template literal strings, HTML text format, JavaScript text format).</p>
+                
+                <p>————————————</p>
+                
+                <p>There is the front-end consumer of the information. How the information is displayed plays a key role in information absorption and human energy expenditure (ability to concentrate).</p>
+                
+                <p>Much of this formatting is set up automatically based on the HTML element. This is also altered using CSS.</p>
+                
+                <p>Then there’s the developer. That text that’s on the screen is also in the HTML document. The formatting of the text within the HTML document may or may not affect how it is displayed on the front end. </p>
+                
+                <p>By default, the white-space and text formatting that occurs within the HTML document code is ignored. This behavior is altered by CSS and also by using the <pre> element. </p>
+                
+                <p>Text moves from HTML to web page. But text can also move into HTML from JavaScript. </p>
+                
+                <p>With JavaScript one can insert text into an element. This means that what JS in isnerting is meant to be seen on the front end. </p>
+                
+                <p>With JS, one can also insert new HTML into the HTML document. This is structure. Along with this, text is usually inserted into the created elements as well.</p>
+                
+                <p>When inserting HTML and text into an HTML document from JS, when does formatting of the text matter?</p>
+                
+                <p>————————————</p>
+                
+                <p>As for escaping characters, the types of characters that need to be escaped depends on the context within which that character occurs and whether or not there is additional meaning programmed into it within that context. If there is additional meaning, then that character needs to be escaped. </p>
+                
+                <p>Each context has its own means of escaping. In JS, there’s the \. In HTML, there’s a number of escape sequences.</p>
+                
+                <p>I never realized this in this way with such clarity. It seems so obvious, but without me actually putting it into concrete words, it was blurry.</p>
+                
+                <p>————————————</p>
+                
+                <p>So in the HTML document, within an element, I can type \n, \b, \r without any conflicts. HTML doesn’t care about the ‘\’ character. It is just a character to it. It will display.</p>
+                
+                <p>However, within JavaScript, if I create a string and want to use the ‘\’ character, or if I want the string itself to contain ‘\n’, then I must escape the ‘\’. This is because JS has an extra in-built meaning to the ‘\’ itself. If I don’t escape the ‘\’ JS will utilize its functionality within the string.</p>
+                
+                <p>Let’s say I have a passage that contains a number of paragraphs. If, on the front-end, I wanted the paragraphs to be separated by line breaks I could do this in a number of ways. </p>
+                
+                <p>The most basic level, is statically adding the paragraphs into the HTML document, putting each paragraph into a paragraph element. Paragraph elements are block elements and so there would be a percieved line break. In the HTML document itself, the white-space formatting would not need to be taken into account.</p>
+                
+                <p>Another way to accomplish this would be to insert to text into the HTML wrapped in a <pre> tag and format the text appropriately. The problem with this approach is control. All the control for formatting comes from within the HTML document itself. Or within the JS file that is inserting the text onto the HTML element. This is best left to CSS.</p>
+                
+                <p>————————————</p>
+                
+                <p>I created a simple white-space refererence project. It has examples of each of the property values that the <code>white-space</code> CSS decalartion uses. This did help me with understanding what is going on in regards to how text is displayed, how escape characters work and that they vary with context. </p>
+                
+                <p>One article I read mentioned how the <code>white-space</code> declaration deals with new lines, spaces and tabs, and text-wrapping. </p>
+                
+                <p>These aspects are so fundamental to computer programming, but easily overlooked. </p>
+                
+                <p>————————————</p>
+                
+                <p> The only way you can display formatted text that has been sent to HTML via Javascript, is if that HTML element has a white-space property declared on it, other than the default ‘normal’ value. </p>
+                
+                <p>The reason this is, is that normally, all extra new line, space, and tab characters are ignored. Other white-space values take these characters into consideration, as well as wrapping. </p>
+                
+                <p>Template literals have implied line break, space, and tab characters. Whereas with string literals, a \n must be used to indicate a line break, template literals will insert the \n characters for us based on how the string is formatted. </p>
+                
+                <pre><code>let stringLiteral = "\n\n\n";
+                
+                //3 returns, literally:
+                let templateLiteral = `
+                
+                
+                `;
+                
+                //logs true
+                console.log(stringLiteral === templateLiteral); </code></pre>
+                <p><br></p>
+                <p>When the string is added to HTML, these characters are there, and whether or not they have any impact on how the text looks on the front-end depends on CSS declarations, such white-space. </p>
+                
+            </div>
+        </section>
+        
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 7, 2023</h2>
                 <p>I am getting an annoying behavior in VSCode. I have a node<i>modules folder, which is ignored via the .gitignore file, but the node</i>modules is highlighted in blue, and therefore the entire project folder is highlighted in blue. It is successfully ignored as I can see there are no commits, but the blue color makes me cranky. Makes it seem like there’s something that needs to be done.</p>
 
