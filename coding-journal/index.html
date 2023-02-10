@@ -30,6 +30,88 @@
         
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 9, 2023</h2>
+                <h3>Learning and Building: Whitespace, escape characters, etc.</h3>
+                <p>Yesterday I learned so much more about how text is translated between layers. There is still some fuzziness, but my understanding has improved enough for now. </p>
+                
+                <p>At this point I want to simply wrap up yesterday’s reference project.</p>
+                
+                <p>Quick review for my sake:</p>
+                <p>In JS, strings are essentially one long line of characters with spaces, tabs and new lines being characters as well. It’s easy to forget that emptiness and the characteristic of that kind of emptiness also make up characters.</p>
+                
+                <p>Characters like ‘\n’ are telling the computer how to display the string. Layout has everything to do with space. These characters are mini-functions. They are called escape characters. </p>
+                
+                <p>Console logging a JS string that contains these escape characters will show the proper space in place of the character. In order to have the front-end webpage do this, the default behavior needs to be changed. </p>
+                
+                <p>The front-end has its own way of parsing strings. These strings come from the content of the HTML element. </p>
+                
+                <p>It will ignore extra new lines or spaces. New lines are essentially determined by the container. Text hits container wall, a new line is created. No need for any other extra attention to be paid to any escape characters.</p>
+                
+                <p>Question:</p>
+                <p>How does an escape character inserted directly into HTML differ from an escape character inserted by JS?</p>
+                
+                <p>It must be that the JS escape characters get parsed and converted into HTML entities. For example, when HTML receives a JS string that has ‘\n’ there must be something that converts it to ‘&amp;#10;’ which is the corresponding HTML entity.</p>
+                
+                <p>Even when using certain HTML entities, like the new line entity, whether or not it does anything on the webpage is determined by the value of white-space.</p>
+                
+                <p>————————————</p>
+                
+                <p>It’s interesting… representing nothing with something. It’s interesting how nothing itself can have different flavors (spaces, tabs, new lines). These nothings need to be represented somehow to give their nothingness a somethingness. The somethingness of the nothings is only explicit when there are soemthings (visible symbols, like letters) surrounding it. Without the nothings, the meaning of the somethings would be lost, would be noise, all jumbled together. The nothings and the somethings work together to uphold the value of one another. With that said it is cleaner, lighter, more potent to have nothing without somethings, than to have a lot of somethings without nothing. </p>
+                
+                <p>————————————</p>
+                
+                <p>I really don’t know when it would be useful to format text within an HTML document or within a JS string. Moving on.</p>
+                
+                <h3>Building: ChatGPT Tutorial Project #1</h3>
+                <p>It is well past time to finished this tutorial. I can see clearly now just how ChatGPT’s response is packaged thanks to the time I spent researching and exploring the white-space property. </p>
+                
+                <p>I spent some time exploring the how to craft ChatGPT prompts. This is an art in an of itself. How best to use words to have a machine do what I want. </p>
+                
+                <p>This is what coding is. It is the art of getting a machine to accurately do what we want. Now, with ChatGPT, the words/symbols/characters we use to tell the machine what to do are words that are familiar to us.</p>
+                
+                <p>Still, clear communication is important. Yes the words are in a familiar syntax (i.e. English), but what words to use and in what order is important.</p>
+                
+                <p>What’s interesting is that by learing to communicate with the machine using my language, it forces me to hone my language usage. Now all those english classes and writing exercises and reading and engaging with words in general can pay off in new and wild ways. </p>
+                
+                <p>————————————</p>
+                
+                <p>This tutorial introduced me to 3 tools that I am glad I know exist now.</p>
+                
+                <p>The first is Vite. This is the client-side packaging of the front end. I am not sure quite what it does, like specifically… will look into this further tomorrow.</p>
+                
+                <p>The second is <a href="http://render.com" target="_blank">render.com</a>. What a cool tool. This is for back-end deployment. With this I can now spin up a remotely accessed server really easy-like. Before I had to go into AWS to create. I can do it, but I’d have to look up the instructions again.</p>
+                
+                <p>This site makes it super easy. I don’t know what the costs are like, but it allows me to start for free.</p>
+                
+                <p>The third tool is <a href="http://vercel.com" target="_blank">vercel.com</a>. This is the front-end deployment tool. This gives us a URL for the front-end, which will be talking with the back-end (thanks to <a href="http://render.com" target="_blank">render.com</a>). </p>
+                
+                <p>This is where I leave off with this for today. Tomorrow I will continue breaking down this project for the meta-processes. I think it would be helpful to make a diagram of all the tools (Vite, Nodejs, GitHub, Vercel, Render) and their purpose. Will be fun!</p>
+                
+                <h3>Learning: Frontend Masters/The New Hard Parts</h3>
+                <p>More thinking on async JS.</p>
+                
+                <p>I have some code that needs to run when something happens. I don’t know when that something will happen, but when it does happen I need some other things to happen. But only when the first something happens. </p>
+                
+                <p>What the Fetch API does is sets up a listener and assigns functions to run in a specific order. </p>
+                
+                <p>The things that need to happen occur within the browser itself. The callstack() is free, not blocked by this process. The process finishes, that has a result, this result triggers the other functions to run.</p>
+                
+                <p>It’s that whole setting up a listener thing. It’s that whole moving long processes outside of JavaScript as much as possible and tying JavaScript code to run. Asynchronous happenings within a synchronous environment. </p>
+                
+                <p>————————————</p>
+                
+                <p>I am seeing now that for the most part, we don’t want any tasks that take a long time to occur within JavaScript. We want to keep that callstack() open and responsive to do what it needs to do. </p>
+                
+                <p>The most common form of long-running processes that we want to keep out of JS land is the HTTP request. Depending on the request and distance to server, server traffic handling capacity (bandwidth?), the time it takes is highl variable. HTTP requests are always open ended where time is concerned.</p>
+                
+                <p>This process occurs outside JavaScript, within the runtime environment. The runtime (browser, nodejs, etc) is packaging, parsing, serializing/deserializing, making the network connect, sending/receiving the request/response. This task takes a certain amount of time. While its doing its thing, we don’t want JavaScript to be hung up waiting for the result.</p>
+                
+                <p>Fetch is an API that allows us to make HTTP requests (utilize the runtime’s network feature), attach functions and error handling to the response, and when the response is completed, auto-run those functions based on the response. And ultimately it allows us to keep the callstack() free and open while this happens.</p>
+            </div>
+        </section>
+        
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 8, 2023</h2>
                 <h2>Learning: Whitespace, escape characters, serialization-desierialization, etc.</h2>
                 <p>I want to spend at least another hour today studying a bit more into how text works when coding. I feel like this is important, especially when it comes to interacting with APIs. </p>
