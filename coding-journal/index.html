@@ -27,6 +27,104 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">February 10, 2023</h2>
+                <h3>Learning: Error Handling and Catching</h3>
+                <p>I am feeling like a side adventure will be happening today and I think it will be of much benefit. </p>
+                
+                <p>The adventure begins with <a href="https://www.freecodecamp.org/news/how-javascript-promises-actually-work-from-the-inside-out-76698bb7210b/" target="_blank">this article on what the heck Promises are doing behind the scenes</a>.</p>
+                
+                <p>There’s a lot happening here that makes me head go *&^isajdhflkj. This is fruitful territory.</p>
+                
+                <p>While looking at the code I noticed the try…catch statement, which I’ve used and seen many a time. This time however, I wanted to explore it more and specifically what the heck it means to catch an error. </p>
+                
+                <p>I created a new javascript file and started exploring with errors. The first thing I noticed within the console is the word “Uncaught”… funny how something I’ve ‘seen’ for so long finally becomes meaningful. </p>
+                
+                <p>Every error that occurs within a JS file is either caught or uncaught. </p>
+                
+                <p>Errors are events. By catching errors we have an opportunity to attach code to the event that will help us understand errors that occur. </p>
+                
+                <p>I learned that there are parse-time errors and runtime errors and how the catch can only catch runtime errors, which are also called exceptions.</p>
+                
+                <p>There is code that can’t even run because it is not understandable. Then there is code that is syntactically correct, but when it actually executes, there are exceptions.</p>
+                
+                <p>This seems so basic, yet I am only just now exploring this. Good. It’s about time. </p>
+                
+                <h3>Promises</h3>
+                <p>A Promise is an object with neat properties and methods. To create a new instance of a Promise, a callback (or an executer) needs to be passed into the instantiating statement. </p>
+                
+                <p>That executer  gets called immediately. But what gets passed into it? What are the executers arguments?</p>
+                
+                <p>If a function is taking in a callback, what is known? The arguments that will be passed into the callback need to be known.</p>
+                
+                <p>If my job is to pass in the behavior (i.e. function value), then I need to know what the arguments are that the supplied behavior will apply to. The Higher-order function is what determines the arguments.</p>
+                
+                <p>In the case of a promise, when I am passing in a callback, I need to know that the arguments that will be passed into the callback are callbacks themselves. </p>
+                
+                <p>But what then is the argument passed into these argument callbacks? Don’t I need to know that? Yes, yes I do. And this is where it gets a little tricky in my head.</p>
+                
+                <p>————————————</p>
+                
+                <p>It would be helpful fo rme to do a quick review of how objects work in JS.</p>
+                
+                <p>We create functions that return objects. We want all objects that that functions returns to have shared properties and methods. </p>
+                
+                <p>These shared features were stored in an object and would be assigned as the prototype of each object that is returned by the object factory. </p>
+                
+                <p>The ‘new’ keyword came along to help us with all this. ‘new’ creates a new object, assigns that object’s prototype to be the object that is assigned to the prototype property of the function factory’s object. </p>
+                
+                <p>Next, ‘new’ changes the reference of the ‘this’ keyword to be the new object created. We can then, in the body of the function assign the properties using this.property = argument.</p>
+                
+                <p>Lastly, ‘new’ returns this object for us (within object factory functions made for the ‘new’ keyword, there will be no return statement; this is done by ‘new’).</p>
+                
+                <p>The next phase of this process is to assign methods and properties to the prototype using factoryFunction.prototype.methodName = someFunction.</p>
+                
+                <p>What the ‘class’ keyword does is allows us to package the prototype assignment into the same block of code. That’s all it does. Everything that was originally happening is still happening, just more behind-the-scenes.</p>
+                
+                <p>How is this helpful? Well, Promises are object factory functions.</p>
+                
+                <p>The ‘class’ keyword is very similar to the ‘function’ keyword. Classes have special identifiers with the capitalized first letter. When they are defined it looks kind of funny because it’s just keyword, identifier, brackets for the object body. That can make it confusing if one doesn’t know what is going on behind the scenes. </p>
+                
+                <p>When instances of classes are called into being, the calling of the Class contsructor look just like a function call, and, lo, it is a function call. That’s all it is. </p>
+                
+                <p>What’s returned by that function call is an object with properties and a prototype of shared functionality. </p>
+                
+                <p>————————————</p>
+                
+                <p>When creating a new instance of a Promise object we pass into a callback, which is the executor. This will execute right away. What executes is really up to me. </p>
+                
+                <p>However, the callback we pass in has an opportunity to take advantage of two arguments that will be passed into it.</p>
+                
+                <p>These arguments are themselves callbacks. These callbacks’ behaviors have been defined, we determine what to pass into them. We know that when these callbacks are called, the arguments we pass in will be passed in as the arguments to the callback passed into the .then and .catch methods, respectively. That’s a mouthful.</p>
+                
+                <p>The ‘under-the-hood’ part is how the argument we pass into the resolve function calls the other callbacks with its argument. That’s the helpful part that is there for us to use. But it was built somehow. And I am interested in that under-the-hood bit. I don’t know why.</p>
+                
+                <p>These callbacks that the Promise obejct proves us access to can be accessed by way of the parameters we set for the callback we pass into the Promise constructor. </p>
+                
+                <p>————————————</p>
+                
+                <p>Here are the functions we are giving you, you tell us what to pass into them and when to call them.</p>
+                
+                <p>The functions are accessed by way of the callback parameter. They both do magic. The function accessed by the first parameter is related to the .then() method. The second is related to the .catch method.</p>
+                
+                <p>————————————</p>
+                
+                <p>There’s some fundamental thing that feels like it is slowly clicking into place in regards to my understanding of how to think about these more complex functions and objects. This is thanks to this study into promises and revisiting objects and the class syntax and hwo it came about..</p>
+                
+                <p>There’s defining the behavior and there’s defining the arguments. There’s the definer/coder, there’s the user. </p>
+                
+                <p>If the definer is defining behavior, then the argument is abstract, is up to the user. The user knows what outcome they want to happen (this is why they are calling this specific function after all), they don’t know (or need to know) how it happens. For the user the behavior is abstract. They are defining the arguments. </p>
+                
+                <p>This is straight forward. </p>
+                
+                <p>It feels a little tricky the other way around: when the user is defining the behavior, and the definer is defining the arguments that the user will use. </p>
+                
+                <p>Even more so when the arguments the definer defines are themselves behaviors. </p>
+                
+                <p>It’s still out my ability to communicate it just yet though… </p>
+            </div>
+        </section>
         
         <section class="entry">
             <div class="inner-column">
