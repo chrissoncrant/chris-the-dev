@@ -27,6 +27,21 @@
                 <h2 class="date"></h2>
             </div>
         </section> -->
+        
+        <section class="entry">
+            <div class="inner-column">
+                <h2 class="date">February 11, 2023</h2>
+                <p>Async JS. Spending more time thinking about it. How callbacks work, how they are written for asynchronous execution. What problem Promise objects solve. </p>
+
+                <p>It’s like programming chains of code to run and tying each chain to an event that will take a certain unknown amount of time. While that’s occuring, the rest of the script runs until the callstack is clear and waiting. </p>
+                
+                <p>At some point the event occurs, this is when the callbacks, the chains of code are added to the callback queue (macro and micro). The event loop adds them to the callstack, one by one, waiting until the callstack is all clear again before adding the next, on and on until it is all clear again.</p>
+                
+                <p>Before anything is plucked out of the macrotask list, the microtask list is cleared out. Each execution context that bubbles up can add more callbacks to either. </p>
+                
+                <p>There’s something organic about this. I picture cellular operations. </p>
+            </div>
+        </section>
         <section class="entry">
             <div class="inner-column">
                 <h2 class="date">February 10, 2023</h2>
