@@ -30,6 +30,67 @@
         
         <section class="entry">
             <div class="inner-column">
+                <h2 class="date">February 13, 2023</h2>
+                <h3>Learning: Promises</h3>
+                <p>Yesterday I spent more time reviewing the promise deconstruction. Doing these deconstructions is interesting. I think there is definitely some massive value in doing this. </p>
+                
+                <p>One thing I learned is that trying to understand all the code as I write it before moving onto the next line isn’t viable simply because there’s so much that depends on so much else. It reminds me of the the chicken and the egg.</p>
+                
+                <p>A lot of this involves simply talking out the code to myself, learning when to let go of an abstraction, learning when I am engaging with an abstraction, learning at what level of the abstraction I am within. </p>
+                
+                <p>Also because the Promise object is a pretty sophisticated piece of code, I am also getting some experience in reading good patterns.</p>
+                
+                <p>————————————</p>
+                <p>The more I learn about Promises the more I learn about the abstraction that exists between the service and the user of the service. What do I mean by this?</p>
+                
+                <p>When first learning to code, it is really easy to get lost in the layers. Which layer do I begin with? Which layer do I need to learn?</p>
+                
+                <p>The answer to those questions generally starts with answering the question: Why am I learning to code?</p>
+                
+                <p>This can get pretty deep, pretty quick. At least for me it does. </p>
+                
+                <p>But with Promises, the service that is provided is a visually appealing way to attach actions to other actions whose resolution time is unknown, but whose resolution the attached actions depend on. Additionally, and equally as important, it allows for catching and adding behavior to exceptions when they occur. </p>
+                
+                <p>The feature that makes Promises come alive is the .then method. With the .then() method we can attach actions to both successful and exceptional outcomes. </p>
+                
+                <p>What .then() does not do is call the callbacks. This is a common confusion with Promsies. One that Will’s course has cured me of.</p>
+                
+                <p>I know that .then(), in its definition, takes in 2 arguments, each one is intended to be a callback. The arguments passed into .then() are pushed to either the ‘onFulfilled’ or ‘onRejected’ arrays. </p>
+                
+                <p>Soemthing else behind the scenes is happening that actually calls these callbacks.</p>
+                
+                <p>.catch() method means that we don’t have to worry so much about defining the second argument of the .then() method. Even if we did specify the second argument of .then(), if a .catch() is not used, the error is technically uncaught, even though the error was passed into the second argument’s callback. </p>
+                
+                <p>So .then() will add the callbacks to their respective arrays (onFulfilled and onRejected). The result of the executor function sets up the the conditions upon which a promise will either be considered ‘resolved’ or ‘rejected’. </p>
+                
+                <p>The fulfillment of the condition (resolve or reject) determines which array’s callbacks to send the resulting value to, onFulfilled or onRejected.</p>
+                
+                <p>————————————</p>
+                
+                <p>I just finished copying out the promise deconstructed code into my own JS file. As I was typing this out I was inserting questions I have into the code to come back to, I was also talking out what was going on.</p>
+                
+                <p>Now I am faced with the larger task of actually analyzing how this script actually works. I also have another question of how the hell is all this packaged together?</p>
+                
+                <p>I think taking some time to explore how to reason out this code is extremely beneficial.</p>
+                
+                <p>This led me to reading about Static Code Analysis.</p>
+                
+                <p>————————————</p>
+                
+                <p>Exploring different ways of breaking down the code I am understanding.</p>
+                
+                <p>I’m using my iPad and the Goodnotes application to do it because it’s a sloppy process.</p>
+                
+                <p>First thing I did was create a map of sorts of what property of the promise object is being invoked where. Did this for the instances as well. </p>
+                
+                <p>Now I am mapping out the actual flow of the function calls that make this thing go. This is very cool.</p>
+                
+                <p>I like seeing how the function calls flow into one another, and there’s definitely some closure occurring with this. Closure is used to ensure certain functions are only called once. </p>
+            </div>
+        </section>
+
+        <section class="entry">
+            <div class="inner-column">
                 <h2 class="date">February 11, 2023</h2>
                 <p>Async JS. Spending more time thinking about it. How callbacks work, how they are written for asynchronous execution. What problem Promise objects solve. </p>
 
